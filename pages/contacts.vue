@@ -6,6 +6,6 @@ definePageMeta({
 
 <template>
     <div>
-        <p>HomePage</p>
+        <p>Contacts</p>
     </div>
 </template>
