@@ -66,7 +66,7 @@ const menu: IMenu = [
 ]
 </script>
 <template>
-    <div class="bg-red-500 w-48 p-3">
+    <div class="bg-shamrock-green w-48 h-screen p-3">
         <MenuHeader />
         <template v-for="menuItem in menu" v-key="menuItem.key">
             <MenuItem :key-name="menuItem.key" :items="menuItem.items" />

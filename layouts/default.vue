@@ -1,8 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div>
+    <div class="flex bg-nyanza-green">
         <Menu />
-        <slot />
+        <div class="p-5">
+            <slot />
+        </div>
     </div>
 </template>
