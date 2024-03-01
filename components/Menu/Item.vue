@@ -12,7 +12,7 @@ const props = defineProps<{
     </div>
     <template v-for="item in items" v-key="item.label">
         <button class="flex items-center gap-2">
-            <font-awesome-icon :icon="item.icon" />
+            <font-awesome-icon v-if="item.icon" :icon="item.icon" />
             <p>
                 {{ item.label }}
             </p>
