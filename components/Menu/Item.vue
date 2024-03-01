@@ -21,7 +21,7 @@ const handleButtonMenuClick = (destination: string) => {
     </div>
     <template v-for="item in items" v-key="item.label">
         <button class="flex items-center gap-2 w-full my-3 mx-3 py-2 px-4"
-            :class="appStore.activeMenuButton === item.label ? ' rounded-l-full bg-nyanza-green text-cal-poly-green' : ''"
+            :class="appStore.activeMenuButton === item.path ? ' rounded-l-full bg-nyanza-green text-cal-poly-green' : ''"
             @click="handleButtonMenuClick(item.path)">
             <font-awesome-icon v-if="item.icon" :icon="item.icon" />
             <p> {{ item.label }} </p>
