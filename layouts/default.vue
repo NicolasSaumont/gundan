@@ -2,7 +2,7 @@
 
 <template>
     <div>
-        <p>layout</p>
+        <Menu />
         <slot />
     </div>
 </template>
