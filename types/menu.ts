@@ -1,6 +1,8 @@
+import type { IconDefinition } from '@fortawesome/free-solid-svg-icons';
+
 export interface IMenuItem {
   label: string;
-  icon: string;
+  icon?: IconDefinition;
   path: string;
 }
 

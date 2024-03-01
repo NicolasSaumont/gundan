@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { faAddressBook, faCalendarDays, faCarrot, faCoins, faHouseChimney, faLightbulb, faUsers, faWind } from '@fortawesome/free-solid-svg-icons';
 import { useI18n } from 'vue-i18n'
 const { t } = useI18n()
 
@@ -8,18 +9,57 @@ const menu: IMenu = [
         items: [
             {
                 label: t('Accueil'),
-                icon: '',
                 path: '/'
             }
         ]
     },
     {
-        key: 'Service',
+        key: 'QUARTIERS',
         items: [
             {
+                label: t('Calendrier'),
+                icon: faCalendarDays,
+                path: '/calendrier'
+            },
+            {
                 label: t('Maison'),
-                icon: '',
-                path: '/'
+                icon: faHouseChimney,
+                path: '/maison'
+            },
+            {
+                label: t('Repas'),
+                icon: faCarrot,
+                path: '/repas'
+            },
+            {
+                label: t('Finances'),
+                icon: faCoins,
+                path: '/finances'
+            },
+            {
+                label: t('Bien-être'),
+                icon: faWind,
+                path: '/bien-etre'
+            },
+            {
+                label: t('Contacts'),
+                icon: faAddressBook,
+                path: '/contacts'
+            }
+        ]
+    },
+    {
+        key: 'OUTILS',
+        items: [
+            {
+                label: t('Conseils'),
+                icon: faLightbulb,
+                path: '/conseils'
+            },
+            {
+                label: t('Communauté'),
+                icon: faUsers,
+                path: '/communaute'
             }
         ]
     }
