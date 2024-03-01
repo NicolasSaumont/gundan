@@ -32,7 +32,7 @@ const handleButtonMenuClick = (destination: string) => {
 <style scoped>
 .active::after,
 .active::before {
-    --border-radius: 1rem;
+    --border-radius: 1.5rem;
     --nyanza-green: #DCFCE7;
     --shamrock-green: #599E66;
 
