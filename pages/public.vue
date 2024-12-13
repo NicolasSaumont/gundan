@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
-        <p>HomePage</p>
-    </div>
+  <div>
+    <p>Page d'accueil publique</p>
+  </div>
 </template>

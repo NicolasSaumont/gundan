@@ -4,6 +4,6 @@
 
 <template>
     <div>
-        <p>HomePage</p>
+        <p>Règles du jeu</p>
     </div>
 </template>

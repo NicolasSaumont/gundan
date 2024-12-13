@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
-        <p>HomePage</p>
-    </div>
+  <div>
+    <p>Missions</p>
+  </div>
 </template>

@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
-        <p>HomePage</p>
-    </div>
+  <div>
+    <p>Composez votre deck</p>
+  </div>
 </template>

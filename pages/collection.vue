@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
-        <p>HomePage</p>
-    </div>
+  <div>
+    <p>Collection de cartes</p>
+  </div>
 </template>
