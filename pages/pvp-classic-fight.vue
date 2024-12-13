@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p>Missions</p>
+    <p>Combat classique - Joueur contre joueur</p>
   </div>
 </template>
