@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p>Missions</p>
+    <p>Combat rapide - Joueur contre joueur</p>
   </div>
 </template>

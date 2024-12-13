@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p>Missions</p>
+    <p>Entrainement</p>
   </div>
 </template>

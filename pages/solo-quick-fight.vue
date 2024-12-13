@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p>Missions</p>
+    <p>Combats solo rapide</p>
   </div>
 </template>

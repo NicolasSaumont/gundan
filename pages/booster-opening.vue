@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p>Missions</p>
+    <p>Ouverture de booster</p>
   </div>
 </template>

@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p>Missions</p>
+    <p>Arène</p>
   </div>
 </template>
