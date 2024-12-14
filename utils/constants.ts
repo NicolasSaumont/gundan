@@ -1,0 +1,2 @@
+// PUBLIC HOME PAGE
+export const GAP_BETWEEN_SECTIONS = 16;
