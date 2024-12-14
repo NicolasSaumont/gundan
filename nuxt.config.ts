@@ -8,8 +8,21 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
-  modules: ['@pinia/nuxt', '@nuxtjs/i18n', '@nuxtjs/tailwindcss'],
+  modules: [
+    '@pinia/nuxt',
+    '@nuxtjs/i18n',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-fonts',
+  ],
   imports: {
     dirs: ['./types/**'],
+  },
+  googleFonts: {
+    families: {
+      Bungee: [400],
+      'Yusei+Magic': [400],
+      Caveat: [400, 700],
+    },
+    display: 'swap', // Option recommandée pour une meilleure performance
   },
 });

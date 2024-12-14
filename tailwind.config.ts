@@ -8,6 +8,11 @@ module.exports = {
         black: '#110B0D', // Smoky black
         white: '#FFF4E8', // Linen
       },
+      fontFamily: {
+        bungee: ['Bungee', 'sans-serif'], // Titres
+        'yusei-magic': ['Yusei Magic', 'sans-serif'], // Textes principaux
+        caveat: ['Caveat', 'cursive'], // Textes alternatifs
+      },
     },
   },
 };

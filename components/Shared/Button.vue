@@ -2,6 +2,7 @@
 defineProps<{
   textContent: string
 }>()
+
 const { t } = useI18n()
 </script>
 
