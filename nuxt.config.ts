@@ -17,6 +17,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./types/**'],
   },
+  css: ['@/assets/css/main.css'],
   googleFonts: {
     families: {
       Bungee: [400],
