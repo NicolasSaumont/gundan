@@ -6,7 +6,8 @@ export const useMenu = () => {
     // Ajustement de la position vers laquelle scroller pour prendre en compte le sticky header
     const targetPosition = element.offsetTop;
 
-    const headerHeight = document.getElementById('header')?.offsetHeight || 0;
+    const headerHeight =
+      document.body.querySelector('header')?.offsetHeight || 0;
 
     const adjustedPosition =
       targetPosition - headerHeight - GAP_BETWEEN_SECTIONS;

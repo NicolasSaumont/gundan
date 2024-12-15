@@ -3,9 +3,9 @@
 </script>
 
 <template>
-  <div id="top" class="flex flex-col" :style="{ gap: `${GAP_BETWEEN_SECTIONS}px` }">
-    <PublicHeader />
-    <main>
+  <div id="top">
+    <PublicHeader :style="{ marginBottom: `${GAP_BETWEEN_SECTIONS}px` }" />
+    <main class="flex flex-col" :style="{ gap: `${GAP_BETWEEN_SECTIONS}px` }">
       <section id="hero" class="bg-tertiary text-white h-[800px]">
         <p>Vidéo + CTA</p>
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque excepturi
