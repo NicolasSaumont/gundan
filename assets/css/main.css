@@ -1,3 +1,7 @@
 @tailwind base;
 @tailwind component;
 @tailwind utilities;
+
+body {
+  @apply font-yusei-magic text-black;
+}
