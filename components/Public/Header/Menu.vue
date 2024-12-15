@@ -22,7 +22,7 @@ const handlePlayButtonClick = () => {
       {{ t('Légions') }}
     </p>
     <div
-      class="flex gap-2 bg-white text-secondary border-2 rounded-lg px-3 py-2 hover:cursor-pointer hover:bg-primary hover:text-xl hover:text-white transition-all duration-300 ease-in-out"
+      class="flex gap-2 bg-white text-secondary border-2 rounded-lg px-3 py-2 shadow-xl hover:cursor-pointer hover:bg-primary hover:text-xl hover:text-white transition-all duration-300 ease-in-out"
       @click="handlePlayButtonClick">
       <p>{{ t('Jouer') }}</p>
       <font-awesome-icon :icon="faGamepad" size="xl" />
