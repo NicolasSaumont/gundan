@@ -15,11 +15,4 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    function ({ addBase }) {
-      addBase({
-        body: { color: '#110B0D' }, // Définit le texte en noir par défaut
-      });
-    },
-  ],
 };
