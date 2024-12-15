@@ -8,7 +8,7 @@ const handlePlayButtonClick = () => {
 </script>
 
 <template>
-  <div class="flex gap-10 text-lg text-white font-semibold h-12">
+  <div class="flex gap-10 font-bungee text-lg text-white h-12">
     <p class="link" @click="scrollTo('top')">
       {{ t('Accueil') }}
     </p>
