@@ -1,8 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
 
 <template>
-  <div id="header" class="flex justify-between bg-primary -mt-5 -mx-5 p-5 sticky top-0 left-0">
-    <p>Logo</p>
+  <div id="header" class="flex justify-between items-center bg-primary -mt-5 -mx-5 p-5 sticky top-0 left-0">
+    <a href="/" :title="t('Accueil Gundan')"><img src="~/public/logo.jpg" width="100px" class="rounded-xl shadow-lg"></a>
     <PublicHeaderMenu />
   </div>
 </template>
