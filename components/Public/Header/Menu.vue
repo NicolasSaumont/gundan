@@ -1,13 +1,12 @@
 <script setup lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { useGame } from '~/composables/useGame';
 
 const { scrollTo } = useMenu()
 const { t } = useI18n()
 
-const handlePlayButtonClick = () => {
-  console.log('Je veux jouer à Gundan !')
-}
+const { handlePlayButtonClick } = useGame()
 </script>
 
 <template>
