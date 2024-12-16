@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faGamepad } from '@fortawesome/free-solid-svg-icons';
-import { useGame } from '~/composables/useGame';
 
 const { scrollTo } = useMenu()
 const { t } = useI18n()

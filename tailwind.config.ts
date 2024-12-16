@@ -13,6 +13,9 @@ module.exports = {
         'yusei-magic': ['Yusei Magic', 'sans-serif'], // Textes principaux
         caveat: ['Caveat', 'cursive'], // Textes alternatifs
       },
+      backgroundImage: {
+        topography: "url('~/assets/images/topography.svg')",
+      },
     },
   },
 };
