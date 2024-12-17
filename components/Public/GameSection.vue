@@ -2,7 +2,9 @@
 </script>
 
 <template>
-  <section id="game" class="border border-primary rounded-lg h-[800px]">
-    <p>Bullet points</p>
+  <section id="game" class="flex gap-4 justify-between">
+    <PublicGameSectionCard />
+    <PublicGameSectionCard />
+    <PublicGameSectionCard />
   </section>
 </template>
