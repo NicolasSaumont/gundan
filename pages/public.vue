@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { HERO_OFFSET } from '~/utils/constants';
 
 const { t } = useI18n()
 const { headerHeight } = useMenu()
@@ -10,7 +11,7 @@ const heroHeight = ref(0)
 
 onMounted(() => {
   if (!window) return
-  heroHeight.value = window.innerHeight - headerHeight.value - 2 * GAP_BETWEEN_SECTIONS;
+  heroHeight.value = window.innerHeight - headerHeight.value - HERO_OFFSET;
 })
 </script>
 
