@@ -6,10 +6,8 @@
     <PublicHeader :style="{ marginBottom: `${GAP_BETWEEN_SECTIONS}px` }" />
     <main class="flex flex-col text-white max-w-[960px] mx-auto"
       :style="{ gap: `${GAP_BETWEEN_SECTIONS}px`, marginBottom: `${GAP_BETWEEN_SECTIONS}px` }">
-      <PublicHero />
-      <section id="game" class="border border-primary rounded-lg h-[800px]">
-        <p>Bullet points</p>
-      </section>
+      <PublicHeroSection />
+      <PublicGameSection />
       <section id="legions" class="border border-primary rounded-lg h-[800px]">
         <p>Légions</p>
       </section>
