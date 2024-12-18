@@ -36,11 +36,26 @@
   "eslintConfig": {
     "root": true,
     "extends": [
+      "@cooperl/eslint-config",
       "@nuxtjs/eslint-config-typescript"
     ],
     "rules": {
-      "eslint-plugin-vue/no-multiple-template-root": 0,
-      "eslint-plugin-vue/multi-word-component-names": "off"
+      "vue/no-multiple-template-root": 0,
+      "vue/multi-word-component-names": "off"
     }
+  },
+  "rules": {
+    "at-rule-no-unknown": [
+      true,
+      {
+        "ignoreAtRules": [
+          "tailwind",
+          "apply",
+          "variants",
+          "responsive",
+          "screen"
+        ]
+      }
+    ]
   }
 }
