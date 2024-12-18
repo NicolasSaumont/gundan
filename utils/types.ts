@@ -4,6 +4,7 @@ export interface IGameSectionCardDetails {
   sourceImage: string;
   title: string;
   content: string;
+  effect: "gearFifth" | "rasengan" | "enseiHeidan";
 }
 
 export type IGameSectionCards = IGameSectionCardDetails[];
