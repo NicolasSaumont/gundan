@@ -18,7 +18,7 @@ onMounted(() => {
   <section id="hero" class="flex w-full mx-auto" :style="{ height: `${heroHeight}px` }">
     <div class="w-[45%] flex flex-col gap-10 justify-center items-center">
       <div class="flex flex-col items-center gap-4">
-        <img src="~/assets/images/logo.jpg" width="250px" class="rounded-xl shadow shadow-white">
+        <img src="@/assets/images/logo.jpg" width="250px" class="rounded-xl shadow shadow-white">
         <h1 class="font-bungee text-6xl">Gundan</h1>
       </div>
       <button

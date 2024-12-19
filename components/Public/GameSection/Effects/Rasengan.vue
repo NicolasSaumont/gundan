@@ -54,17 +54,6 @@ onMounted(() => {
 
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-}
-
-body {
-    background-color: #262626;
-    background-repeat: repeat-y;
-    background-position: center;
-}
-
 .rasengan {
   position: absolute;
   top: 11%;

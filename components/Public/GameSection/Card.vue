@@ -22,7 +22,7 @@ const cardsEffect = {
       v-if="cardsEffect[card.effect]" 
       :is="cardsEffect[card.effect]" 
     />
-    <img :src="`/_nuxt/assets/images/${card.sourceImage}`" :alt="t('Image de présentation du jeu')" class="h-48 -mt-16">
+    <img :src="`/_nuxt/assets/images/${card.sourceImage}`" :alt="t('Image de présentation du jeu')" class="h-48 -mt-16 z-10">
     <h2 class="font-caveat text-6xl">{{ card.title }}</h2>
     <p class="text-center">{{ card.content }}</p>
   </article>
