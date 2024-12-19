@@ -1,32 +1,36 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
-
-const props = defineProps({
-  width: { type: Number, default: 25 },
-  height: { type: Number, default: 25 }
-});
+import {MIN_LINE_SIZE_RATIO, MAX_LINE_SIZE_RATIO, LINE_COUNT, LINE_ANIMATION_SPEED_MULTIPLIER, LINE_BORDER_RATIO} from '~/utils/constants'
 
 const rasengan = ref<HTMLDivElement | null>(null);
 
-// Calculer des variables dynamiques en fonction de la taille
+// Calcul des tailles des lignes
 const lineSizeRange = computed(() => ({
-  min: props.width * 0.02, // Exemple : 2% de la largeur
-  max: props.width * 0.2  // Exemple : 20% de la largeur
+  min: RASENGAN_SIDE * MIN_LINE_SIZE_RATIO,
+  max: RASENGAN_SIDE * MAX_LINE_SIZE_RATIO  
 }));
 
+/**
+ * Créé les lignes dynamiques du Rasengan
+ * @param container - L'élément HTML dans lequel les lignes sont ajoutées
+ * @param lineCount - Nombre total de lignes à créer
+ */
 const createLines = (container: HTMLDivElement, lineCount: number) => {
   for (let i = 1; i <= lineCount; i++) {
+
     const line = document.createElement('div');
     line.classList.add('line');
 
-    // Calcul dynamique de la taille
+    // Calcul aléatoire de la taille de la ligne dans la plage spécifiée
     const size = Math.random() * (lineSizeRange.value.max - lineSizeRange.value.min) + lineSizeRange.value.min;
 
     line.style.top = `${size}px`;
     line.style.left = `${size}px`;
     line.style.bottom = `${size}px`;
     line.style.right = `${size}px`;
-    line.style.animation = `rotating ${i * 0.03}s infinite linear`;
+
+    // Définition d'une animation personnalisée pour chaque ligne
+    line.style.animation = `rotating ${i * LINE_ANIMATION_SPEED_MULTIPLIER}s infinite linear`;
 
     container.appendChild(line);
   }
@@ -34,7 +38,7 @@ const createLines = (container: HTMLDivElement, lineCount: number) => {
 
 onMounted(() => {
   if (rasengan.value) {
-    createLines(rasengan.value, 25); // 100 lignes par défaut
+    createLines(rasengan.value, LINE_COUNT);
   }
 });
 </script>
@@ -45,8 +49,8 @@ onMounted(() => {
     ref="rasengan"
     class="rasengan"
     :style="{
-      '--rasengan-size': `${width}px`,
-      '--line-border': `${width * 0.002}px` // Dynamique pour les lignes
+      '--rasengan-size': `${RASENGAN_SIDE}px`,
+      '--line-border': `${RASENGAN_SIDE * LINE_BORDER_RATIO}px` // Épaisseur de la bordure des lignes calculée dynamiquement
     }"
   />
 </template>
