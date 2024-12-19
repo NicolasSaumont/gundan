@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { computed, ref } from 'vue';
-import {MIN_LINE_SIZE_RATIO, MAX_LINE_SIZE_RATIO, LINE_COUNT, LINE_ANIMATION_SPEED_MULTIPLIER, LINE_BORDER_RATIO} from '~/utils/constants'
-
 const rasengan = ref<HTMLDivElement | null>(null);
 
 // Calcul des tailles des lignes
