@@ -18,7 +18,7 @@ onMounted(() => {
 <style>
 .clouds-container {
   position: absolute;
-  width: 100%;
+  width: 273px;
   height: 100%; 
   overflow: hidden; 
 }
