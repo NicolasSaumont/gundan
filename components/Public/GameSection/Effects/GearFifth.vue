@@ -1,6 +1,6 @@
 <template>
   <div class="gear-fifth-placeholder">
-    <!-- Contenu temporaire -->
+    <!-- TODO: Création de l'effet GearFifth -->
   </div>
 </template>
 

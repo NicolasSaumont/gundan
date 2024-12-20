@@ -14,9 +14,9 @@ export const LINE_ANIMATION_SPEED_MULTIPLIER = 0.03; // Facteur multiplicateur p
 export const LINE_BORDER_RATIO = 0.002; // Ratio entre la taille du Rasengan et l'épaisseur des bordures
 
   // ENSEI HEIDAN
-export const MIN_TOP_POSITION = 11 // top: 11%
-export const MAX_TOP_POSITION = -10 // top: -10%
-export const MAX_TOP_MIN_TOP_DIFFERENCE = MIN_TOP_POSITION + MAX_TOP_POSITION 
+export const MIN_TOP_POSITION = 80 // top: 80%
+export const MAX_TOP_POSITION = -80 // top: -80%
+export const MAX_TOP_MIN_TOP_DIFFERENCE = MIN_TOP_POSITION - MAX_TOP_POSITION 
 
 export const INITIAL_CLOUD_WIDTH = 150
 export const INITIAL_CLOUD_HEIGHT = 80

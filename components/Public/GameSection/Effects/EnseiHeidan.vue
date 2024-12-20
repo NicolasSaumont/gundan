@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const cloudTop = ref('-10%'); 
+const cloudTop = ref('50%'); 
 const cloudWidth = ref(`${INITIAL_CLOUD_WIDTH}px`); 
 const cloudHeight = ref(`${INITIAL_CLOUD_HEIGHT}px`);
 
@@ -9,7 +9,7 @@ onMounted(() => {
   // Change les propriétés du nuage à chaque boucle d'animation
   const updateCloudProperties = () => {
     // Change la position verticale entre -10% et 11%
-    cloudTop.value = `${Math.random() * MAX_TOP_MIN_TOP_DIFFERENCE + MAX_TOP_POSITION}%`; // Math.random() donne une valeur entre 0 et 22, on soustrait 10 pour que ça soit entre -10% et 11%
+    cloudTop.value = `${Math.random() * MAX_TOP_MIN_TOP_DIFFERENCE + MAX_TOP_POSITION}%`; // Math.random() donne une valeur entre 0 et 21, on soustrait 10 pour que ça soit entre -10% et 11%
 
     // Change la largeur entre 50px et 250px et calcule la hauteur correspondante
     const width = Math.random() * MAX_CLOUD_WIDTH_MIN_CLOUD_WIDTH_DIFFERENCE + MIN_CLOUD_WIDTH; // Largeur entre 50px et 250px
