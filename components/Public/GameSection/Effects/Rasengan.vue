@@ -44,7 +44,7 @@ onMounted(() => {
 <template>
   <div
     ref="rasengan"
-    class="rasengan"
+    class="rasengan absolute top-[11%] left-[37%] transform -translate-x-1/2 -translate-y-1/2 w-[var(--rasengan-size)] h-[var(--rasengan-size)] perspective-[1000px] rounded-full"
     :style="{
       '--rasengan-size': `${RASENGAN_SIDE}px`,
       '--line-border': `${RASENGAN_SIDE * LINE_BORDER_RATIO}px` // Épaisseur de la bordure des lignes calculée dynamiquement
@@ -55,15 +55,7 @@ onMounted(() => {
 
 <style>
 .rasengan {
-  position: absolute;
-  top: 11%;
-  left: 37%;
-  transform: translate(-50%, -50%);
-  width: var(--rasengan-size);
-  height: var(--rasengan-size);
-  perspective: 1000px;
   background: radial-gradient(#fff 10%, #2994f2 40%);
-  border-radius: 50%;
   animation: twinkling 1.5s infinite linear;
 }
 
