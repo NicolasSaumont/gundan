@@ -1,6 +1,8 @@
 <script setup lang='ts'>
 const { t } = useI18n()
 
+const sliderIndex = ref(1)
+
 const legions: ILegions = [
   {
     id: 1,
@@ -30,7 +32,9 @@ const legions: ILegions = [
         <h2 class="font-caveat text-4xl">{{ t('Créez la plus puissante des alliances') }}</h2>
         <p>{{ t('Dans GUNDAN, les joueurs peuvent combiner plusieurs légions issues des mangas les plus cultes. Chaque légion apporte ses héros uniques, avec des pouvoirs et des synergies spéciales, permettant de créer une stratégie sur-mesure. Les bonus de légion activent des effets puissants selon les personnages choisis, et leur interaction crée des dynamiques de jeu inédites. Choisissez judicieusement vos légions, exploitez leurs forces et menez vos héros à la victoire dans ce jeu de cartes où stratégie et alliances sont la clé du succès !') }}</p>
       </div>
-      <PublicLegionsSectionLegion />
+      <template v-for="legion in legions" :key="legion.id">
+        <PublicLegionsSectionLegion v-show="sliderIndex === legion.id" :legion="legion" />
+      </template>
     </div>
   </section>
 </template>
