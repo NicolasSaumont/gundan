@@ -8,3 +8,12 @@ export interface IGameSectionCardDetails {
 }
 
 export type IGameSectionCards = IGameSectionCardDetails[];
+
+export interface ILegion {
+  id: number;
+  name: string;
+  image: string;
+  description: string;
+}
+
+export type ILegions = ILegion[];

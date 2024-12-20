@@ -2,18 +2,24 @@
 </script>
 
 <template>
-  <div id="top">
-    <PublicHeader :style="{ marginBottom: `${GAP_BETWEEN_SECTIONS}px` }" />
-    <main class="flex flex-col text-white max-w-[960px] mx-auto"
-      :style="{ gap: `${GAP_BETWEEN_SECTIONS}px`, marginBottom: `${GAP_BETWEEN_SECTIONS}px` }">
-      <PublicHeroSection />
-      <PublicGameSection />
-      <section id="legions" class="border border-primary rounded-lg h-[800px]">
-        <p>Légions</p>
-      </section>
+  <div id="top" class="flex flex-col" :style="{ gap: `${GAP_BETWEEN_SECTIONS}px` }">
+    <PublicHeader />
+    <main class="flex flex-col text-white"
+      :style="{ gap: `${GAP_BETWEEN_SECTIONS}px` }">
+      <div class="main-container flex flex-col" :style="{ gap: `${GAP_BETWEEN_SECTIONS}px` }">
+        <PublicHeroSection />
+        <PublicGameSection />
+      </div>
+      <PublicLegionsSection />
     </main>
     <footer class="text-white border border-primary rounded-lg h-[200px]">
       <p>Footer</p>
     </footer>
   </div>
 </template>
+
+<style>
+.main-container {
+  @apply max-w-[960px] mx-auto;
+}
+</style>
