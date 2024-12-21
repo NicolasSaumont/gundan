@@ -7,12 +7,17 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <div class="slides w-1/2 flex flex-col gap-4 justify-around p-8 border-2 rounded-xl">
-    <div class="flex gap-4 justify-between items-center">
-      <h3 class="font-bungee text-3xl">{{ t(legion.name) }}</h3>
-      <img :src="legion.image" :alt="t(`Logo de la légion ${legion.name}`)" class="rounded-xl">
+  <div class="slides w-2/3 flex gap-4">
+    <div class="flex flex-col gap-4 justify-around p-8 border-2 rounded-xl">
+      <div class="flex gap-4 justify-between items-center">
+        <div class="flex flex-col font-bungee">
+          <p>{{ t('Légion :') }}</p>
+          <h3 class="text-3xl text-secondary">{{ t(legion.name) }}</h3>
+        </div>
+      </div>
+      <h4 class="font-caveat text-3xl">{{ t(legion.tagLine) }}</h4>
+      <p>{{ t(legion.description) }}</p>
     </div>
-    <h4 class="font-caveat text-3xl text-secondary">{{ t(legion.tagLine) }}</h4>
-    <p>{{ t(legion.description) }}</p>
+    <img :src="legion.image" :alt="t(`Logo de la légion ${legion.name}`)" class="rounded-xl h-24">
   </div>
 </template>

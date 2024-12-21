@@ -20,6 +20,6 @@
 
 <style>
 .main-container {
-  @apply max-w-[960px] mx-auto;
+  @apply max-w-[1240px] mx-auto;
 }
 </style>

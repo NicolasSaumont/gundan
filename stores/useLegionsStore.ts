@@ -14,7 +14,7 @@ const legions = ref<ILegions>([
     name: 'Naruto',
     image: `${LOGO_FILE}/naruto.png`,
     description: 'La légion Naruto regroupe les ninjas les plus puissants de l’univers de Konoha et au-delà. Des héros comme Naruto, Sasuke et Sakura offrent une combinaison redoutable de techniques secrètes et de capacités stratégiques. Les personnages de cette légion maîtrisent des pouvoirs uniques, comme le chakra et les transformations, qui peuvent infliger des dégâts massifs ou renforcer la défense de votre équipe. Grâce à des bonus de légion activés par les synergies entre les personnages, la légion Naruto excelle dans l’adaptation et la résilience. Utilisez leurs compétences pour contourner les obstacles et dominer vos ennemis dans chaque combat !',
-    tagLine: 'Trouve ton Nindo et dépasse tous les hunins !'
+    tagLine: 'Trouve ton Nindo et dépasse tous les Shunins !'
   },
   {
     id: 3,
