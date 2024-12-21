@@ -14,6 +14,7 @@ export interface ILegion {
   name: string;
   image: string;
   description: string;
+  tagLine: string;
 }
 
 export type ILegions = ILegion[];

@@ -1,8 +1,12 @@
 // PUBLIC HOME PAGE
 
   // GENERAL
-export const GAP_BETWEEN_SECTIONS = 16;
-export const HERO_OFFSET = GAP_BETWEEN_SECTIONS * 4;
+export const GAP_BETWEEN_SECTIONS = 96;
+
+// Equation linéaire qui permet de calculer HERO_OFFSET :
+// - quand GAP_BETWEEN_SECTIONS = 96, le multiplicateur est 2.5.
+// - quand GAP_BETWEEN_SECTIONS = 16, le multiplicateur est 4.
+export const HERO_OFFSET = GAP_BETWEEN_SECTIONS * (0.01875 * GAP_BETWEEN_SECTIONS + 0.7);
 
   // RASENGAN
 export const RASENGAN_SIDE = 25

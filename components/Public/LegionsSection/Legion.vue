@@ -2,14 +2,17 @@
 defineProps<{
   legion: ILegion
 }>()
+
+const { t } = useI18n()
 </script>
 
 <template>
-  <div class="w-1/2 p-4 slides border-2 rounded-xl">
-    <div class="flex gap-4">
-      <img :src="legion.image" class="rounded-xl shadow shadow-white">
-      <h3>{{ legion.name }}</h3>
+  <div class="slides w-1/2 flex flex-col gap-4 justify-around p-8 border-2 rounded-xl">
+    <div class="flex gap-4 justify-between items-center">
+      <h3 class="font-bungee text-3xl">{{ t(legion.name) }}</h3>
+      <img :src="legion.image" :alt="t(`Logo de la légion ${legion.name}`)" class="rounded-xl">
     </div>
-    <p>{{ legion.description }}</p>
+    <h4 class="font-caveat text-3xl text-secondary">{{ t(legion.tagLine) }}</h4>
+    <p>{{ t(legion.description) }}</p>
   </div>
 </template>
