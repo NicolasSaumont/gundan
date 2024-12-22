@@ -7,7 +7,7 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <card class="slides w-2/3 flex gap-4 p-8 border-2 rounded-xl">
+  <article class="slides w-2/3 flex gap-4 p-8 border-2 rounded-xl">
     <div class="flex flex-col gap-4 justify-around">
       <div class="flex gap-4 justify-between items-center">
         <div class="flex flex-col font-bungee">
@@ -19,5 +19,5 @@ const { t } = useI18n()
       <p>{{ t(legion.description) }}</p>
     </div>
     <img :src="legion.image" :alt="t(`Logo de la légion ${legion.name}`)" class="rounded-xl h-24">
-  </card>
+  </article>
 </template>
