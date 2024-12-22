@@ -37,7 +37,7 @@ onMounted(async () => {
           <PublicLegionsSectionLegion v-show="sliderIndex === legion.id" :legion="legion" />
         </template>
       </div>
-      <div class="flex gap-24">
+      <nav class="flex gap-24">
         <img src="@/assets/images/arrowLeft.png" 
           :alt="t('Flèche de sélection de la légion précédente')" 
           :title="t('Légion précédente')"
@@ -51,7 +51,7 @@ onMounted(async () => {
           class="cursor-pointer shaking-animation animation-delay-50"
           @click="handleNextLegionClick"
         >
-      </div>
+      </nav>
     </div>
   </section>
 </template>
