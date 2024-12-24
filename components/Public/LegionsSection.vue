@@ -1,40 +1,18 @@
 <script setup lang='ts'>
 const { setLegions, legions } = useLegionsStore()
+const { activeLegionIndex, isFlipping } = storeToRefs(useLegionsStore())
 const { t } = useI18n()
 
-const sliderIndex = ref(1)
 
 onMounted(async () => {
   await setLegions()
   // Initialise sliderIndex à une valeur aléatoire entre le premier et le dernier index des légions
-  sliderIndex.value = Math.floor(Math.random() * legions.length) + 1;
+  activeLegionIndex.value = Math.floor(Math.random() * legions.length) + 1;
 })
-
-const isFlipping = ref(false); // État pour gérer l'animation
-
-// Fonction pour animer le retournement et changer de légion
-const flipCard = (direction: "next" | "previous") => {
-  if (isFlipping.value) return; // Empêche une double animation
-  isFlipping.value = true;
-
-  // Attendre que la carte soit "retournée" pour changer l'index
-  setTimeout(() => {
-    if (direction === "next") {
-      sliderIndex.value = sliderIndex.value !== legions.length ? sliderIndex.value + 1 : 1;
-    } else {
-      sliderIndex.value = sliderIndex.value !== 1 ? sliderIndex.value - 1 : legions.length;
-    }
-  }, 300); // Correspond à mi-parcours de l'animation
-
-  // Terminer l'animation après la rotation complète
-  setTimeout(() => {
-    isFlipping.value = false;
-  }, 600); // Durée totale de l'animation
-};
 </script>
 
 <template>
-  <section id="legions" class="h-[650px] bg-primary -mx-5">
+  <section id="legions" class="bg-primary -mx-5">
     <div class="main-container slider flex flex-col items-center gap-2 px-10 py-10 h-full">
       <div class="main-container slider flex gap-4 px-10 py-10 h-full">
         <div class="w-1/3 p-4 flex flex-col justify-around">
@@ -42,15 +20,15 @@ const flipCard = (direction: "next" | "previous") => {
           <p>{{ t('Dans GUNDAN, combinez des légions issues des mangas cultes pour créer des stratégies uniques. Chaque légion offre des héros aux pouvoirs et synergies spéciales. Activez des bonus puissants, exploitez leurs forces et menez vos héros à la victoire dans ce jeu de cartes où stratégie et alliances font la différence !') }}</p>
         </div>
         <div
-          class="card-container"
+          class="card-container w-2/3 h-[400px]" 
           :class="{ flipping: isFlipping }"
         >
           <template v-for="legion in legions" :key="legion.id">
-            <PublicLegionsSectionLegion v-show="sliderIndex === legion.id" :legion="legion" />
+            <PublicLegionsSectionLegion v-show="activeLegionIndex === legion.id" :legion="legion" />
           </template>
         </div>
       </div>
-      <PublicLegionsSectionNavigation @slider-index-next="() => flipCard('next')" @slider-index-previous="() => flipCard('previous')" />
+      <PublicLegionsSectionNavigation />
     </div>
   </section>
 </template>
@@ -85,6 +63,7 @@ const flipCard = (direction: "next" | "previous") => {
   animation: flip 0.6s ease-in-out;
 }
 
+/* Animation pour le retournement des cartes */
 @keyframes flip {
   0% {
     transform: rotateY(0deg);
