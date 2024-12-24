@@ -13,10 +13,10 @@ onMounted(async () => {
 
 <template>
   <section id="legions" class="bg-primary -mx-5">
-    <div class="main-container slider flex flex-col items-center gap-2 px-10 py-10 h-full">
-      <div class="main-container slider flex gap-4 px-10 py-10 h-full">
+    <div class="main-container flex flex-col items-center gap-10 px-10 py-10">
+      <div class="flex gap-4">
         <div class="w-1/3 p-4 flex flex-col justify-around">
-          <h2 class="font-caveat text-4xl text-secondary">{{ t('Créez la plus puissante des alliances') }}</h2>
+          <h2 class="font-caveat text-4xl">{{ t('Créez la plus puissante des alliances') }}</h2>
           <p>{{ t('Dans GUNDAN, combinez des légions issues des mangas cultes pour créer des stratégies uniques. Chaque légion offre des héros aux pouvoirs et synergies spéciales. Activez des bonus puissants, exploitez leurs forces et menez vos héros à la victoire dans ce jeu de cartes où stratégie et alliances font la différence !') }}</p>
         </div>
         <div
