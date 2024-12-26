@@ -19,10 +19,16 @@ const cardsEffect = {
 <template>
   <article class="flex flex-col gap-6 items-center bg-black w-full border-2 p-4 pb-8 border-secondary rounded-lg relative">
     <component 
-      v-if="cardsEffect[card.effect]" 
+      v-if="cardsEffect[card.effect] && cardsEffect[card.effect] !== cardsEffect.rasengan" 
       :is="cardsEffect[card.effect]" 
     />
-    <img :src="`/_nuxt/assets/images/${card.sourceImage}`" :alt="t('Image de présentation du jeu')" class="-mt-16 z-10">
+    <div class="relative">
+      <component 
+        v-if="cardsEffect[card.effect] && cardsEffect[card.effect] === cardsEffect.rasengan" 
+        :is="cardsEffect[card.effect]" 
+      />
+      <img :src="`/_nuxt/assets/images/${card.sourceImage}`" :alt="t('Image de présentation du jeu')" class="-mt-16 z-10">
+    </div>
     <h2 class="font-caveat text-6xl">{{ card.title }}</h2>
     <p class="text-center">{{ card.content }}</p>
   </article>

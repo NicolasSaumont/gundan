@@ -44,7 +44,7 @@ onMounted(() => {
 <template>
   <div
     ref="rasengan"
-    class="rasengan absolute top-[11%] left-[37%] transform -translate-x-1/2 -translate-y-1/2 w-[var(--rasengan-size)] h-[var(--rasengan-size)] perspective-[1000px] rounded-full"
+    class="rasengan absolute top-[31%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 w-[var(--rasengan-size)] h-[var(--rasengan-size)] perspective-[1000px] rounded-full"
     :style="{
       '--rasengan-size': `${RASENGAN_SIDE}px`,
       '--line-border': `${RASENGAN_SIDE * LINE_BORDER_RATIO}px` // Épaisseur de la bordure des lignes calculée dynamiquement
