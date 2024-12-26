@@ -37,5 +37,6 @@ export const TITAN_ANIMATION_DURATION = 8000
 
   // LEGIONS
 export const LOGO_FILE = '/_nuxt/assets/images/logos'
+export const FLIP_ANIMATION_DURATION = 600
 
 

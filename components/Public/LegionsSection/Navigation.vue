@@ -16,12 +16,12 @@ const flipCard = (direction: "next" | "previous") => {
     } else {
       activeLegionIndex.value = activeLegionIndex.value !== 1 ? activeLegionIndex.value - 1 : legions.length;
     }
-  }, 300); // Correspond à mi-parcours de l'animation
+  }, FLIP_ANIMATION_DURATION / 2); // Correspond à mi-parcours de l'animation
 
   // Terminer l'animation après la rotation complète
   setTimeout(() => {
     isFlipping.value = false;
-  }, 600); // Durée totale de l'animation
+  }, FLIP_ANIMATION_DURATION); // Durée totale de l'animation
 };
 </script>
 
