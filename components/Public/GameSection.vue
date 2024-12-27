@@ -11,7 +11,7 @@ const gameSectionCards: IGameSectionCards = [
     id: 2,
     sourceImage: 'naruto.png',
     title: 'Maîtrisez',
-    content: 'Devenez un stratège en maîtrisant l\'art de la gestion des cartes.Optimisez vos combinaisons, choisissez les meilleures synergies et construisez un deck équilibré pour surpasser vos adversaires. Chaque décision compte : améliorez vos cartes, activez des bonus et adaptez-vous pour remporter la victoire en toute situation.',
+    content: 'Devenez un stratège en maîtrisant l\'art de la gestion des cartes. Optimisez vos combinaisons, choisissez les meilleures synergies et construisez un deck équilibré pour surpasser vos adversaires. Chaque décision compte : améliorez vos cartes, activez des bonus et adaptez-vous pour remporter la victoire en toute situation.',
     effect: 'rasengan'
   },
   {

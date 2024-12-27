@@ -12,9 +12,7 @@
       </div>
       <PublicLegionsSection />
     </main>
-    <footer class="text-white border border-primary rounded-lg h-[200px]">
-      <p>Footer</p>
-    </footer>
+    <PublicFooter/>
   </div>
 </template>
 

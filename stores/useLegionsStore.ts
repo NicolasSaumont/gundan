@@ -23,7 +23,7 @@ const legions = ref<ILegions>([
     id: 3,
     name: 'Dragon Ball',
     image: `${LOGO_FILE}/dragon-ball.png`,
-    description: 'Affronte tes ennemis avec les guerriers légendaires de Dragon Ball ! Goku, Vegeta et leurs alliés repoussent leurs limites avec des attaques mythiques et des pouvoirs infinis. Exploite leur force incomparable et leurs synergies pour remporter la victoir',
+    description: 'Affronte tes ennemis avec les guerriers légendaires de Dragon Ball ! Goku, Vegeta et leurs alliés repoussent leurs limites avec des attaques mythiques et des pouvoirs infinis. Exploite leur force incomparable et leurs synergies pour remporter la victoire !',
     tagLine: 'Repousse tes limites pour être le Guerrier Ultime !'
   }
 ])

@@ -8,6 +8,7 @@ export default defineNuxtConfig({
     },
   },
   devtools: { enabled: true },
+  ssr: false,
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/i18n',
@@ -17,6 +18,7 @@ export default defineNuxtConfig({
   imports: {
     dirs: ['./types/**'],
   },
+  spaLoadingTemplate: 'loading-page.html',
   css: ['@/assets/css/main.css'],
   googleFonts: {
     families: {
