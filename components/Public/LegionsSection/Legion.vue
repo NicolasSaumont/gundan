@@ -18,6 +18,6 @@ const { t } = useI18n()
       <h4 class="font-caveat text-2xl">{{ t(legion.tagLine) }}</h4>
       <p>{{ t(legion.description) }}</p>
     </div>
-    <img :src="legion.image" :alt="t(`Logo de la légion ${legion.name}`)" class="rounded-xl h-24">
+    <img :src="legion.image" :alt="t(`Logo de la légion ${legion.name}`)" class="w-1/2 rounded-xl">
   </article>
 </template>

@@ -34,27 +34,6 @@ onMounted(async () => {
 </template>
 
 <style>
-.shaking-animation {
-  animation: shake 0.1s infinite;
-}
-
-.shaking-animation:hover {
-  animation: none; /* Arrête l'animation sur hover */
-}
-
-.animation-delay-50 {
-  animation-delay: 0.05s;
-}
-
-/* Animation pour les soubresauts rapides */
-@keyframes shake {
-  0% { transform: translate(0px, 0px); }
-  25% { transform: translate(-1px, 1px); }
-  50% { transform: translate(1px, -1px); }
-  75% { transform: translate(-0.5px, -0.5px); }
-  100% { transform: translate(0px, 0px); }
-}
-
 .card-container {
   perspective: 1000px;
 }
