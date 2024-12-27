@@ -8,7 +8,7 @@ const legions = ref<ILegions>([
   {
     id: 1,
     name: 'One Piece',
-    image: `${LOGO_FILE}/one-piece.png`,
+    image: `${LOGO_FILE}/luffy.png`,
     description: 'Rejoins les héros et pirates légendaires de One Piece ! Grâce à leurs attaques dévastatrices, leur puissante synergie et esprit d’équipe, Luffy et son équipage maîtrisent chaque bataille. En combinant force et stratégie, vise le trésor ultime et impose-toi comme le maître des océans !',
     tagLine: 'Deviens le Roi des Cartes !'
   },
@@ -22,8 +22,8 @@ const legions = ref<ILegions>([
   {
     id: 3,
     name: 'Dragon Ball',
-    image: `${LOGO_FILE}/dragon-ball.png`,
-    description: 'Affronte tes ennemis avec les guerriers légendaires de Dragon Ball ! Goku, Vegeta et leurs alliés repoussent leurs limites avec des attaques mythiques et des pouvoirs infinis. Exploite leur force incomparable et leurs synergies pour remporter la victoir',
+    image: `${LOGO_FILE}/goku.png`,
+    description: 'Affronte tes ennemis avec les guerriers légendaires de Dragon Ball ! Goku, Vegeta et leurs alliés repoussent leurs limites avec des attaques mythiques et des pouvoirs infinis. Exploite leur force incomparable et leurs synergies pour remporter la victoire !',
     tagLine: 'Repousse tes limites pour être le Guerrier Ultime !'
   }
 ])
