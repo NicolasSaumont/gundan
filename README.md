@@ -206,11 +206,7 @@ Project Link: [https://github.com/NicolasSaumont/gundan](https://github.com/Nico
 [license-url]: https://github.com/NicolasSaumont/gundan/blob/main/LICENSE.txt
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/nicolas-saumont
-<<<<<<< HEAD
 [product-screenshot]: public/screenshot.png
-=======
-[product-screenshot]: public/img/screenshot.png
->>>>>>> feat: update readme
 [Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
 [Vuejs-url]: https://vuejs.org/
 [Nuxt]: https://img.shields.io/badge/nuxt.js-00DC82?style=for-the-badge&logo=nuxt.js&logoColor=white
