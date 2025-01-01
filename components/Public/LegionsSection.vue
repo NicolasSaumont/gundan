@@ -2,10 +2,13 @@
 const { setLegions, legions } = useLegionsStore()
 const { activeLegionIndex, isFlipping } = storeToRefs(useLegionsStore())
 
+
 const { t } = useI18n()
 
-const sectionRef = ref<HTMLElement | null>(null);
-const scrollProgress = ref(0);
+const legionsRef = ref<HTMLElement | null>(null);
+
+const { scrollProgress } = useScroll(legionsRef)
+/* const scrollProgress = ref(0);
 
 const handleScroll = () => {
   if (!sectionRef.value) return;
@@ -27,24 +30,24 @@ const handleScroll = () => {
 
   // Augmente la vitesse de déplacement des blocs grâce au multiplicateur
   scrollProgress.value = progress * 3; 
-};
+}; */
 
 onMounted(async () => {
   await setLegions()
   // Initialise sliderIndex à une valeur aléatoire entre le premier et le dernier index des légions
   activeLegionIndex.value = Math.floor(Math.random() * legions.length) + 1;
 
-  window.addEventListener("scroll", handleScroll);
-  handleScroll();
+ /*  window.addEventListener("scroll", handleScroll);
+  handleScroll(); */
 })
 
-onUnmounted(() => {
+/* onUnmounted(() => {
   window.removeEventListener("scroll", handleScroll);
-});
+}); */
 </script>
 
 <template>
-  <section id="legions" ref="sectionRef" class="bg-primary -mx-5">
+  <section id="legions" ref="legionsRef" class="bg-primary -mx-5">
     <div class="main-container flex flex-col items-center gap-10 px-10 py-10">
       <div class="flex gap-4">
         <div class="section-left w-1/3 p-4 flex flex-col justify-around" :style="{ transform: `translateX(${-30 + scrollProgress * 30}%)` }">
