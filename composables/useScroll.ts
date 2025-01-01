@@ -20,7 +20,7 @@ export const useScroll = (sectionRef: Ref<HTMLElement | null>) => {
       Math.min(Math.max((windowHeight - rect.top) / (windowHeight + rect.height), 0), 0.3);
 
     // Augmente la vitesse de déplacement des blocs grâce au multiplicateur
-    scrollProgress.value = progress * 3; 
+    scrollProgress.value = progress * (3 + 1/3); 
   };
 
   onMounted(async () => {

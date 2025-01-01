@@ -1,4 +1,8 @@
 <script setup lang="ts">
+const gameRef = ref<HTMLElement | null>(null);
+
+const { scrollProgress } = useScroll(gameRef)
+
 const gameSectionCards: IGameSectionCards = [
   {
     id: 1,
@@ -22,12 +26,21 @@ const gameSectionCards: IGameSectionCards = [
     effect: 'enseiHeidan'
   }
 ]
+
+const cardStyles = computed(() =>
+  gameSectionCards.map((card) => {
+    if (card.id === 1) return { transform: 'none' };
+    if (card.id === 2) return { transform: `translateY(${30 - scrollProgress.value * 30}%)` };
+    if (card.id === 3) return { transform: `translateY(${60 - scrollProgress.value * 60}%)` };
+    return { transform: 'none' };
+  })
+);
 </script>
 
 <template>
-  <section id="game" class="flex gap-4 justify-between">
-    <template v-for="cardDetails in gameSectionCards" :key="cardDetails.id">
-      <PublicGameSectionCard :card="cardDetails" />
+  <section id="game" ref="gameRef" class="flex gap-4 justify-between">
+    <template v-for="(cardDetails, index) in gameSectionCards" :key="cardDetails.id">
+      <PublicGameSectionCard :card="cardDetails" :style="cardStyles[index]"/>
     </template>
   </section>
 </template>
