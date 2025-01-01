@@ -29,10 +29,8 @@ const gameSectionCards: IGameSectionCards = [
 
 const cardStyles = computed(() =>
   gameSectionCards.map((card) => {
-    if (card.id === 1) return { transform: 'none' };
-    if (card.id === 2) return { transform: `translateY(${30 - scrollProgress.value * 30}%)` };
-    if (card.id === 3) return { transform: `translateY(${60 - scrollProgress.value * 60}%)` };
-    return { transform: 'none' };
+    const baseTranslation = 30 * (card.id - 1); // Calcule une valeur de base (id=1: 0, id=2: 30, id=3: 60, etc.)
+    return { transform: `translateY(${baseTranslation - scrollProgress.value * baseTranslation}%)` };
   })
 );
 </script>
