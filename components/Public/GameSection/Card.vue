@@ -17,7 +17,7 @@ const cardsEffect = {
 </script>
 
 <template>
-  <article class="flex flex-col gap-6 items-center bg-black w-full border-2 p-4 pb-8 border-secondary rounded-lg relative">
+  <article class="flex flex-col gap-6 items-center bg-black w-full border-2 p-4 pb-8 border-secondary rounded-lg relative" :data-cy="card.id">
     <component 
       v-if="cardsEffect[card.effect] && cardsEffect[card.effect] !== cardsEffect.rasengan" 
       :is="cardsEffect[card.effect]" 

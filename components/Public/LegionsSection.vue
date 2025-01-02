@@ -1,8 +1,13 @@
 <script setup lang='ts'>
 const { setLegions, legions } = useLegionsStore()
 const { activeLegionIndex, isFlipping } = storeToRefs(useLegionsStore())
+
+
 const { t } = useI18n()
 
+const legionsRef = ref<HTMLElement | null>(null);
+
+const { scrollProgress } = useScroll(legionsRef)
 
 onMounted(async () => {
   await setLegions()
@@ -12,16 +17,17 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section id="legions" class="bg-primary -mx-5">
+  <section id="legions" ref="legionsRef" class="bg-primary -mx-5">
     <div class="main-container flex flex-col items-center gap-10 px-10 py-10">
       <div class="flex gap-4">
-        <div class="w-1/3 p-4 flex flex-col justify-around">
+        <div class="section-left w-1/3 p-4 flex flex-col justify-around" :style="{ transform: `translateX(${-30 + scrollProgress * 30}%)` }">
           <h2 class="font-caveat text-4xl">{{ t('Créez la plus puissante des alliances') }}</h2>
           <p>{{ t('Dans GUNDAN, combinez des légions issues des mangas cultes pour créer des stratégies uniques. Chaque légion offre des héros aux pouvoirs et synergies spéciales. Activez des bonus puissants, exploitez leurs forces et menez vos héros à la victoire dans ce jeu de cartes où stratégie et alliances font la différence !') }}</p>
         </div>
         <div
-          class="card-container w-2/3 h-[400px]" 
+          class="section-right card-container w-2/3 h-[400px]" 
           :class="{ flipping: isFlipping }"
+          :style="{ transform: `translateX(${30 - scrollProgress * 30}%)` }"
         >
           <template v-for="legion in legions" :key="legion.id">
             <PublicLegionsSectionLegion v-show="activeLegionIndex === legion.id" :legion="legion" />
@@ -33,7 +39,12 @@ onMounted(async () => {
   </section>
 </template>
 
-<style>
+<style scoped>
+.section-left,
+.section-right {
+  transition: transform 0.1s linear;
+}
+
 .card-container {
   perspective: 1000px;
 }
