@@ -1,4 +1,7 @@
 module.exports = {
+  content: [
+    './front/**/*.{vue,js,ts,jsx,tsx}',
+  ],
   theme: {
     extend: {
       colors: {
@@ -15,6 +18,8 @@ module.exports = {
       },
       backgroundImage: {
         topography: "url('~/assets/images/topography.svg')",
+        menu: "url('~/assets/images/homepage-menu-bg.png')",
+        "menu-inverted-colors": "url('~/assets/images/homepage-menu-bg-inverted-colors.png')"
       },
     },
   },

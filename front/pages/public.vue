@@ -16,8 +16,3 @@
   </div>
 </template>
 
-<style>
-.main-container {
-  @apply max-w-[1240px] mx-auto;
-}
-</style>

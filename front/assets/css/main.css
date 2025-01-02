@@ -5,3 +5,11 @@
 body {
   @apply font-yusei-magic text-black;
 }
+
+.main-container {
+  @apply max-w-[1240px] mx-auto;
+}
+
+.height-screen { 
+  height: calc(100vh - 40px) /* 40px correspond au padding du layout : py-5*/  
+}

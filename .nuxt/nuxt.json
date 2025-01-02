@@ -1,0 +1,9 @@
+{
+  "_hash": "RBwGyJqwwY",
+  "project": {
+    "rootDir": "/var/www/html/personal_projects/gundan"
+  },
+  "versions": {
+    "nuxt": "3.10.3"
+  }
+}
