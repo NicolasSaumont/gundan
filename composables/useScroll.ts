@@ -25,7 +25,6 @@ export const useScroll = (sectionRef: Ref<HTMLElement | null>) => {
 
   onMounted(async () => {
     window.addEventListener("scroll", handleScroll);
-    handleScroll();
   })
 
   onUnmounted(() => {
