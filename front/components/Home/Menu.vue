@@ -17,7 +17,7 @@ const homePageLinks = [
   {
     label: 'Boutique',
     path: '/shop'
-  },
+  }
 ]
 </script>
 
