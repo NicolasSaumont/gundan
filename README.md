@@ -116,8 +116,8 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 ### V1
 
 - [ ] Création des data
-- [ ] User stories
-- [ ] MCD
+- [x] User stories
+- [x] MCD
 - [ ] Création des BDD
 - [x] Création de la page d'accueil public
 - [ ] Création d'un compte utilisateur
@@ -127,10 +127,9 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 - [ ] Acquérir de nouvelles cartes
 - [ ] Voir la liste des cartes possédées
 - [ ] Voir le détail d'une carte possédée
-- [ ] CRUD deck
+- [ ] CRUD deck (pas de modification dans la V1)
   - [ ] Création
   - [ ] Affichage
-  - [ ] Modification
   - [ ] Suppression
 - [ ] Afficher la liste des missions (avec leurs progressions respectives)
 - [ ] Système de combat
@@ -147,6 +146,7 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 - [ ] Système de chat
 - [ ] Système d'échanges de cartes
 - [ ] Mode carrière
+- [ ] Système de paiement pour ouvrir des decks plus souvent
 
 
 Voir les [problèmes non résolus](https://github.com/NicolasSaumont/gundan/issues) pour accéder à la liste complète des fonctionnalités proposées (et les bugs connus).
