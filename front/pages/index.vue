@@ -33,6 +33,11 @@ const handleHoverImage = (image: string) => {
           :alt="t('Image de présentation du lien')"
           :style="{ transition: 'opacity 0.2s ease-in-out', opacity: opacity }"
         >
+        <img 
+          v-show="!currentImage" 
+          src="/_nuxt/assets/images/home-page-menu/luffy-naruto-fight.gif" 
+          :alt="t('Luffy combattant Naruto')"
+        >
       </div>
     </div>
   </div>
