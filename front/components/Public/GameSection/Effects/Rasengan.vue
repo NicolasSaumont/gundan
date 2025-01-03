@@ -1,11 +1,11 @@
 <script setup lang="ts">
-const rasengan = ref<HTMLDivElement | null>(null);
+const rasengan = ref<HTMLDivElement | null>(null)
 
 // Calcul des tailles des lignes
 const lineSizeRange = computed(() => ({
   min: RASENGAN_SIDE * MIN_LINE_SIZE_RATIO,
   max: RASENGAN_SIDE * MAX_LINE_SIZE_RATIO  
-}));
+}))
 
 /**
  * Créé les lignes dynamiques du Rasengan
@@ -15,29 +15,29 @@ const lineSizeRange = computed(() => ({
 const createLines = (container: HTMLDivElement, lineCount: number) => {
   for (let i = 1; i <= lineCount; i++) {
 
-    const line = document.createElement('div');
-    line.classList.add('line');
+    const line = document.createElement('div')
+    line.classList.add('line')
 
     // Calcul aléatoire de la taille de la ligne dans la plage spécifiée
-    const size = Math.random() * (lineSizeRange.value.max - lineSizeRange.value.min) + lineSizeRange.value.min;
+    const size = Math.random() * (lineSizeRange.value.max - lineSizeRange.value.min) + lineSizeRange.value.min
 
-    line.style.top = `${size}px`;
-    line.style.left = `${size}px`;
-    line.style.bottom = `${size}px`;
-    line.style.right = `${size}px`;
+    line.style.top = `${size}px`
+    line.style.left = `${size}px`
+    line.style.bottom = `${size}px`
+    line.style.right = `${size}px`
 
     // Définition d'une animation personnalisée pour chaque ligne
-    line.style.animation = `rotating ${i * LINE_ANIMATION_SPEED_MULTIPLIER}s infinite linear`;
+    line.style.animation = `rotating ${i * LINE_ANIMATION_SPEED_MULTIPLIER}s infinite linear`
 
-    container.appendChild(line);
+    container.appendChild(line)
   }
-};
+}
 
 onMounted(() => {
   if (rasengan.value) {
-    createLines(rasengan.value, LINE_COUNT);
+    createLines(rasengan.value, LINE_COUNT)
   }
-});
+})
 </script>
 
 
@@ -51,7 +51,6 @@ onMounted(() => {
     }"
   />
 </template>
-
 
 <style>
 .rasengan {

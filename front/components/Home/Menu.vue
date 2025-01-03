@@ -1,30 +1,42 @@
 <script setup lang='ts'>
+const emit = defineEmits(['hoverImage'])
+
 const { t } = useI18n()
 
 const homePageLinks = [
   {
     label: 'Combats',
-    path: '/battle-modes'
+    path: '/battle-modes',
+    image: '/_nuxt/assets/images/home-page-menu/seiya.png'
   },
   {
     label: 'Collection',
-    path: '/collection'
+    path: '/collection',
+    image: '/_nuxt/assets/images/home-page-menu/lucy.png'
   },
   {
     label: 'Missions',
-    path: '/missions'
+    path: '/missions',
+    image: '/_nuxt/assets/images/home-page-menu/snk.png'
   },
   {
     label: 'Boutique',
-    path: '/shop'
+    path: '/shop',
+    image: '/_nuxt/assets/images/home-page-menu/nami.png'
   }
 ]
 </script>
 
 <template>
-  <nav class="relative flex flex-col gap-8 justify-center z-10 text-white font-bungee text-4xl">
+  <nav class="relative flex flex-col justify-center z-10 text-white font-bungee text-4xl">
     <template v-for="link in homePageLinks" :key="link.label">
-      <span class="link">{{ t(link.label) }}</span>
+      <span 
+        class="link py-4" 
+        @mouseover="emit('hoverImage', link.image)"
+        @mouseleave="emit('hoverImage', '')"
+      >
+        {{ t(link.label) }}
+      </span>
     </template>
   </nav>
 </template>

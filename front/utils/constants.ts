@@ -1,12 +1,12 @@
 // PUBLIC HOME PAGE
 
   // GENERAL
-export const GAP_BETWEEN_SECTIONS = 96;
+export const GAP_BETWEEN_SECTIONS = 96
 
 // Equation linéaire qui permet de calculer HERO_OFFSET :
 // - quand GAP_BETWEEN_SECTIONS = 96, le multiplicateur est 2.5.
 // - quand GAP_BETWEEN_SECTIONS = 16, le multiplicateur est 4.
-export const HERO_OFFSET = GAP_BETWEEN_SECTIONS * (0.01875 * GAP_BETWEEN_SECTIONS + 0.7);
+export const HERO_OFFSET = GAP_BETWEEN_SECTIONS * (0.01875 * GAP_BETWEEN_SECTIONS + 0.7)
 
   // RASENGAN
 export const RASENGAN_SIDE = 25
@@ -14,8 +14,8 @@ export const LINE_COUNT = 25
 
 export const MIN_LINE_SIZE_RATIO = 0.02 // Taille minimale pour une ligne
 export const MAX_LINE_SIZE_RATIO = 0.2 // Taille maximale pour une ligne
-export const LINE_ANIMATION_SPEED_MULTIPLIER = 0.03; // Facteur multiplicateur pour la durée de l'animation
-export const LINE_BORDER_RATIO = 0.002; // Ratio entre la taille du Rasengan et l'épaisseur des bordures
+export const LINE_ANIMATION_SPEED_MULTIPLIER = 0.03 // Facteur multiplicateur pour la durée de l'animation
+export const LINE_BORDER_RATIO = 0.002 // Ratio entre la taille du Rasengan et l'épaisseur des bordures
 
   // ENSEI HEIDAN
 export const MIN_TOP_POSITION = 50 // top: 50%
@@ -38,5 +38,11 @@ export const TITAN_ANIMATION_DURATION = 8000
   // LEGIONS
 export const LOGO_FILE = '/_nuxt/assets/images/legions'
 export const FLIP_ANIMATION_DURATION = 600
+
+// HOME PAGE
+
+  // GENERAL
+export const SHOW_DURATION = 50
+export const HIDE_DURATION = 200
 
 

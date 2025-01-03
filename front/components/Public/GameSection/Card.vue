@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import PublicGameSectionEffectsGearFifth from '~/components/Public/GameSection/Effects/GearFifth.vue';
-import PublicGameSectionEffectsRasengan from '~/components/Public/GameSection/Effects/Rasengan.vue';
-import PublicGameSectionEffectsEnseiHeidan from '~/components/Public/GameSection/Effects/EnseiHeidan.vue';
+import PublicGameSectionEffectsGearFifth from '~/components/Public/GameSection/Effects/GearFifth.vue'
+import PublicGameSectionEffectsRasengan from '~/components/Public/GameSection/Effects/Rasengan.vue'
+import PublicGameSectionEffectsEnseiHeidan from '~/components/Public/GameSection/Effects/EnseiHeidan.vue'
 
 defineProps<{
   card: IGameSectionCardDetails

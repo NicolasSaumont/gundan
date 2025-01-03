@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const gameRef = ref<HTMLElement | null>(null);
+const gameRef = ref<HTMLElement | null>(null)
 
 const { scrollProgress } = useScroll(gameRef)
 
@@ -29,10 +29,10 @@ const gameSectionCards: IGameSectionCards = [
 
 const cardStyles = computed(() =>
   gameSectionCards.map((card) => {
-    const baseTranslation = 30 * (card.id - 1); // Calcule une valeur de base (id=1: 0, id=2: 30, id=3: 60, etc.)
-    return { transform: `translateY(${baseTranslation - scrollProgress.value * baseTranslation}%)` };
+    const baseTranslation = 30 * (card.id - 1) // Calcule une valeur de base (id=1: 0, id=2: 30, id=3: 60, etc.)
+    return { transform: `translateY(${baseTranslation - scrollProgress.value * baseTranslation}%)` }
   })
-);
+)
 </script>
 
 <template>

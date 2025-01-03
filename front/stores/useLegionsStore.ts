@@ -1,7 +1,7 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
-const activeLegionIndex = ref(1);
-const isFlipping = ref(false);
+const activeLegionIndex = ref(1)
+const isFlipping = ref(false)
 
 // TODO: once API linked, initiate 'legions' at null
 const legions = ref<ILegions>([
@@ -49,5 +49,5 @@ export const useLegionsStore = defineStore('legions', () => {
     legions,
     activeLegionIndex,
     isFlipping
-  };
-});
+  }
+})
