@@ -11,5 +11,9 @@ body {
 }
 
 .height-screen { 
-  height: calc(100vh - 40px) /* 40px correspond au padding du layout : py-5*/  
+  height: calc(100vh - 40px) /* 40px correspond au padding du layout : py-5 */  
+}
+
+.height-screen-minus-header { 
+  height: calc(100vh - 100px - 40px) /* 100px correspond à la hauteur du header ; 40px correspond au padding du layout : py-5 */  
 }

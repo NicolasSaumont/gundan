@@ -17,7 +17,7 @@ const handleHoverImage = (image: string) => {
 </script>
 
 <template>
-  <div class="height-screen flex items-center justify-center">
+  <div class="h-full flex items-center justify-center">
     <div class="relative flex px-10 justify-between items-center w-1/2 h-1/2 bg-primary border-2 border-secondary rounded-xl">
       <!-- Image d'arrière-plan avec opacité -->
       <div 
