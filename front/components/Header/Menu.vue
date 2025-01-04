@@ -13,11 +13,11 @@ const { t } = useI18n()
         {{ t(link.label) }}
       </NuxtLink>
     </template>
-    <NuxtLink to="/user">
+    <NuxtLink to="/user" :title="t('Utilisateur')" class="icon-link">
       <font-awesome-icon :icon="faUser" size="xl" />
     </NuxtLink>
     <!-- TODO: simulation de déconnexion-->
-    <NuxtLink to="/public">
+    <NuxtLink to="/public" :title="t('Déconnexion')" class="icon-link">
       <font-awesome-icon :icon="faRightFromBracket" size="xl" />
     </NuxtLink>
   </nav>
@@ -26,5 +26,9 @@ const { t } = useI18n()
 <style scoped>
 .link {
   @apply tracking-widest px-3 py-2 hover:cursor-pointer hover:text-2xl hover:rotate-[-6deg] transition-all duration-300 ease-in-out;
+}
+
+.icon-link {
+  @apply hover:text-secondary hover:text-2xl transition-all duration-300 ease-in-out
 }
 </style>
