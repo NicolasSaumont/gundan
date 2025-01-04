@@ -1,6 +1,11 @@
+import { useRouter } from 'vue-router'
+
 export const useGame = () => {
+  const router = useRouter()
+
   const handlePlayButtonClick = () => {
-    console.log('Je veux jouer à Gundan !')
+    // TODO: simulation de connexion
+    router.push('/')
   }
   return { handlePlayButtonClick }
 }

@@ -45,4 +45,27 @@ export const FLIP_ANIMATION_DURATION = 600
 export const SHOW_DURATION = 50
 export const HIDE_DURATION = 200
 
+export const NAVIGATION_LINKS = [
+  {
+    label: 'Combats',
+    path: '/battle-modes',
+    image: '/_nuxt/assets/images/home-page-menu/seiya.png'
+  },
+  {
+    label: 'Collection',
+    path: '/collection',
+    image: '/_nuxt/assets/images/home-page-menu/lucy.png'
+  },
+  {
+    label: 'Missions',
+    path: '/missions',
+    image: '/_nuxt/assets/images/home-page-menu/snk.png'
+  },
+  {
+    label: 'Boutique',
+    path: '/shop',
+    image: '/_nuxt/assets/images/home-page-menu/nami.png'
+  }
+]
+
 

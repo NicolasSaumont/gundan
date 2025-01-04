@@ -1,41 +1,25 @@
+
 <script setup lang='ts'>
-const emit = defineEmits(['hoverImage'])
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
 
 const { t } = useI18n()
-
-const homePageLinks = [
-  {
-    label: 'Combats',
-    path: '/battle-modes',
-    image: '/_nuxt/assets/images/home-page-menu/seiya.png'
-  },
-  {
-    label: 'Collection',
-    path: '/collection',
-    image: '/_nuxt/assets/images/home-page-menu/lucy.png'
-  },
-  {
-    label: 'Missions',
-    path: '/missions',
-    image: '/_nuxt/assets/images/home-page-menu/snk.png'
-  },
-  {
-    label: 'Boutique',
-    path: '/shop',
-    image: '/_nuxt/assets/images/home-page-menu/nami.png'
-  }
-]
 </script>
 
 <template>
-  <nav class="flex gap-6 font-bungee text-lg text-white h-12">
-    <template v-for="link in homePageLinks" :key="link.label">
-      <NuxtLink :to="link.path" 
-        class="link" 
-      >
+  <nav class="flex items-center gap-6 font-bungee text-lg text-white h-12">
+    <template v-for="link in NAVIGATION_LINKS" :key="link.label">
+      <NuxtLink :to="link.path" class="link">
         {{ t(link.label) }}
       </NuxtLink>
     </template>
+    <NuxtLink to="/user">
+      <font-awesome-icon :icon="faUser" size="xl" />
+    </NuxtLink>
+    <!-- TODO: simulation de déconnexion-->
+    <NuxtLink to="/public">
+      <font-awesome-icon :icon="faRightFromBracket" size="xl" />
+    </NuxtLink>
   </nav>
 </template>
 

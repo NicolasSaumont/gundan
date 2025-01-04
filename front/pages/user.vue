@@ -4,6 +4,6 @@
 
 <template>
   <div>
-    <p class="text-white">Choix de l'arène</p>
+    <p>Utilisateur</p>
   </div>
 </template>
