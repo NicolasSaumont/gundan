@@ -5,6 +5,7 @@ export interface IGameSectionCardDetails {
   title: string
   content: string
   effect: "gearFifth" | "rasengan" | "enseiHeidan"
+  background: string
 }
 
 export type IGameSectionCards = IGameSectionCardDetails[]

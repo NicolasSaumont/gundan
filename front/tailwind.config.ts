@@ -18,6 +18,9 @@ module.exports = {
       },
       backgroundImage: {
         topography: "url('~/assets/images/topography.svg')",
+        luffy: "url('~/assets/images/luffy-lines.svg')",
+        naruto: "url('~/assets/images/naruto-lines.svg')",
+        goku: "url('~/assets/images/goku-lines.svg')",
         menu: "url('~/assets/images/homepage-menu-bg.png')",
         "menu-inverted-colors": "url('~/assets/images/homepage-menu-bg-inverted-colors.png')"
       },

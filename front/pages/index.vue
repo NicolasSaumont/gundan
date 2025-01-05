@@ -26,7 +26,7 @@ const handleHoverImage = (image: string) => {
 
       <!-- Contenu au-dessus de l'image -->
       <HomeMenu @hoverImage="handleHoverImage" />
-      <div class="relative z-10">
+      <div class="relative z-10 flex justify-center w-full">
         <img 
           v-show="currentImage" 
           :src="currentImage" 
