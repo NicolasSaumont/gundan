@@ -26,7 +26,7 @@ const gameSectionCards: IGameSectionCards = [
     title: 'Combattez',
     content: 'Affrontez des joueurs du monde entier dans des duels intenses et épiques. Déployez vos personnages, utilisez vos techniques et tactiques pour prendre l’avantage. Activez des modes spéciaux, comme le mode Fury, pour renverser le cours de la bataille et triompher avec style dans des combats mémorables.',
     effect: 'enseiHeidan',
-    background: 'goku'
+    background: 'livai'
   }
 ]
 

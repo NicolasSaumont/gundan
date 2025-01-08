@@ -40,12 +40,13 @@ const cardsEffect = {
   </article>
 </template>
 
-<style>
+<style scoped>
 article::before {
   content: '';
   position: absolute;
   inset: 0;
   background: rgba(17, 11, 13, 0.93);
+  border-radius: 0.5rem;
   z-index: -1; 
 }
 </style>
