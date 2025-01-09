@@ -27,14 +27,19 @@ legion(
   tagline VARCHAR(255) NOT NULL
 )
 
+rarity (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+)
+
 card(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
   type VARCHAR(255) NOT NULL,
-  rarity VARCHAR(255) NOT NULL,
   experience INTEGER NOT NULL DEFAULT 0,
-  legion_id INTEGER REFERENCES legion(id) NOT NULL
+  legion_id INTEGER REFERENCES legion(id) NOT NULL,
+  rarity_id INTEGER REFERENCES rarity(id) NOT NULL
 )
 
 evolution (
@@ -75,6 +80,19 @@ transaction(
   type VARCHAR(255) NOT NULL,
   amount INTEGER NOT NULL,
   description TEXT NOT NULL,
+  user_id INTEGER REFERENCES user(id) NOT NULL,
+  booster_id INTEGER REFERENCES booster(id) NULL
+)
+
+booster (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL, 
+  price INTEGER NOT NULL,
+  card_count INTEGER NOT NULL,
+  common_chance DECIMAL(5, 2) NOT NULL,
+  uncommon_chance DECIMAL(5, 2) NOT NULL,
+  rare_chance DECIMAL(5, 2) NOT NULL,
+  legendary_chance DECIMAL(5, 2) NOT NULL,
   user_id INTEGER REFERENCES user(id) NOT NULL
 )
 
