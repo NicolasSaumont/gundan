@@ -7,6 +7,7 @@ deck: code deck, nom
 capacité: code capacité, nom, mode
 bonus: code bonus, mode
 effet: code effet, code, description
+transaction: code transaction, type, montant, description
 
 posséder, 01 utilisateur, 11 collection
 construire, 0N utilisateur, 11 deck
@@ -18,3 +19,4 @@ maîtriser, 1N évolution, 0N capacité
 porter, 11 légion, 0N bonus
 exposer, 11 capacité, 0N effet
 arborer, 11 bonus, 0N effet
+effectuer, 0N utilisateur, 11 transaction

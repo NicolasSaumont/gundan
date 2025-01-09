@@ -3,8 +3,8 @@ user(
   username VARCHAR(255) UNIQUE NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
   password VARCHAR(255) NOT NULL,
-  experience INTEGER NOT NULL,
-  tokens INTEGER NOT NULL
+  experience INTEGER NOT NULL DEFAULT 0,
+  tokens INTEGER NOT NULL DEFAULT 0
 )
 
 collection(
@@ -67,6 +67,15 @@ effect(
   id SERIAL PRIMARY KEY,
   code VARCHAR(255) UNIQUE NOT NULL,
   description TEXT NOT NULL
+)
+
+transaction(
+  id SERIAL PRIMARY KEY,
+  code VARCHAR(255) UNIQUE NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  amount INTEGER NOT NULL,
+  description TEXT NOT NULL,
+  user_id INTEGER REFERENCES user(id) NOT NULL
 )
 
 -- Relations associatives
