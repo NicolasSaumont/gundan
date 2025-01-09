@@ -1,4 +1,4 @@
-utilisateur: code utilisateur, pseudo, email, mot de passe, expérience
+utilisateur: code utilisateur, pseudo, email, mot de passe, expérience, tokens
 légion: code légion, nom, image, logo, description, slogan
 carte: code carte, nom, description, type, rareté, experience
 évolution: code évolution, niveau, expérience recquise, puissance, défense, dégâts, points de vie, image
