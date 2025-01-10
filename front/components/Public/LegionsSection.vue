@@ -5,14 +5,14 @@ const { activeLegionIndex, isFlipping } = storeToRefs(useLegionsStore())
 
 const { t } = useI18n()
 
-const legionsRef = ref<HTMLElement | null>(null);
+const legionsRef = ref<HTMLElement | null>(null)
 
 const { scrollProgress } = useScroll(legionsRef)
 
 onMounted(async () => {
   await setLegions()
   // Initialise sliderIndex à une valeur aléatoire entre le premier et le dernier index des légions
-  activeLegionIndex.value = Math.floor(Math.random() * legions.length) + 1;
+  activeLegionIndex.value = Math.floor(Math.random() * legions.length) + 1
 })
 </script>
 

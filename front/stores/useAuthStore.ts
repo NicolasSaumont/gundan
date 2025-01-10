@@ -1,9 +1,9 @@
-import { defineStore } from 'pinia';
+import { defineStore } from 'pinia'
 
 export const useAuthStore = defineStore('auth', () => {
-  const isUserLoggedIn = ref(false);
+  const isUserLoggedIn = ref(false)
 
   return {
     isUserLoggedIn,
-  };
-});
+  }
+})
