@@ -3,7 +3,12 @@ const { t } = useI18n()
 </script>
 
 <template>
-   <div class="relative w-[350px] h-[500px]">
+  <div class="relative" :style="{ width: `${CARD_WIDTH}px`, height: `${CARD_HEIGHT}px` }">
+    <img
+      src="@/assets/images/cards/legions/one-piece/background.png"
+      :alt="t('Arrière plan spécifique à la légion')"
+      class="absolute inset-0 w-full h-full"
+    >
     <img
       src="@/assets/images/cards/elements/card-background.png"
       :alt="t('Arrière plan de la carte')"
@@ -18,6 +23,11 @@ const { t } = useI18n()
       src="@/assets/images/cards/elements/card-content.png"
       :alt="t('Contenu de la carte')"
       class="absolute inset-0 w-full h-full"
+    >
+    <img
+      src="@/assets/images/cards/legions/one-piece/logo.png"
+      :alt="t('Logo de la légion')"
+      class="absolute inset-0 top-[5%] left-[6.3%] w-[10%]"
     >
     <img
       src="@/assets/images/cards/elements/card-border.png"

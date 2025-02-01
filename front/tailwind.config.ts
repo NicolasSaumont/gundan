@@ -23,7 +23,7 @@ module.exports = {
         livai: "url('~/assets/images/livai-lines.svg')",
         menu: "url('~/assets/images/homepage-menu-bg.png')",
         "menu-inverted-colors": "url('~/assets/images/homepage-menu-bg-inverted-colors.png')"
-      },
+      }
     },
   },
 };
