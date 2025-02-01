@@ -17,7 +17,7 @@ const { t } = useI18n()
     <img
       src="@/assets/images/cards/legions/one-piece/luffy5.png"
       :alt="t('Personnage de la carte')"
-      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 max-w-[90%]"
+      class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%]"
     >
     <img
       src="@/assets/images/cards/elements/card-content.png"
@@ -25,9 +25,14 @@ const { t } = useI18n()
       class="absolute inset-0 w-full h-full"
     >
     <img
+      src="@/assets/images/cards/elements/name-tag/rare.png"
+      :alt="t('Encadré coloré du nom en fonction de la rareté de la carte')"
+      class="absolute top-[4.8%] right-[1.5%] w-[77%]"
+    >
+    <img
       src="@/assets/images/cards/legions/one-piece/logo.png"
       :alt="t('Logo de la légion')"
-      class="absolute inset-0 top-[5%] left-[6.3%] w-[10%]"
+      class="absolute top-[5%] left-[6.3%] w-[10%]"
     >
     <img
       src="@/assets/images/cards/elements/card-border.png"
