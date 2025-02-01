@@ -86,6 +86,8 @@ Dans GUNDAN, combinez des légions issues des mangas cultes pour créer des stra
 
 - [![Vuejs][Vue.js]][Vuejs-url]
 - [![Nuxt][Nuxt]][Nuxt-url]
+- [![Nodejs][Node.js]][Node-url]
+- [![Express][Express]][Express-url]
 
 <p align="right">(<a href="#readme-top">Haut de la page</a>)</p>
 

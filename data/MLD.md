@@ -2,7 +2,9 @@ user(
   id SERIAL PRIMARY KEY,
   username VARCHAR(255) UNIQUE NOT NULL,
   email VARCHAR(255) UNIQUE NOT NULL,
-  password VARCHAR(255) NOT NULL
+  password VARCHAR(255) NOT NULL,
+  experience INTEGER NOT NULL DEFAULT 0,
+  tokens INTEGER NOT NULL DEFAULT 0
 )
 
 collection(
@@ -25,18 +27,32 @@ legion(
   tagline VARCHAR(255) NOT NULL
 )
 
+rarity (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+)
+
 card(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   description TEXT NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  experience INTEGER NOT NULL DEFAULT 0,
+  max_level INTEGER NOT NULL,
+  legion_id INTEGER REFERENCES legion(id) NOT NULL,
+  rarity_id INTEGER REFERENCES rarity(id) NOT NULL
+)
+
+evolution (
+  id SERIAL PRIMARY KEY,
   level INTEGER NOT NULL,
+  experience_required INTEGER NOT NULL,
   power INTEGER NOT NULL,
   defense INTEGER NOT NULL,
   damage INTEGER NOT NULL,
   health_points INTEGER NOT NULL,
-  type VARCHAR(255) NOT NULL,
-  rarity VARCHAR(255) NOT NULL,
-  legion_id INTEGER REFERENCES legion(id) NOT NULL
+  image VARCHAR(255) NOT NULL,
+  card_id INTEGER REFERENCES card(id) NOT NULL
 )
 
 capacity(
@@ -59,22 +75,46 @@ effect(
   description TEXT NOT NULL
 )
 
+transaction(
+  id SERIAL PRIMARY KEY,
+  code VARCHAR(255) UNIQUE NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  amount INTEGER NOT NULL,
+  description TEXT NOT NULL,
+  user_id INTEGER REFERENCES user(id) NOT NULL,
+  booster_id INTEGER REFERENCES booster(id) NULL
+)
+
+booster (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL, 
+  price INTEGER NOT NULL,
+  card_count INTEGER NOT NULL,
+  common_chance DECIMAL(5, 2) NOT NULL,
+  uncommon_chance DECIMAL(5, 2) NOT NULL,
+  rare_chance DECIMAL(5, 2) NOT NULL,
+  legendary_chance DECIMAL(5, 2) NOT NULL,
+  user_id INTEGER REFERENCES user(id) NOT NULL
+)
+
 -- Relations associatives
 
-collection_card(
+collection_evolution(
   collection_id INTEGER REFERENCES collection(id),
-  card_id INTEGER REFERENCES card(id),
-  PRIMARY KEY (collection_id, card_id)
+  evolution_id INTEGER REFERENCES evolution(id),
+  PRIMARY KEY (collection_id, evolution_id)
 )
 
-deck_card(
+deck_evolution(
   deck_id INTEGER REFERENCES deck(id),
-  card_id INTEGER REFERENCES card(id),
-  PRIMARY KEY (deck_id, card_id)
+  evolution_id INTEGER REFERENCES evolution(id),
+  PRIMARY KEY (deck_id, evolution_id)
 )
 
-card_capacity(
-  card_id INTEGER REFERENCES card(id),
+evolution_capacity(
+  evolution_id INTEGER REFERENCES evolution(id),
   capacity_id INTEGER REFERENCES capacity(id),
-  PRIMARY KEY (card_id, capacity_id)
+  PRIMARY KEY (evolution_id, capacity_id),
+  level_activation INTEGER NOT NULL,
+  is_active BOOLEAN NOT NULL DEFAULT false
 )
