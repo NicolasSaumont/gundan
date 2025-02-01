@@ -36,7 +36,7 @@ export const MAX_TITAN_ANIMATION_DEBOUNCE_MMIN_TITAN_ANIMATION_DEBOUNCE_DIFFEREN
 export const TITAN_ANIMATION_DURATION = 8000
 
   // LEGIONS
-export const LOGO_FILE = '/_nuxt/assets/images/legions'
+export const LOGO_FILE = '/_nuxt/assets/images/public-home-page/legions-section'
 export const FLIP_ANIMATION_DURATION = 600
 
 // HOME PAGE

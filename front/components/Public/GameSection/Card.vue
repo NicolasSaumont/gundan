@@ -20,7 +20,7 @@ const cardsEffect = {
   <article 
     class="flex flex-col gap-6 items-center bg-black w-full border-2 p-4 pb-8 border-secondary rounded-lg relative bg-no-repeat"
     :style="{ 
-      backgroundImage: `url(/_nuxt/assets/images/${card.background}-lines.png)`,
+      backgroundImage: `url(/_nuxt/assets/images/public-home-page/game-section/${card.background}-lines.png)`,
       backgroundPosition: `center calc(100% + 50px)`
     }"
   >
@@ -33,7 +33,7 @@ const cardsEffect = {
         v-if="cardsEffect[card.effect] && cardsEffect[card.effect] === cardsEffect.rasengan" 
         :is="cardsEffect[card.effect]" 
       />
-      <img :src="`/_nuxt/assets/images/${card.sourceImage}`" :alt="t('Image de présentation du jeu')" class="-mt-16 z-10">
+      <img :src="`/_nuxt/assets/images/public-home-page/game-section/${card.sourceImage}`" :alt="t('Image de présentation du jeu')" class="-mt-16 z-10">
     </div>
     <h2 class="font-caveat text-6xl">{{ card.title }}</h2>
     <p class="text-center">{{ card.content }}</p>
