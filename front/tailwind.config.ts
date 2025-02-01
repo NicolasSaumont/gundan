@@ -15,6 +15,7 @@ module.exports = {
         bungee: ['Bungee', 'sans-serif'], // Titres
         'yusei-magic': ['Yusei Magic', 'sans-serif'], // Textes principaux
         caveat: ['Caveat', 'cursive'], // Textes alternatifs
+        'bloom-monday': ['BloomMonday', 'sans-serif'] // Textes des cartes
       },
       backgroundImage: {
         topography: "url('~/assets/images/topography.svg')",

@@ -28,7 +28,7 @@ const { t } = useI18n()
       class="absolute inset-0 w-full h-full"
     >
     <img
-      src="@/assets/images/cards/elements/name-tag/rare.png"
+      src="@/assets/images/cards/elements/name-tag/unusual.png"
       :alt="t('Encadré coloré du nom en fonction de la rareté de la carte')"
       class="absolute top-[4.8%] right-[1.5%] w-[77%]"
     >
@@ -42,11 +42,35 @@ const { t } = useI18n()
       :alt="t('Bordure de la carte')"
       class="absolute inset-0 w-full h-full"
     >
+    <div class="flex items-center justify-center w-[80%] h-[7%] absolute top-[5%] right-0">
+      <div 
+        class="font-bloom-monday text-white tracking-widest drop-shadow-[2px_2px_0_rgb(0,0,0)]"
+        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
+      >
+        Monkey D. Luffy
+      </div>
+    </div>
+    <div class="flex items-center w-[70%] h-[7%] absolute bottom-[19%] right-0">
+      <div 
+        class="font-bloom-monday tracking-wider"
+        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
+      >
+        Puissance +2
+      </div>
+    </div>
+    <div class="flex items-center w-[70%] h-[7%] absolute bottom-[4.5%] right-0">
+      <div 
+        class="font-bloom-monday tracking-wider"
+        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
+      >
+        Puissance et defense +1
+      </div>
+    </div>
     <font-awesome-icon 
       :icon="faBurst" 
-      size="lg" 
       :title="t('Attaquant')"
       class="text-white absolute top-[15.3%] right-[5%]" 
+      :style="{ fontSize: `${CARD_WIDTH * 0.055}px` }"
     />
   </div>
 </template>
