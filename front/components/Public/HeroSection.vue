@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faGamepad } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faGamepad } from '@fortawesome/free-solid-svg-icons'
 
 const { t } = useI18n()
 const { handlePlayButtonClick } = useGame()
@@ -10,7 +10,7 @@ const heroHeight = ref(0)
 
 onMounted(() => {
   if (!window) return
-  heroHeight.value = window.innerHeight - headerHeight.value - HERO_OFFSET;
+  heroHeight.value = window.innerHeight - headerHeight.value - HERO_OFFSET
 })
 </script>
 
@@ -34,7 +34,7 @@ onMounted(() => {
         src="https://www.youtube.com/embed/1CV5vYtD6mA?si=Aq8ELZG3zponIruC"
         title="YouTube video player" 
         frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allow="accelerometer autoplay clipboard-write encrypted-media gyroscope picture-in-picture web-share"
         referrerpolicy="strict-origin-when-cross-origin" 
         allowfullscreen 
       />
