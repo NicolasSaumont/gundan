@@ -38,6 +38,7 @@ card(
   description TEXT NOT NULL,
   type VARCHAR(255) NOT NULL,
   experience INTEGER NOT NULL DEFAULT 0,
+  max_level INTEGER NOT NULL,
   legion_id INTEGER REFERENCES legion(id) NOT NULL,
   rarity_id INTEGER REFERENCES rarity(id) NOT NULL
 )
