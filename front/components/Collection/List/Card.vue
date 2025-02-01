@@ -1,4 +1,7 @@
 <script setup lang='ts'>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faBurst } from '@fortawesome/free-solid-svg-icons/faBurst'
+
 const { t } = useI18n()
 </script>
 
@@ -39,5 +42,11 @@ const { t } = useI18n()
       :alt="t('Bordure de la carte')"
       class="absolute inset-0 w-full h-full"
     >
+    <font-awesome-icon 
+      :icon="faBurst" 
+      size="lg" 
+      :title="t('Attaquant')"
+      class="text-white absolute top-[15.3%] right-[5%]" 
+    />
   </div>
 </template>

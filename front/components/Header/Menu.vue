@@ -1,7 +1,8 @@
 
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faUser, faRightFromBracket } from '@fortawesome/free-solid-svg-icons'
+import { faUser } from '@fortawesome/free-solid-svg-icons/faUser'
+import { faRightFromBracket } from '@fortawesome/free-solid-svg-icons/faRightFromBracket'
 
 const { t } = useI18n()
 </script>
