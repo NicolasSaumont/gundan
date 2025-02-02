@@ -4,10 +4,14 @@ import { faBurst } from '@fortawesome/free-solid-svg-icons/faBurst'
 
 const { t } = useI18n()
 
-const life = Array(18) // Remplace ce chiffre pour tester (ex: 5, 10, 15)
+const fullLife = Array(18) // Vie totale
 
-const rightColumn = life.slice(0, 10) // Jusqu'à 10 cœurs dans la colonne de droite
-const leftColumn = life.slice(10) // Le reste va dans la colonne de gauche
+const rightColumnLife = fullLife.slice(0, HEARTS_BY_COLUMN) // Jusqu'à 10 cœurs dans la colonne de droite
+const leftColumnLife = fullLife.slice(HEARTS_BY_COLUMN) // Le reste va dans la colonne de gauche
+
+const maxLevel = 5
+const currentLevel = 3
+const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
 </script>
 
 <template>
@@ -101,9 +105,9 @@ const leftColumn = life.slice(10) // Le reste va dans la colonne de gauche
       </div>
     </div>
     <div class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">
-      <div v-if="life.length > 10" class="flex flex-col-reverse h-full">
+      <div v-if="fullLife.length > 10" class="flex flex-col-reverse h-full">
         <img
-          v-for="(heart, index) in leftColumn"
+          v-for="(heart, index) in leftColumnLife"
           :key="'left-' + index"
           src="@/assets/images/cards/elements/heart.png"
           :alt="t('Coeur de vie')"
@@ -112,13 +116,29 @@ const leftColumn = life.slice(10) // Le reste va dans la colonne de gauche
       </div>
       <div class="flex flex-col justify-end items-center h-full">
         <img
-          v-for="(heart, index) in rightColumn"
+          v-for="(heart, index) in rightColumnLife"
           :key="'right-' + index"
           src="@/assets/images/cards/elements/heart.png"
           :alt="t('Coeur de vie')"
           :style="{ width: `${CARD_WIDTH * 0.057}px` }"
         >
       </div>
+    </div>
+    <div class="flex gap-2 w-[40%] h-[5%] absolute top-[17%] left-[5%]">
+      <img
+        v-for="(star, index) in currentLevel"
+        :key="index"
+        src="@/assets/images/cards/elements/star.png"
+        :alt="t('Étoile de niveau atteint')"
+        :style="{ width: `${CARD_WIDTH * 0.057}px` }"
+      >
+      <img
+        v-for="(star, index) in differenceFromCurrentToMaxLevel"
+        :key="index"
+        src="@/assets/images/cards/elements/star-black-white.png"
+        :alt="t('Étoile de niveau non atteint')"
+        :style="{ width: `${CARD_WIDTH * 0.057}px` }"
+      >
     </div>
     <font-awesome-icon 
       :icon="faBurst" 
