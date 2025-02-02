@@ -107,7 +107,7 @@ const leftColumn = life.slice(10) // Le reste va dans la colonne de gauche
           :key="'left-' + index"
           src="@/assets/images/cards/elements/heart.png"
           :alt="t('Coeur de vie')"
-          class="w-5"
+          :style="{ width: `${CARD_WIDTH * 0.057}px` }"
         >
       </div>
       <div class="flex flex-col justify-end items-center h-full">
@@ -116,7 +116,7 @@ const leftColumn = life.slice(10) // Le reste va dans la colonne de gauche
           :key="'right-' + index"
           src="@/assets/images/cards/elements/heart.png"
           :alt="t('Coeur de vie')"
-          class="w-5"
+          :style="{ width: `${CARD_WIDTH * 0.057}px` }"
         >
       </div>
     </div>
