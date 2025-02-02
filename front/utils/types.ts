@@ -14,8 +14,55 @@ export interface ILegion {
   id: number
   name: string
   image: string
+  logo: string
   description: string
   tagLine: string
 }
 
 export type ILegions = ILegion[]
+
+// COLLECTION
+
+export type CardType = "Attaquant" | "Défenseur" | "Soutien" | "Stratège"
+export type CardRarity = "Commune" | "Inhabituelle" | "Rare" | "Légendaire"
+
+export interface IEvolution {
+  level: number
+  experienceNeeded: number
+  stats: {
+    power: number
+    defense: number
+    damage: number
+    health: number
+  }
+  image: string
+}
+
+export interface ICapacity {
+  name: string
+  code: string
+  description: string
+}
+
+export interface ISkills {
+  bonus: ICapacity
+  capacity: {
+    quickMode: ICapacity
+    classicalMode: ICapacity
+  } 
+}
+
+export interface ICard {
+  id: number
+  name: string
+  description: string
+  type: CardType
+  rarity: CardRarity
+  experience: number
+  maxLevel: number
+  evolution: IEvolution
+  legion: Partial<ILegion>
+  skills: ISkills
+}
+
+export type ICards = ICard[]

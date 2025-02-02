@@ -2,22 +2,46 @@
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBurst } from '@fortawesome/free-solid-svg-icons/faBurst'
 
+const props = defineProps<{
+  card: ICard
+}>()
+
 const { t } = useI18n()
 
-const fullLife = Array(18) // Vie totale
+const cardName = ref<string>()
+const legionName = ref<string>()
 
-const rightColumnLife = fullLife.slice(0, HEARTS_BY_COLUMN) // Jusqu'à 10 cœurs dans la colonne de droite
-const leftColumnLife = fullLife.slice(HEARTS_BY_COLUMN) // Le reste va dans la colonne de gauche
+const fullLife = ref<number[]>([]) // Vie totale
 
-const maxLevel = 5
-const currentLevel = 3
-const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
+const rightColumnLife = ref<number[]>([]) // Jusqu'à 10 cœurs dans la colonne de droite
+const leftColumnLife = ref<number[]>([]) // Le reste va dans la colonne de gauche
+
+const maxLevel = ref(0)
+const currentLevel = ref(0)
+const differenceFromCurrentToMaxLevel = ref(0)
+
+const formatLegionName = (legionName: string) => {
+  return legionName.toLowerCase().replace(/\s+/g, '-') // Remplace les majuscules en minuscules et espaces en tirets
+}
+
+onMounted(() => {
+  cardName.value = props.card.name
+  legionName.value = formatLegionName(props.card.legion.name!) // Je sais que le nom de la légion est toujours défini
+
+  maxLevel.value = props.card.maxLevel
+  currentLevel.value = props.card.evolution.level
+  differenceFromCurrentToMaxLevel.value = maxLevel.value - currentLevel.value
+
+  fullLife.value = Array(props.card.evolution.stats.health)
+  rightColumnLife.value = fullLife.value.slice(0, HEARTS_BY_COLUMN) // Jusqu'à 10 cœurs dans la colonne de droite
+  leftColumnLife.value = fullLife.value.slice(HEARTS_BY_COLUMN) // Le reste va dans la colonne de gauche
+})
 </script>
 
 <template>
   <div class="relative" :style="{ width: `${CARD_WIDTH}px`, height: `${CARD_HEIGHT}px` }">
     <img
-      src="@/assets/images/cards/legions/one-piece/background.png"
+      :src="`_nuxt/assets/images/cards/legions/${legionName}/background.png`"
       :alt="t('Arrière plan spécifique à la légion')"
       class="absolute inset-0 w-full h-full"
     >
@@ -27,7 +51,7 @@ const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
       class="absolute inset-0 w-full h-full"
     >
     <img
-      src="@/assets/images/cards/legions/one-piece/luffy5.png"
+      :src="`_nuxt/assets/images/cards/legions/${legionName}/characters/${card.evolution.image}.png`"
       :alt="t('Personnage de la carte')"
       class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%]"
     >
@@ -37,7 +61,7 @@ const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
       class="absolute inset-0 w-full h-full"
     >
     <img
-      src="@/assets/images/cards/elements/name-tag/unusual.png"
+      :src="`_nuxt/assets/images/cards/elements/name-tag/${card.rarity}.png`"
       :alt="t('Encadré coloré du nom en fonction de la rareté de la carte')"
       class="absolute top-[4.8%] right-[1.5%] w-[77%]"
     >
@@ -47,7 +71,7 @@ const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
       class="absolute top-[4.8%] right-[1.5%] w-[77%]"
     >
     <img
-      src="@/assets/images/cards/legions/one-piece/logo.png"
+      :src="`_nuxt/assets/images/cards/legions/${legionName}/logo.png`"
       :alt="t('Logo de la légion')"
       class="absolute top-[5%] left-[6.3%] w-[10%]"
     >
@@ -61,7 +85,7 @@ const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
         class="font-bloom-monday text-white tracking-widest drop-shadow-[2px_2px_0_rgb(0,0,0)]"
         :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
-        Monkey D. Luffy
+        {{ cardName }}
       </div>
     </div>
     <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[33.5%] left-[4.6%]">
@@ -69,7 +93,7 @@ const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
         class="font-bloom-monday text-white"
         :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
-        8
+      {{ cardName }}
       </div>
     </div>
     <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[46.7%] left-[4.6%]">
@@ -124,7 +148,7 @@ const differenceFromCurrentToMaxLevel = maxLevel - currentLevel
         >
       </div>
     </div>
-    <div class="flex gap-2 w-[40%] h-[5%] absolute top-[17%] left-[5%]">
+    <div class="flex gap-2 w-[40%] h-[5%] absolute top-[15%] left-[5%]">
       <img
         v-for="(star, index) in currentLevel"
         :key="index"
