@@ -50,20 +50,44 @@ const { t } = useI18n()
         Monkey D. Luffy
       </div>
     </div>
+    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[33.5%] left-[4.6%]">
+      <div 
+        class="font-bloom-monday text-white"
+        :style="{ fontSize: `${CARD_WIDTH * 0.1}px` }"
+      >
+        8
+      </div>
+    </div>
+    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[47%] left-[4.6%]">
+      <div 
+        class="font-bloom-monday text-white"
+        :style="{ fontSize: `${CARD_WIDTH * 0.1}px` }"
+      >
+        7
+      </div>
+    </div>
+    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[60.5%] left-[4.6%]">
+      <div 
+        class="font-bloom-monday text-white"
+        :style="{ fontSize: `${CARD_WIDTH * 0.1}px` }"
+      >
+        6
+      </div>
+    </div>
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[19%] right-0">
       <div 
-        class="font-bloom-monday tracking-wider"
-        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
+        class="font-caveat"
+        :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
         Puissance +2
       </div>
     </div>
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[4.5%] right-0">
       <div 
-        class="font-bloom-monday tracking-wider"
-        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
+        class="font-caveat"
+        :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
-        Puissance et defense +1
+        Puissance et défense +1
       </div>
     </div>
     <font-awesome-icon 
