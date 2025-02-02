@@ -3,6 +3,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBurst } from '@fortawesome/free-solid-svg-icons/faBurst'
 
 const { t } = useI18n()
+
+const life = Array(18) // Remplace ce chiffre pour tester (ex: 5, 10, 15)
+
+const rightColumn = life.slice(0, 10) // Jusqu'à 10 cœurs dans la colonne de droite
+const leftColumn = life.slice(10) // Le reste va dans la colonne de gauche
 </script>
 
 <template>
@@ -33,6 +38,11 @@ const { t } = useI18n()
       class="absolute top-[4.8%] right-[1.5%] w-[77%]"
     >
     <img
+      src="@/assets/images/cards/elements/name-tag/texture.png"
+      :alt="t('Texture de l\'encadré coloré du nom de la carte')"
+      class="absolute top-[4.8%] right-[1.5%] w-[77%]"
+    >
+    <img
       src="@/assets/images/cards/legions/one-piece/logo.png"
       :alt="t('Logo de la légion')"
       class="absolute top-[5%] left-[6.3%] w-[10%]"
@@ -53,23 +63,23 @@ const { t } = useI18n()
     <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[33.5%] left-[4.6%]">
       <div 
         class="font-bloom-monday text-white"
-        :style="{ fontSize: `${CARD_WIDTH * 0.1}px` }"
+        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
         8
       </div>
     </div>
-    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[47%] left-[4.6%]">
+    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[46.7%] left-[4.6%]">
       <div 
         class="font-bloom-monday text-white"
-        :style="{ fontSize: `${CARD_WIDTH * 0.1}px` }"
+        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
         7
       </div>
     </div>
-    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[60.5%] left-[4.6%]">
+    <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[60%] left-[4.6%]">
       <div 
         class="font-bloom-monday text-white"
-        :style="{ fontSize: `${CARD_WIDTH * 0.1}px` }"
+        :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
         6
       </div>
@@ -88,6 +98,26 @@ const { t } = useI18n()
         :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
         Puissance et défense +1
+      </div>
+    </div>
+    <div class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">
+      <div v-if="life.length > 10" class="flex flex-col-reverse h-full">
+        <img
+          v-for="(heart, index) in leftColumn"
+          :key="'left-' + index"
+          src="@/assets/images/cards/elements/heart.png"
+          :alt="t('Coeur de vie')"
+          class="w-5"
+        >
+      </div>
+      <div class="flex flex-col justify-end items-center h-full">
+        <img
+          v-for="(heart, index) in rightColumn"
+          :key="'right-' + index"
+          src="@/assets/images/cards/elements/heart.png"
+          :alt="t('Coeur de vie')"
+          class="w-5"
+        >
       </div>
     </div>
     <font-awesome-icon 
