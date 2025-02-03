@@ -1,9 +1,11 @@
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBurst } from '@fortawesome/free-solid-svg-icons/faBurst'
+import { CardRarity, type GameModeType } from '~/utils/types'
 
 const props = defineProps<{
   card: ICard
+  quickModeIsSelected: boolean
 }>()
 
 const { t } = useI18n()
@@ -20,8 +22,16 @@ const maxLevel = ref(0)
 const currentLevel = ref(0)
 const differenceFromCurrentToMaxLevel = ref(0)
 
+const cardPower = ref(0)
+const cardDefense = ref(0)
+const cardDamage = ref(0)
+
 const formatLegionName = (legionName: string) => {
   return legionName.toLowerCase().replace(/\s+/g, '-') // Remplace les majuscules en minuscules et espaces en tirets
+}
+
+const getRarityImage = (rarity: CardRarity) => {
+  return rarityImages[rarity]
 }
 
 onMounted(() => {
@@ -35,6 +45,10 @@ onMounted(() => {
   fullLife.value = Array(props.card.evolution.stats.health)
   rightColumnLife.value = fullLife.value.slice(0, HEARTS_BY_COLUMN) // Jusqu'à 10 cœurs dans la colonne de droite
   leftColumnLife.value = fullLife.value.slice(HEARTS_BY_COLUMN) // Le reste va dans la colonne de gauche
+
+  cardPower.value = props.card.evolution.stats.power
+  cardDefense.value = props.card.evolution.stats.defense
+  cardDamage.value = props.card.evolution.stats.damage
 })
 </script>
 
@@ -61,7 +75,7 @@ onMounted(() => {
       class="absolute inset-0 w-full h-full"
     >
     <img
-      :src="`_nuxt/assets/images/cards/elements/name-tag/${card.rarity}.png`"
+      :src="`_nuxt/assets/images/cards/elements/name-tag/${getRarityImage(card.rarity)}`"
       :alt="t('Encadré coloré du nom en fonction de la rareté de la carte')"
       class="absolute top-[4.8%] right-[1.5%] w-[77%]"
     >
@@ -93,7 +107,7 @@ onMounted(() => {
         class="font-bloom-monday text-white"
         :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
-      {{ cardName }}
+      {{ cardPower }}
       </div>
     </div>
     <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[46.7%] left-[4.6%]">
@@ -101,7 +115,7 @@ onMounted(() => {
         class="font-bloom-monday text-white"
         :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
-        7
+      {{ cardDefense }}
       </div>
     </div>
     <div class="flex items-center justify-center w-[7%] h-[7%] absolute top-[60%] left-[4.6%]">
@@ -109,26 +123,28 @@ onMounted(() => {
         class="font-bloom-monday text-white"
         :style="{ fontSize: `${CARD_WIDTH * 0.08}px` }"
       >
-        6
+      {{ cardDamage }}
       </div>
     </div>
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[19%] right-0">
       <div 
         class="font-caveat"
+        :title="quickModeIsSelected ? card.skills.capacity.quickMode.description : card.skills.capacity.classicalMode.description"
         :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
-        Puissance +2
+        {{ quickModeIsSelected ? card.skills.capacity.quickMode.code : card.skills.capacity.classicalMode.name }}
       </div>
     </div>
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[4.5%] right-0">
       <div 
         class="font-caveat"
+        :title="card.skills.bonus.description"
         :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
-        Puissance et défense +1
+        {{ quickModeIsSelected ? card.skills.bonus.code : card.skills.bonus.name }}
       </div>
     </div>
-    <div class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">
+    <div v-if="!quickModeIsSelected" class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">
       <div v-if="fullLife.length > 10" class="flex flex-col-reverse h-full">
         <img
           v-for="(heart, index) in leftColumnLife"

@@ -41,7 +41,7 @@ const cards = ref<ICards>([
           code: 'Puissance +2 & Rebond',
           description: 'Luffy gagne +2 en puissance et il peut attaquer une seconde fois s’il élimine un adversaire'
         }
-      } 
+      }
     }
   },
   {
@@ -80,10 +80,10 @@ const cards = ref<ICards>([
         },
         classicalMode: {
           name: 'Piège de couteaux éclatés',
-          code: 'Sniper',
+          code: 'Fragmentation',
           description: 'Baggy inflige des dégâts à l’adversaire de son choix'
         }
-      } 
+      }
     }
   }
 ])

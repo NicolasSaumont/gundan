@@ -1,6 +1,6 @@
 // PUBLIC HOME PAGE
 
-  // GENERAL
+// GENERAL
 export const GAP_BETWEEN_SECTIONS = 96
 
 // Equation linéaire qui permet de calculer HERO_OFFSET :
@@ -8,7 +8,7 @@ export const GAP_BETWEEN_SECTIONS = 96
 // - quand GAP_BETWEEN_SECTIONS = 16, le multiplicateur est 4.
 export const HERO_OFFSET = GAP_BETWEEN_SECTIONS * (0.01875 * GAP_BETWEEN_SECTIONS + 0.7)
 
-  // RASENGAN
+// RASENGAN
 export const RASENGAN_SIDE = 25
 export const LINE_COUNT = 25
 
@@ -17,10 +17,10 @@ export const MAX_LINE_SIZE_RATIO = 0.2 // Taille maximale pour une ligne
 export const LINE_ANIMATION_SPEED_MULTIPLIER = 0.03 // Facteur multiplicateur pour la durée de l'animation
 export const LINE_BORDER_RATIO = 0.002 // Ratio entre la taille du Rasengan et l'épaisseur des bordures
 
-  // ENSEI HEIDAN
+// ENSEI HEIDAN
 export const MIN_TOP_POSITION = 50 // top: 50%
 export const MAX_TOP_POSITION = -20 // top: -20%
-export const MAX_TOP_MIN_TOP_DIFFERENCE = MIN_TOP_POSITION - MAX_TOP_POSITION 
+export const MAX_TOP_MIN_TOP_DIFFERENCE = MIN_TOP_POSITION - MAX_TOP_POSITION
 
 export const INITIAL_CLOUD_WIDTH = 150
 export const INITIAL_CLOUD_HEIGHT = 80
@@ -35,13 +35,13 @@ export const MAX_TITAN_ANIMATION_DEBOUNCE = 5000
 export const MAX_TITAN_ANIMATION_DEBOUNCE_MMIN_TITAN_ANIMATION_DEBOUNCE_DIFFERENCE = MAX_TITAN_ANIMATION_DEBOUNCE - MIN_TITAN_ANIMATION_DEBOUNCE
 export const TITAN_ANIMATION_DURATION = 8000
 
-  // LEGIONS
+// LEGIONS
 export const LOGO_FILE = '/_nuxt/assets/images/public-home-page/legions-section'
 export const FLIP_ANIMATION_DURATION = 600
 
 // HOME PAGE
 
-  // GENERAL
+// GENERAL
 export const SHOW_DURATION = 50
 export const HIDE_DURATION = 200
 
@@ -70,8 +70,8 @@ export const NAVIGATION_LINKS = [
 
 // COLLECTION
 
-  // CARD
-export const CARD_WIDTH = 250
+// CARD
+export const CARD_WIDTH = 350
 export const CARD_HEIGHT = CARD_WIDTH * 1.32857142857143 // 350 px de largeur pour 463 de hauteur
 
 export const HEARTS_BY_COLUMN = 10

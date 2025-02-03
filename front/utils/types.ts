@@ -22,9 +22,23 @@ export interface ILegion {
 export type ILegions = ILegion[]
 
 // COLLECTION
+export type GameModeType = "quick" | "classical"
 
 export type CardType = "Attaquant" | "Défenseur" | "Soutien" | "Stratège"
-export type CardRarity = "Commune" | "Inhabituelle" | "Rare" | "Légendaire"
+
+export enum CardRarity {
+  Common = "Commune",
+  Unusual = "Inhabituelle",
+  Rare = "Rare",
+  Legendary = "Légendaire"
+}
+
+export const rarityImages: Record<CardRarity, string> = {
+  [CardRarity.Common]: "common.png",
+  [CardRarity.Unusual]: "unusual.png",
+  [CardRarity.Rare]: "rare.png",
+  [CardRarity.Legendary]: "legendary.png"
+}
 
 export interface IEvolution {
   level: number
@@ -49,7 +63,7 @@ export interface ISkills {
   capacity: {
     quickMode: ICapacity
     classicalMode: ICapacity
-  } 
+  }
 }
 
 export interface ICard {
