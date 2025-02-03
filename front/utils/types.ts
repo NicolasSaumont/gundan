@@ -26,18 +26,13 @@ export type GameModeType = "quick" | "classical"
 
 export type CardType = "Attaquant" | "Défenseur" | "Soutien" | "Stratège"
 
-export enum CardRarity {
-  Common = "Commune",
-  Unusual = "Inhabituelle",
-  Rare = "Rare",
-  Legendary = "Légendaire"
-}
+export type CardRarity = "Commune" | "Inhabituelle" | "Rare" | "Légendaire"
 
 export const rarityImages: Record<CardRarity, string> = {
-  [CardRarity.Common]: "common.png",
-  [CardRarity.Unusual]: "unusual.png",
-  [CardRarity.Rare]: "rare.png",
-  [CardRarity.Legendary]: "legendary.png"
+  "Commune": "common.png",
+  "Inhabituelle": "unusual.png",
+  "Rare": "rare.png",
+  "Légendaire": "legendary.png"
 }
 
 export interface IEvolution {

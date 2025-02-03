@@ -71,7 +71,7 @@ export const NAVIGATION_LINKS = [
 // COLLECTION
 
 // CARD
-export const CARD_WIDTH = 350
+export const CARD_WIDTH = 250
 export const CARD_HEIGHT = CARD_WIDTH * 1.32857142857143 // 350 px de largeur pour 463 de hauteur
 
 export const HEARTS_BY_COLUMN = 10

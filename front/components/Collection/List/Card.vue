@@ -1,11 +1,13 @@
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBurst } from '@fortawesome/free-solid-svg-icons/faBurst'
-import { CardRarity, type GameModeType } from '~/utils/types'
+import { faSyringe } from '@fortawesome/free-solid-svg-icons/faSyringe'
+import { faChessRook } from '@fortawesome/free-solid-svg-icons/faChessRook'
+import { faChessKing } from '@fortawesome/free-solid-svg-icons/faChessKing'
 
 const props = defineProps<{
   card: ICard
-  quickModeIsSelected: boolean
+  gameMode: GameModeType
 }>()
 
 const { t } = useI18n()
@@ -33,6 +35,25 @@ const formatLegionName = (legionName: string) => {
 const getRarityImage = (rarity: CardRarity) => {
   return rarityImages[rarity]
 }
+
+const typeIcon = computed(() => {
+  switch (props.card.type) {
+    case 'Attaquant':
+      return faBurst
+
+    case 'Défenseur':
+      return faChessRook
+  
+    case 'Soutien':
+      return faSyringe
+  
+    case 'Stratège':
+      return faChessKing
+  
+    default:
+      return faBurst
+  }
+})
 
 onMounted(() => {
   cardName.value = props.card.name
@@ -129,10 +150,10 @@ onMounted(() => {
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[19%] right-0">
       <div 
         class="font-caveat"
-        :title="quickModeIsSelected ? card.skills.capacity.quickMode.description : card.skills.capacity.classicalMode.description"
+        :title="gameMode === 'quick' ? card.skills.capacity.quickMode.description : card.skills.capacity.classicalMode.description"
         :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
-        {{ quickModeIsSelected ? card.skills.capacity.quickMode.code : card.skills.capacity.classicalMode.name }}
+        {{ gameMode === 'quick' ? card.skills.capacity.quickMode.code : card.skills.capacity.classicalMode.name }}
       </div>
     </div>
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[4.5%] right-0">
@@ -141,10 +162,10 @@ onMounted(() => {
         :title="card.skills.bonus.description"
         :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
-        {{ quickModeIsSelected ? card.skills.bonus.code : card.skills.bonus.name }}
+        {{ gameMode === 'quick' ? card.skills.bonus.code : card.skills.bonus.name }}
       </div>
     </div>
-    <div v-if="!quickModeIsSelected" class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">
+    <div v-if="gameMode === 'classical'" class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">
       <div v-if="fullLife.length > 10" class="flex flex-col-reverse h-full">
         <img
           v-for="(heart, index) in leftColumnLife"
@@ -180,11 +201,13 @@ onMounted(() => {
         :style="{ width: `${CARD_WIDTH * 0.057}px` }"
       >
     </div>
-    <font-awesome-icon 
-      :icon="faBurst" 
-      :title="t('Attaquant')"
-      class="text-white absolute top-[15.3%] right-[5%]" 
-      :style="{ fontSize: `${CARD_WIDTH * 0.055}px` }"
-    />
+    <div class="flex justify-center items-center w-[7%] h-[6%] absolute top-[14.3%] right-[4.2%]">
+      <font-awesome-icon 
+        :icon="typeIcon" 
+        :title="t(props.card.type)"
+        class="text-white" 
+        :style="{ fontSize: `${CARD_WIDTH * 0.055}px` }"
+      />
+    </div>
   </div>
 </template>

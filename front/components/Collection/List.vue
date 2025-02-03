@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 defineProps<{
-  quickModeIsSelected: boolean
+  gameMode: GameModeType
 }>()
 
 const { setCards, cards } = useCardStore()
@@ -12,6 +12,6 @@ onMounted(async () => {
 
 <template>
   <div class="flex gap-4">
-    <CollectionListCard v-for="card in cards" :key="card.id" :card="card" :quick-mode-is-selected="quickModeIsSelected" />
+    <CollectionListCard v-for="card in cards" :key="card.id" :card="card" :game-mode="gameMode" />
   </div>
 </template>

@@ -1,12 +1,10 @@
 <script setup lang="ts">
-const quickModeIsSelected = ref(true)
-
-
+const gameMode = ref<GameModeType>('quick')
 </script>
 
 <template>
   <div class="flex flex-col gap-4">
-    <CollectionFilters v-model:quick-mode-is-selected="quickModeIsSelected" />
-    <CollectionList :quick-mode-is-selected="quickModeIsSelected" />
+    <CollectionFilters v-model:game-mode="gameMode" />
+    <CollectionList :game-mode="gameMode" />
   </div>
 </template>
