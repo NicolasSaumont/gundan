@@ -74,8 +74,12 @@ export const NAVIGATION_LINKS = [
 export const DEFAULT_GAME_MODE = 'quick'
 
 // CARD
-export const CARD_WIDTH = 250
-export const CARD_HEIGHT = CARD_WIDTH * 1.32857142857143 // 350 px de largeur pour 463 de hauteur
+const CARD_MODEL_WIDTH = 350
+const CARD_MODEL_HEIGHT = 463
+const CARD_MODEL_RATIO = CARD_MODEL_HEIGHT / CARD_MODEL_WIDTH
+
+export const CARD_WIDTH = 350
+export const CARD_HEIGHT = CARD_WIDTH * CARD_MODEL_RATIO
 
 export const HEARTS_BY_COLUMN = 10
 

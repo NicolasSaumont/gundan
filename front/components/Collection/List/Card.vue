@@ -167,10 +167,10 @@ onMounted(() => {
     <div class="flex items-center w-[70%] h-[7%] absolute bottom-[4.5%] right-0">
       <div 
         class="font-caveat"
-        :title="card.skills.bonus.description"
+        :title="gameMode === 'quick' ? card.skills.bonus.quickMode.description : card.skills.bonus.classicalMode.description"
         :style="{ fontSize: `${CARD_WIDTH * 0.07}px` }"
       >
-        {{ gameMode === 'quick' ? card.skills.bonus.code : card.skills.bonus.name }}
+        {{ gameMode === 'quick' ? card.skills.bonus.quickMode.code : card.skills.bonus.classicalMode.name }}
       </div>
     </div>
     <div v-if="gameMode === 'classical'" class="h-[43%] absolute top-[23%] right-[4%] flex items-end justify-end gap-1">

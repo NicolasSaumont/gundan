@@ -54,7 +54,10 @@ export interface ICapacity {
 }
 
 export interface ISkills {
-  bonus: ICapacity
+  bonus: {
+    quickMode: ICapacity
+    classicalMode: ICapacity
+  }
   capacity: {
     quickMode: ICapacity
     classicalMode: ICapacity
