@@ -1,8 +1,4 @@
 <script setup lang='ts'>
-defineProps<{
-  gameMode: GameModeType
-}>()
-
 const { setCards, cards } = useCardStore()
 
 onMounted(async () => {
@@ -12,6 +8,6 @@ onMounted(async () => {
 
 <template>
   <div class="flex gap-4">
-    <CollectionListCard v-for="card in cards" :key="card.id" :card="card" :game-mode="gameMode" />
+    <CollectionListCard v-for="card in cards" :key="card.id" :card="card" />
   </div>
 </template>

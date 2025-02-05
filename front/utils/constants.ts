@@ -70,6 +70,9 @@ export const NAVIGATION_LINKS = [
 
 // COLLECTION
 
+// FILTERS
+export const DEFAULT_GAME_MODE = 'quick'
+
 // CARD
 export const CARD_WIDTH = 250
 export const CARD_HEIGHT = CARD_WIDTH * 1.32857142857143 // 350 px de largeur pour 463 de hauteur

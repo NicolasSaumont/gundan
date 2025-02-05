@@ -9,6 +9,9 @@ const { t } = useI18n()
 
 <template>
   <nav class="flex items-center gap-6 font-bungee text-lg text-white h-12">
+    <NuxtLink to="/" class="link">
+      {{ t('Accueil') }}
+    </NuxtLink>
     <template v-for="link in NAVIGATION_LINKS" :key="link.label">
       <NuxtLink :to="link.path" class="link">
         {{ t(link.label) }}

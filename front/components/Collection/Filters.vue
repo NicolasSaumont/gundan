@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faBolt } from '@fortawesome/free-solid-svg-icons/faBolt'
 import { faChess } from '@fortawesome/free-solid-svg-icons/faChess'
 
-const gameMode = defineModel<GameModeType>('gameMode', { required: true })
-
+const { gameMode } = storeToRefs(useCollectionStore())
+const { toggleGameMode } = useCollectionStore()
 const { t } = useI18n()
 
 const icons = [
@@ -17,13 +17,13 @@ const modes = [
   { value: "quick", label: "Mode rapide", position: "left-4" },
 ]
 
-const toggleGameMode = () => {
-  gameMode.value = gameMode.value === 'quick' ? 'classical' : 'quick'
-}
+onMounted(() => {
+  gameMode.value = DEFAULT_GAME_MODE
+})
 </script>
 
 <template>
-  <div class="bg-white shadow-inner-medium border-2 border-primary rounded-md p-4">
+  <div class="bg-white shadow-inner-strong rounded-md p-4">
     <button
       class="relative flex items-center w-40 h-10 bg-primary shadow-inner-strong rounded-full text-white p-1 transition-all duration-300"
       :class="{ 'bg-tertiary': gameMode === 'quick' }"
@@ -54,7 +54,7 @@ const toggleGameMode = () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .shadow-inner-medium {
   box-shadow: inset 0 3px 6px rgba(0, 0, 0, 0.3);
 }

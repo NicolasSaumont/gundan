@@ -37,7 +37,7 @@ export const rarityImages: Record<CardRarity, string> = {
 
 export interface IEvolution {
   level: number
-  experienceNeeded: number
+  experienceNeeded: number | null // null if max level reached
   stats: {
     power: number
     defense: number
@@ -67,7 +67,7 @@ export interface ICard {
   description: string
   type: CardType
   rarity: CardRarity
-  experience: number
+  experience: number | null // null if full experience
   maxLevel: number
   evolution: IEvolution
   legion: Partial<ILegion>

@@ -8,11 +8,11 @@ const cards = ref<ICards>([
     description: 'Capitaine des Mugiwara, Luffy rêve de devenir le Roi des Pirates. Son fruit du démon Gomu Gomu no Mi lui confère une grande élasticité, qu’il utilise avec créativité au combat.',
     type: 'Attaquant',
     rarity: 'Inhabituelle',
-    experience: 850,
+    experience: null,
     maxLevel: 5,
     evolution: {
       level: 5,
-      experienceNeeded: 850,
+      experienceNeeded: null,
       stats: {
         power: 8,
         defense: 7,
@@ -50,11 +50,11 @@ const cards = ref<ICards>([
     description: 'Un pirate excentrique et rival de Luffy, Baggy possède les pouvoirs du Bara Bara no Mi, lui permettant de séparer son corps en morceaux.',
     type: 'Stratège',
     rarity: 'Commune',
-    experience: 500,
+    experience: 650,
     maxLevel: 3,
     evolution: {
       level: 2,
-      experienceNeeded: 100,
+      experienceNeeded: 1000,
       stats: {
         power: 4,
         defense: 4,

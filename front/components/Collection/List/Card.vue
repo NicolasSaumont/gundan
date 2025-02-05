@@ -7,9 +7,9 @@ import { faChessKing } from '@fortawesome/free-solid-svg-icons/faChessKing'
 
 const props = defineProps<{
   card: ICard
-  gameMode: GameModeType
 }>()
 
+const { gameMode } = storeToRefs(useCollectionStore())
 const { t } = useI18n()
 
 const cardName = ref<string>()
@@ -52,6 +52,14 @@ const typeIcon = computed(() => {
   
     default:
       return faBurst
+  }
+})
+
+const experienceToNextLevel = computed(() => {
+  if (props.card.experience === null || props.card.evolution.experienceNeeded === null) {
+    return 1
+  } else {
+    return props.card.experience / props.card.evolution.experienceNeeded
   }
 })
 
@@ -185,21 +193,30 @@ onMounted(() => {
         >
       </div>
     </div>
-    <div class="flex gap-2 w-[40%] h-[5%] absolute top-[15%] left-[5%]">
-      <img
-        v-for="(star, index) in currentLevel"
-        :key="index"
-        src="@/assets/images/cards/elements/star.png"
-        :alt="t('Étoile de niveau atteint')"
-        :style="{ width: `${CARD_WIDTH * 0.057}px` }"
-      >
-      <img
-        v-for="(star, index) in differenceFromCurrentToMaxLevel"
-        :key="index"
-        src="@/assets/images/cards/elements/star-black-white.png"
-        :alt="t('Étoile de niveau non atteint')"
-        :style="{ width: `${CARD_WIDTH * 0.057}px` }"
-      >
+    <div class="w-[50%] h-[5%] absolute top-[15%] left-[5%]">
+      <div class="w-full h-full bg-tertiary border-2 border-tertiary shadow-inner-strong rounded-full absolute inset-0 z-10" />
+      <div 
+        v-if="experienceToNextLevel >= 0.04"
+        class="h-full border-2 border-tertiary shadow-inner-strong rounded-full absolute inset-0 z-10" 
+        :class="experienceToNextLevel === 1 ? 'bg-purple-900' : 'bg-primary'"
+        :style="{ width: `${experienceToNextLevel * 100}%` }"
+      />
+      <div class="absolute left-[5%] top-[50%] transform -translate-y-1/2 flex gap-2 z-20">
+        <img
+          v-for="(star, index) in currentLevel"
+          :key="index"
+          src="@/assets/images/cards/elements/star.png"
+          :alt="t('Étoile de niveau atteint')"
+          :style="{ width: `${CARD_WIDTH * 0.057}px` }"
+        >
+        <img
+          v-for="(star, index) in differenceFromCurrentToMaxLevel"
+          :key="index"
+          src="@/assets/images/cards/elements/star-black-white.png"
+          :alt="t('Étoile de niveau non atteint')"
+          :style="{ width: `${CARD_WIDTH * 0.057}px` }"
+        >
+      </div>
     </div>
     <div class="flex justify-center items-center w-[7%] h-[6%] absolute top-[14.3%] right-[4.2%]">
       <font-awesome-icon 
