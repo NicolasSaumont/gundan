@@ -28,7 +28,7 @@ const legions = ref<ILegions>([
   }
 ])
 
-export const useLegionsStore = defineStore('legions', () => {
+export const useLegionStore = defineStore('legion', () => {
   const setLegions = async () => {
     // TODO: create loader
     console.log('loader active')

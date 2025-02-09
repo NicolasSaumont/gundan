@@ -1,9 +1,9 @@
 <script setup lang="ts">
-
 </script>
 
 <template>
-  <div>
-    <p>Collection de cartes</p>
+  <div class="flex flex-col gap-4">
+    <CollectionFilters />
+    <CollectionList />
   </div>
 </template>

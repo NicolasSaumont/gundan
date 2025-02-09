@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-const { setLegions, legions } = useLegionsStore()
-const { activeLegionIndex, isFlipping } = storeToRefs(useLegionsStore())
+const { setLegions, legions } = useLegionStore()
+const { activeLegionIndex, isFlipping } = storeToRefs(useLegionStore())
 
 
 const { t } = useI18n()

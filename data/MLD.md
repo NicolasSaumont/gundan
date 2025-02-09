@@ -59,14 +59,12 @@ capacity(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL,
   mode VARCHAR(255) NOT NULL,
-  effect_code INTEGER REFERENCES effect(code) NOT NULL
 )
 
 bonus(
   id SERIAL PRIMARY KEY,
   mode VARCHAR(255) NOT NULL,
   legion_id INTEGER REFERENCES legion(id) NOT NULL,
-  effect_code INTEGER REFERENCES effect(code) NOT NULL
 )
 
 effect(
@@ -85,7 +83,7 @@ transaction(
   booster_id INTEGER REFERENCES booster(id) NULL
 )
 
-booster (
+booster(
   id SERIAL PRIMARY KEY,
   name VARCHAR(255) NOT NULL, 
   price INTEGER NOT NULL,
@@ -95,6 +93,26 @@ booster (
   rare_chance DECIMAL(5, 2) NOT NULL,
   legendary_chance DECIMAL(5, 2) NOT NULL,
   user_id INTEGER REFERENCES user(id) NOT NULL
+)
+
+mission(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL
+)
+
+mission_step(
+  id SERIAL PRIMARY KEY,
+  description TEXT NOT NULL,
+  objective INTEGER NOT NULL,
+  step_order INTEGER NOT NULL,
+  mission_id INTEGER REFERENCES mission(id) NOT NULL,
+  reward_id INTEGER REFERENCES reward(id) NOT NULL
+)
+
+reward(
+  id SERIAL PRIMARY KEY,
+  type VRACH(255) NOT NULL,
+  value INTEGER NOT NULL
 )
 
 -- Relations associatives
@@ -117,4 +135,24 @@ evolution_capacity(
   PRIMARY KEY (evolution_id, capacity_id),
   level_activation INTEGER NOT NULL,
   is_active BOOLEAN NOT NULL DEFAULT false
+)
+
+bonus_effect(
+  bonus_id INTEGER REFERENCES bonus(id),
+  effect_id INTEGER REFERENCES effect(id),
+  PRIMARY KEY (bonus_id, effect_id) 
+)
+
+capacity_effect(
+  capacity_id INTEGER REFERENCES capacity(id),
+  effect_id INTEGER REFERENCES effect(id),
+  PRIMARY KEY (capacity_id, effect_id) 
+)
+
+user_step_mission(
+  user_id INTEGER REFERENCES user(id),
+  mission_step_id INTEGER REFERENCES mission_step(id),
+  PRIMARY KEY (user_id, mission_step_id),
+  status VARCHAR(255) NOT NULL DEFAUKT 'in_progress',
+  progression INTEGER NOT NULL DEFAUL 0
 )

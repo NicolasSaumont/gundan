@@ -2,6 +2,13 @@
 @tailwind component;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'BloomMonday';
+  src: url('@/assets/fonts/bloom-monday.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
   @apply font-yusei-magic text-black;
 }

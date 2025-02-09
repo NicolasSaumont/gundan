@@ -15,6 +15,7 @@ module.exports = {
         bungee: ['Bungee', 'sans-serif'], // Titres
         'yusei-magic': ['Yusei Magic', 'sans-serif'], // Textes principaux
         caveat: ['Caveat', 'cursive'], // Textes alternatifs
+        'bloom-monday': ['BloomMonday', 'sans-serif'] // Textes des cartes
       },
       backgroundImage: {
         topography: "url('~/assets/images/topography.svg')",
@@ -23,7 +24,7 @@ module.exports = {
         livai: "url('~/assets/images/livai-lines.svg')",
         menu: "url('~/assets/images/homepage-menu-bg.png')",
         "menu-inverted-colors": "url('~/assets/images/homepage-menu-bg-inverted-colors.png')"
-      },
+      }
     },
   },
 };

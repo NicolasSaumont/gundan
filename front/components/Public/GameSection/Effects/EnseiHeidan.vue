@@ -44,7 +44,7 @@ onMounted(() => {
 <div class="absolute -mt-4 w-[273px] h-[144px] overflow-hidden"> <!--144 = 192 (hauteur de l'image snk.png) - 64 (-mt-16) + 16 (-mt-4)-->
     <div 
       class="cloud absolute -left-[150px] opacity-20 bg-contain bg-no-repeat" 
-      style="background-image: url('/_nuxt/assets/images/cloud.png')"
+      style="background-image: url('/_nuxt/assets/images/public-home-page/game-section/cloud.png')"
       :style="{ 
         top: cloudTop, 
         width: cloudWidth, 
@@ -55,7 +55,7 @@ onMounted(() => {
     <div class="titan-container -mt-12 w-[273px] h-[192px] overflow-hidden">
       <img 
         v-show="titanIsVisible"
-        src="/_nuxt/assets/images/colossalTitan.png" 
+        src="/_nuxt/assets/images/public-home-page/game-section/colossalTitan.png" 
         class="absolute -left-[80px]"
         :style="{ animation: `displayTitan ${TITAN_ANIMATION_DURATION}ms linear` }"
 

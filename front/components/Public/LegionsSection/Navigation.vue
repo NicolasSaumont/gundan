@@ -1,6 +1,6 @@
 <script setup lang='ts'>
-const { legions } = useLegionsStore()
-const { activeLegionIndex, isFlipping } = storeToRefs(useLegionsStore())
+const { legions } = useLegionStore()
+const { activeLegionIndex, isFlipping } = storeToRefs(useLegionStore())
 const { t } = useI18n()
 
 // Retourne la carte et change de légion
