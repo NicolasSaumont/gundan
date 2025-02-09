@@ -89,7 +89,7 @@ const cards = ref<ICards>([
       capacity: {
         quickMode: {
           name: 'Piège de couteaux éclatés',
-          code: 'Défaite : -2 vie Adv',
+          code: 'Défaite : -2 vie Adv.',
           description: 'En cas de défaite, l\'adversaire perd 2 points de vie'
         },
         classicalMode: {
@@ -126,7 +126,7 @@ const cards = ref<ICards>([
       bonus: {
         quickMode: {
           name: 'Ascension Saiyan',
-          code: 'Riposte: Puissance +3',
+          code: 'Riposte : Puissance +3',
           description: 'En cas de défaite du compagnon précédent, le personnage gagne +3 en puissance'
         },
         classicalMode: {
@@ -148,7 +148,56 @@ const cards = ref<ICards>([
         }
       }
     }
-  }
+  },
+  {
+    id: 4,
+    name: 'Dracule Mihawk',
+    description: 'Connu sous le nom de "Œil de Faucon", Mihawk est l\'un des Sept Grands Corsaires et le meilleur épéiste au monde. Il est le rival de Zoro et le maître qu\'il aspire à surpasser.',
+    type: 'Attaquant',
+    rarity: 'Légendaire',
+    experience: null,
+    maxLevel: 5,
+    evolution: {
+      level: 5,
+      experienceNeeded: null,
+      stats: {
+        power: 7,
+        defense: 7,
+        damage: 8,
+        health: 16,
+      },
+      image: 'mihawk5'
+    },
+    legion: {
+      name: 'One Piece'
+    },
+    skills: {
+      bonus: {
+        quickMode: {
+          name: 'Volonté du D.',
+          code: 'Puissance et défense +1',
+          description: 'Le personnage gagne +1 en puissance et +1 en défense'
+        },
+        classicalMode: {
+          name: 'Volonté du D.',
+          code: 'Volonté du D.',
+          description: 'Le personnage gagne +1 en puissance et +1 en défense'
+        }
+      },
+      capacity: {
+        quickMode: {
+          name: 'Danse du faucon',
+          code: 'Contre-attaque & Victoire : Vie Adv. vaut 1',
+          description: 'Si Mihawk gagne le round alors qu\'il ne l\'a pas initié, réduit la vie de l’adversaire à 1 PV'
+        },
+        classicalMode: {
+          name: 'Danse du faucon',
+          code: 'Danse du faucon',
+          description: 'En cas de victoire, les dégâts sont infligés à tous les ennemis qui sont sur la même ligne que l’adversaire'
+        }
+      }
+    }
+  },
 ])
 
 export const useCardStore = defineStore('card', () => {

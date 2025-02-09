@@ -35,15 +35,17 @@ export const rarityImages: Record<CardRarity, string> = {
   "Légendaire": "legendary.png"
 }
 
+export interface IStats {
+  power: number
+  defense: number
+  damage: number
+  health: number
+}
+
 export interface IEvolution {
   level: number
   experienceNeeded: number | null // null if max level reached
-  stats: {
-    power: number
-    defense: number
-    damage: number
-    health: number
-  }
+  stats: IStats
   image: string
 }
 

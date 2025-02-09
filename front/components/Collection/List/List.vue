@@ -7,7 +7,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex gap-4">
+  <div class="flex gap-4 flex-wrap">
     <CollectionListCard v-for="card in cards" :key="card.id" :card="card" />
   </div>
 </template>
