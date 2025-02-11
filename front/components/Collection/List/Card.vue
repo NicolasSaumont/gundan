@@ -3,8 +3,6 @@ const props = defineProps<{
   card: ICard
 }>()
 
-const { t } = useI18n()
-
 const { formatLegionName } = useCard()
 
 const legionName = ref<string>()
@@ -19,7 +17,7 @@ onMounted(() => {
   <!-- Perspective -->
   <div 
     class="relative cursor-pointer"
-    :style="{ width: `${CARD_WIDTH}px`, height: `${CARD_HEIGHT}px`,  perspective: '1000px' }"
+    :style="{ width: `${COLLECTION_CARD_WIDTH}px`, height: `${COLLECTION_CARD_HEIGHT}px`,  perspective: '1000px' }"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >

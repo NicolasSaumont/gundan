@@ -14,7 +14,7 @@ const { t } = useI18n()
       :key="index"
       src="@/assets/images/cards/elements/heart.png"
       :alt="t('Coeur de vie')"
-      :style="{ width: `${CARD_WIDTH * CARD_WIDTH_HEARTS_RATIO}px` }"
+      :style="{ width: `${COLLECTION_CARD_WIDTH * CARD_WIDTH_HEARTS_RATIO}px` }"
     >
   </div>
 </template>

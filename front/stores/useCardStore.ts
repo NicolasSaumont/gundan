@@ -200,6 +200,8 @@ const cards = ref<ICards>([
   },
 ])
 
+const selectedCard = ref<ICard>()
+
 export const useCardStore = defineStore('card', () => {
   const setCards = async () => {
     // TODO: create loader
@@ -216,8 +218,14 @@ export const useCardStore = defineStore('card', () => {
     }
   }
 
+  const setSelectedCard = (id: number) => {
+    selectedCard.value = cards.value.find(card => card.id === id)
+  }
+
   return {
     setCards,
-    cards
+    setSelectedCard,
+    cards,
+    selectedCard
   }
 })

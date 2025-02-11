@@ -36,7 +36,7 @@ const typeIcon = computed(() => {
       :icon="typeIcon" 
       :title="t(cardType)"
       class="text-white" 
-      :style="{ fontSize: `${CARD_WIDTH * CARD_WIDTH_TYPE_ICON_RATIO}px` }"
+      :style="{ fontSize: `${COLLECTION_CARD_WIDTH * CARD_WIDTH_TYPE_ICON_RATIO}px` }"
     />
   </div>
 </template>
