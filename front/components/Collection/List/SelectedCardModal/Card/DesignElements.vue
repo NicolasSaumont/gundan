@@ -36,7 +36,7 @@ const getRarityImage = (rarity: CardRarity) => {
   >
   <div 
     class="flex items-center justify-center w-[80%] h-[7%] font-bloom-monday text-white tracking-widest drop-shadow-[2px_2px_0_rgb(0,0,0)] absolute top-[5%] right-0"
-    :style="{ fontSize: `${COLLECTION_CARD_WIDTH * CARD_WIDTH_NAME_RATIO}px` }"
+    :style="{ fontSize: `${SELECTED_CARD_WIDTH * CARD_WIDTH_NAME_RATIO}px` }"
     >
     {{ card.name }}
   </div>

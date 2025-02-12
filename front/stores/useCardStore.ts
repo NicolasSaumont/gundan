@@ -200,7 +200,7 @@ const cards = ref<ICards>([
   },
 ])
 
-const selectedCard = ref<ICard>()
+const selectedCard = ref<ICard>(DEFAULT_CARD as ICard)
 
 export const useCardStore = defineStore('card', () => {
   const setCards = async () => {
@@ -219,7 +219,7 @@ export const useCardStore = defineStore('card', () => {
   }
 
   const setSelectedCard = (id: number) => {
-    selectedCard.value = cards.value.find(card => card.id === id)
+    selectedCard.value = cards.value.find(card => card.id === id) ?? DEFAULT_CARD as ICard
   }
 
   return {

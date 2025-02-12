@@ -74,6 +74,56 @@ export const NAVIGATION_LINKS = [
 export const DEFAULT_GAME_MODE = 'quick'
 
 // CARD
+export const DEFAULT_CARD = {
+  id: 0,
+  name: '',
+  description: '',
+  type: "Attaquant",
+  rarity: "Commune",
+  experience: 0,
+  maxLevel: 0,
+  evolution: {
+    level: 0,
+    experienceNeeded: 0,
+    stats: {
+      power: 0,
+      defense: 0,
+      damage: 0,
+      health: 0
+    },
+    image: '',
+  },
+  legion: {
+    name: ''
+  },
+  skills: {
+    bonus: {
+      quickMode: {
+        name: '',
+        code: '',
+        description: '',
+      },
+      classicalMode: {
+        name: '',
+        code: '',
+        description: '',
+      }
+    },
+    capacity: {
+      quickMode: {
+        name: '',
+        code: '',
+        description: '',
+      },
+      classicalMode: {
+        name: '',
+        code: '',
+        description: '',
+      }
+    }
+  },
+}
+
 const CARD_MODEL_WIDTH = 350
 const CARD_MODEL_HEIGHT = 463
 const CARD_MODEL_RATIO = CARD_MODEL_HEIGHT / CARD_MODEL_WIDTH
@@ -93,4 +143,6 @@ export const CARD_WIDTH_STARS_EXPERIENCE_RATIO = 0.057
 export const CARD_WIDTH_TYPE_ICON_RATIO = 0.055
 
 export const MIN_EXPERIENCE_VISIBLE = 4
+
+export const ROTATION_SENSIBILITY = 0.15
 
