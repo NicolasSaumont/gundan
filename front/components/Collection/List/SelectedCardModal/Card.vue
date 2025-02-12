@@ -60,14 +60,14 @@ onMounted(() => {
 
     <CollectionListCardBorder />
 
-    <CollectionListCardStats :card-stats="card.evolution.stats"/>
+    <CollectionListSelectedCardModalCardStats :card-stats="card.evolution.stats"/>
 
-    <CollectionListCardSkills :card-skills="card.skills"/>
+    <CollectionListSelectedCardModalCardSkills :card-skills="card.skills"/>
 
-    <CollectionListCardLife :card-health="card.evolution.stats.health"/>
+    <CollectionListSelectedCardModalCardLife :card-health="card.evolution.stats.health"/>
 
-    <CollectionListCardExperience :card/>
+    <CollectionListSelectedCardModalCardExperience :card/>
 
-    <CollectionListCardType :card-type="card.type"/>
+    <CollectionListSelectedCardModalCardType :card-type="card.type"/>
   </div>  
 </template>
