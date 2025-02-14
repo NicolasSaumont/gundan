@@ -13,9 +13,6 @@ const experienceToNextLevel = computed(() => {
     ? props.card.experience / props.card.evolution.experienceNeeded * 100
     : 100
 })
-
-watchEffect(() => console.log(props.card.experience))
-watchEffect(() => console.log(props.card.evolution.experienceNeeded))
 </script>
 
 <template>

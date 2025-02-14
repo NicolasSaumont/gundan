@@ -50,7 +50,7 @@ const resetSelectedCard = () => {
             <span>{{ t('Dégâts : ') }}</span>
             <span>{{ t(selectedCard?.evolution.stats.damage) }}</span>
           </div>
-          <div>
+          <div v-if="!isQuickMode">
             <span>{{ t('Santé : ') }}</span>
             <span>{{ t(selectedCard?.evolution.stats.health) }}</span>
           </div>
