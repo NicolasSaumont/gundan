@@ -7,7 +7,9 @@ import { faChessKing } from '@fortawesome/free-solid-svg-icons/faChessKing'
 
 const props = defineProps<{
   cardType: string
+  cardWidth: number
 }>()
+
 const { t } = useI18n()
 
 const typeIcon = computed(() => {
@@ -36,7 +38,7 @@ const typeIcon = computed(() => {
       :icon="typeIcon" 
       :title="t(cardType)"
       class="text-white" 
-      :style="{ fontSize: `${COLLECTION_CARD_WIDTH * CARD_WIDTH_TYPE_ICON_RATIO}px` }"
+      :style="{ fontSize: `${cardWidth * CARD_WIDTH_TYPE_ICON_RATIO}px` }"
     />
   </div>
 </template>

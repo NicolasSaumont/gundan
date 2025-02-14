@@ -26,6 +26,9 @@ const handleMouseMove = (event) => {
   rotateY.value = -deltaX * ROTATION_SENSIBILITY
 
   cardElement.value.style.transform = `rotateX(${rotateX.value}deg) rotateY(${rotateY.value}deg)`
+
+  // Applique un mouvement sur l'effet holo
+  cardElement.value.style.setProperty('--holo-rotate', `${rotateX.value + rotateY.value}deg`);
 }
 
 const resetCardPosition = () => {
@@ -43,31 +46,31 @@ onMounted(() => {
 
 <template>   
   <div 
-    class="relative"
+    class="relative holo-card overflow-hidden"
     :style="{ width: `${SELECTED_CARD_WIDTH}px`, height: `${SELECTED_CARD_HEIGHT}px` }"
     ref="cardElement"
     @mousemove="handleMouseMove"
     @mouseleave="resetCardPosition"
   >
-    <CollectionListCardBackground :legion-name="legionName"/>
+    <CollectionListCardBackground :legion-name="legionName" />
 
     <CollectionListCardCharacterImage
       :legion-name="legionName"
       :character-image="card.evolution.image"
     />
 
-    <CollectionListSelectedCardModalCardDesignElements :legion-name="legionName" :card />
+    <CollectionListCardDesignElements :legion-name="legionName" :card :card-width="SELECTED_CARD_WIDTH" />
 
     <CollectionListCardBorder />
 
-    <CollectionListSelectedCardModalCardStats :card-stats="card.evolution.stats"/>
+    <CollectionListCardStats :card-stats="card.evolution.stats" :card-width="SELECTED_CARD_WIDTH" />
 
-    <CollectionListSelectedCardModalCardSkills :card-skills="card.skills"/>
+    <CollectionListCardSkills :card-skills="card.skills" :card-width="SELECTED_CARD_WIDTH" />
 
-    <CollectionListSelectedCardModalCardLife :card-health="card.evolution.stats.health"/>
+    <CollectionListCardLife :card-health="card.evolution.stats.health" :card-width="SELECTED_CARD_WIDTH" />
 
-    <CollectionListSelectedCardModalCardExperience :card/>
+    <CollectionListCardExperience :card :card-width="SELECTED_CARD_WIDTH" />
 
-    <CollectionListSelectedCardModalCardType :card-type="card.type"/>
+    <CollectionListCardType :card-type="card.type" :card-width="SELECTED_CARD_WIDTH" />
   </div>  
 </template>

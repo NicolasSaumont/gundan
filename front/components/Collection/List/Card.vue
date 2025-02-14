@@ -37,19 +37,19 @@ onMounted(() => {
         :is-hovered="isHovered"
       />
   
-      <CollectionListCardDesignElements :legion-name="legionName" :card />
+      <CollectionListCardDesignElements :legion-name="legionName" :card :card-width="COLLECTION_CARD_WIDTH" />
   
       <CollectionListCardBorder />
   
-      <CollectionListCardStats :card-stats="card.evolution.stats"/>
+      <CollectionListCardStats :card-stats="card.evolution.stats" :card-width="COLLECTION_CARD_WIDTH" />
   
-      <CollectionListCardSkills :card-skills="card.skills"/>
+      <CollectionListCardSkills :card-skills="card.skills" :card-width="COLLECTION_CARD_WIDTH" />
   
-      <CollectionListCardLife :card-health="card.evolution.stats.health"/>
+      <CollectionListCardLife :card-health="card.evolution.stats.health" :card-width="COLLECTION_CARD_WIDTH" />
   
-      <CollectionListCardExperience :card/>
+      <CollectionListCardExperience :card :card-width="COLLECTION_CARD_WIDTH" />
   
-      <CollectionListCardType :card-type="card.type"/>
+      <CollectionListCardType :card-type="card.type" :card-width="COLLECTION_CARD_WIDTH" />
 
       <CollectionListCardFrontShadow :is-hovered="isHovered" />
     </div>

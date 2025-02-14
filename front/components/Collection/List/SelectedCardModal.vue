@@ -22,16 +22,22 @@ const resetSelectedCard = () => {
 
 <template>
   <Modal v-model:is-visible="isVisible" class="flex gap-4" @click="resetSelectedCard">
-    <div class="flex justify-center gap-4 max-w-[80%] max-h-[70%] mt-[140px]"> <!-- 140px correspond à la hauteur du header -->
+    <div class="flex justify-center items-center gap-4 max-w-[80%] max-h-[70%] mt-[140px]"> <!-- 140px correspond à la hauteur du header -->
       <CollectionListSelectedCardModalCard v-if="selectedCard" :card="selectedCard" />
       <div class="flex flex-col gap-4 text-white p-4 max-w-[50%]">
         <div class="font-bungee text-xl">{{ t(selectedCard?.name) }}</div>
         <div>{{ t(selectedCard?.description) }}</div>
         <div>
-          <span>{{ t('Type : ') }}</span>
-          <span>{{ t(selectedCard?.type) }}</span>
+          <div>
+            <span>{{ t('Rareté : ') }}</span>
+            <span>{{ t(selectedCard?.rarity) }}</span>
+          </div>
+          <div>
+            <span>{{ t('Type : ') }}</span>
+            <span>{{ t(selectedCard?.type) }}</span>
+          </div>
         </div>
-        <div class="flex flex-col">
+        <div>
           <div>
             <span>{{ t('Puissance : ') }}</span>
             <span>{{ t(selectedCard?.evolution.stats.power) }}</span>
@@ -56,6 +62,11 @@ const resetSelectedCard = () => {
         <div>
           <span>{{ t('Bonus : ') }}</span>
           <span>{{ t(bonus?.description) }}</span>
+        </div>
+        <div>
+          <span>{{ t('Experience : ') }}</span>
+          <span v-if="selectedCard.evolution.experienceNeeded">{{ t(selectedCard.experience ? selectedCard.experience : 0) }} / {{ selectedCard.evolution.experienceNeeded }}</span>
+          <span v-else>{{ t('MAX') }}</span>
         </div>
       </div>
     </div>

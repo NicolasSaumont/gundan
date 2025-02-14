@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 const props = defineProps<{
   card: ICard
+  cardWidth: number
 }>()
 
 const maxLevel = computed(() => props.card.maxLevel)
@@ -8,10 +9,13 @@ const currentLevel = computed(() => props.card.evolution.level)
 const differenceFromCurrentToMaxLevel = computed(() => maxLevel.value - currentLevel.value)
 
 const experienceToNextLevel = computed(() => {
-  return props.card.experience && props.card.evolution.experienceNeeded
+  return props.card.experience != null && props.card.evolution.experienceNeeded != null && props.card.evolution.experienceNeeded !== 0
     ? props.card.experience / props.card.evolution.experienceNeeded * 100
     : 100
 })
+
+watchEffect(() => console.log(props.card.experience))
+watchEffect(() => console.log(props.card.evolution.experienceNeeded))
 </script>
 
 <template>
@@ -24,8 +28,8 @@ const experienceToNextLevel = computed(() => {
       :style="{ width: `${experienceToNextLevel}%` }"
     />
     <div class="absolute left-[5%] top-[50%] transform -translate-y-1/2 flex gap-2 z-20">
-      <CollectionListCardExperienceStars :count="currentLevel" imageSrc="_nuxt/assets/images/cards/elements/star.png" />
-      <CollectionListCardExperienceStars :count="differenceFromCurrentToMaxLevel" imageSrc="_nuxt/assets/images/cards/elements/star-black-white.png" />
+      <CollectionListCardExperienceStars :count="currentLevel" imageSrc="_nuxt/assets/images/cards/elements/star.png" :card-width="cardWidth" />
+      <CollectionListCardExperienceStars :count="differenceFromCurrentToMaxLevel" imageSrc="_nuxt/assets/images/cards/elements/star-black-white.png" :card-width="cardWidth" />
     </div>
   </div>
 </template>
