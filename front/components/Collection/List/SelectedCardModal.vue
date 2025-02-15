@@ -23,7 +23,8 @@ const resetSelectedCard = () => {
 <template>
   <Modal v-model:is-visible="isVisible" class="flex gap-4" @click="resetSelectedCard">
     <div class="flex justify-center items-center gap-4 max-w-[80%] max-h-[70%] mt-[140px]"> <!-- 140px correspond à la hauteur du header -->
-      <CollectionListSelectedCardModalCard v-if="selectedCard" :card="selectedCard" />
+      <!-- <CollectionListSelectedCardModalCard v-if="selectedCard" :card="selectedCard" /> -->
+       <Test/>
       <div class="flex flex-col gap-4 text-white p-4 max-w-[50%]">
         <div class="font-bungee text-xl">{{ t(selectedCard?.name) }}</div>
         <div>{{ t(selectedCard?.description) }}</div>

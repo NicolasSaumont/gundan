@@ -6,7 +6,7 @@ defineProps<{
 
 <template>
   <div 
-    class="absolute inset-0 w-full h-full rounded-2xl transition-opacity duration-500 ease-in-out pointer-events-none"
+    class="absolute inset-0 w-full h-full rounded-xl transition-opacity duration-500 ease-in-out pointer-events-none"
     :class="{ 'opacity-100': isHovered, 'opacity-0': !isHovered }"
     style="
       content: '';

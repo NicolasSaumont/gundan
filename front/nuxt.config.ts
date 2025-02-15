@@ -14,6 +14,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
+    '@vueuse/nuxt',
   ],
   imports: {
     dirs: ['./types/**'],
