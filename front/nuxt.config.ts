@@ -7,20 +7,26 @@ export default defineNuxtConfig({
       title: 'Gundan',
     },
   },
+
   devtools: { enabled: true },
   ssr: false,
+
   modules: [
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
     '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
   ],
+
   imports: {
     dirs: ['./types/**'],
   },
+
   spaLoadingTemplate: 'loading-page.html',
   css: ['@/assets/css/main.css'],
+
   googleFonts: {
     families: {
       Bungee: [400],
@@ -29,4 +35,6 @@ export default defineNuxtConfig({
     },
     display: 'swap', // Option recommandée pour une meilleure performance
   },
+
+  compatibilityDate: '2025-02-15',
 });

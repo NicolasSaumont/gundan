@@ -5,15 +5,22 @@ const props = defineProps<{
 
 const { formatLegionName } = useCard()
 
+const cardElement = ref<HTMLElement | null>(null)
+
 const legionName = ref<string>()
 
+defineExpose({
+  cardElement
+})
+
 onMounted(() => {
-  legionName.value = formatLegionName(props.card.legion.name!) // Je sais que le nom de la légion est toujours défini
+  legionName.value = formatLegionName(props.card.legion.name!) // Assurez-vous que le nom est bien défini
 })
 </script>
 
-<template>   
-  <div 
+<template>
+  <div
+    ref="cardElement"
     class="relative holo-card overflow-hidden"
     :style="{ width: `${SELECTED_CARD_WIDTH}px`, height: `${SELECTED_CARD_HEIGHT}px` }"
   >

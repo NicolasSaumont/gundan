@@ -1,4 +1,34 @@
 <script setup lang='ts'>
+
+const cardRef = ref(null)
+
+const {
+  elementX,
+  elementY,
+  isOutside,
+  elementHeight,
+  elementWidth
+} = useMouseInElement(cardRef)
+
+const cardTransform = computed(() => {
+  const MAX_ROTATION = 10
+
+  const XRotation = (
+    MAX_ROTATION / 2 - 
+    (elementY.value / elementHeight.value) * MAX_ROTATION
+  ).toFixed(2)
+
+  const YRotation = (
+    (elementX.value / elementWidth.value) * MAX_ROTATION - 
+    MAX_ROTATION / 2
+  ).toFixed(2)
+
+  return isOutside.value 
+    ? ''
+    : `perspective(${elementWidth.value}px) rotateX(${XRotation}deg) rotateY(${YRotation}deg)`
+})
+
+
 const isVisible = defineModel<boolean>('isVisible', { required: true })
 
 const { t } = useI18n()
@@ -23,8 +53,15 @@ const resetSelectedCard = () => {
 <template>
   <Modal v-model:is-visible="isVisible" class="flex gap-4" @click="resetSelectedCard">
     <div class="flex justify-center items-center gap-4 max-w-[80%] max-h-[70%] mt-[140px]"> <!-- 140px correspond à la hauteur du header -->
-      <!-- <CollectionListSelectedCardModalCard v-if="selectedCard" :card="selectedCard" /> -->
-       <Test/>
+      <CollectionListSelectedCardModalCard
+        v-if="selectedCard" 
+        ref="cardRef"
+        :card="selectedCard" 
+        :style="{
+          transform: cardTransform,
+          transition: 'transform 250ms ease-out'
+        }"
+      /> 
       <div class="flex flex-col gap-4 text-white p-4 max-w-[50%]">
         <div class="font-bungee text-xl">{{ t(selectedCard?.name) }}</div>
         <div>{{ t(selectedCard?.description) }}</div>

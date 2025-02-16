@@ -1,49 +1,53 @@
-import { ref, computed, onMounted, onUnmounted } from 'vue';
-import { defineStore } from 'pinia';
 
-// Fonction pour obtenir l'orientation brute
-const getRawOrientation = (event?: DeviceOrientationEvent) => ({
-  alpha: event?.alpha || 0,
-  beta: event?.beta || 0,
-  gamma: event?.gamma || 0
-});
+import { defineStore } from 'pinia'
 
 export const useOrientationStore = defineStore('orientation', () => {
-  // Références réactives
-  const baseOrientation = ref(getRawOrientation());
-  const absolute = ref(getRawOrientation());
-  const firstReading = ref(true);
 
-  // Calcul de l'orientation relative
-  const relative = computed(() => ({
-    alpha: absolute.value.alpha - baseOrientation.value.alpha,
-    beta: absolute.value.beta - baseOrientation.value.beta,
-    gamma: absolute.value.gamma - baseOrientation.value.gamma
-  }));
+const getRawOrientation = function(e) {
+  if ( !e ) {
+    return { alpha: 0, beta: 0, gamma: 0 };
+  } else {
+    return { alpha: e.alpha, beta: e.beta, gamma: e.gamma };
+  }
+}
 
-  // Réinitialisation de l'orientation de base
-  const resetBaseOrientation = () => {
-    firstReading.value = true;
-    baseOrientation.value = getRawOrientation();
-  };
-
-  // Gestion de l'événement deviceorientation
-  const handleOrientation = (event: DeviceOrientationEvent) => {
-    if (firstReading.value) {
-      firstReading.value = false;
-      baseOrientation.value = getRawOrientation(event);
+const getOrientationObject = (e) => {
+  const orientation = getRawOrientation(e);
+  return {
+    absolute: orientation,
+    relative: { 
+      alpha: orientation.alpha - baseOrientation.alpha, 
+      beta: orientation.beta - baseOrientation.beta, 
+      gamma: orientation.gamma - baseOrientation.gamma, 
     }
-    absolute.value = getRawOrientation(event);
+  }
+}
+
+let firstReading = true;
+let baseOrientation = getRawOrientation();
+
+export const resetBaseOrientation = () => {
+  firstReading = true;
+  baseOrientation = getRawOrientation();
+}
+
+
+  // https://developer.mozilla.org/en-US/docs/Web/API/Window/ondeviceorientation
+  const handleOrientation = function(e) {
+
+    if ( firstReading ) {
+      firstReading = false;
+      baseOrientation = getRawOrientation(e);
+    }
+
+    const o = getOrientationObject(e);
+    set( o );
   };
 
-  // Ajout et suppression des écouteurs d'événements
-  onMounted(() => {
-    window.addEventListener('deviceorientation', handleOrientation, true);
-  });
+  window.addEventListener("deviceorientation", handleOrientation, true);
 
-  onUnmounted(() => {
-    window.removeEventListener('deviceorientation', handleOrientation, true);
-  });
+  return function stop() {
+    window.removeEventListener("deviceorientation", handleOrientation, true);
+  }
 
-  return { absolute, relative, resetBaseOrientation };
 });
