@@ -37,5 +37,10 @@ onMounted(() => {
     <CollectionListCardExperience :card :card-width="SELECTED_CARD_WIDTH" />
 
     <CollectionListCardType :card-type="card.type" :card-width="SELECTED_CARD_WIDTH" />
+
+    <div 
+      class="absolute inset-0 w-full h-full rounded-xl opacity-5 bg-[url('/_nuxt/assets/images/cards/elements/foreground/common.png')] bg-center bg-blend-multiply"
+    />
+
   </div>  
 </template>

@@ -144,5 +144,5 @@ export const CARD_WIDTH_TYPE_ICON_RATIO = 0.055
 
 export const MIN_EXPERIENCE_VISIBLE = 4
 
-export const ROTATION_SENSIBILITY = 0.15
+export const ROTATION_SENSIBILITY = 20
 
