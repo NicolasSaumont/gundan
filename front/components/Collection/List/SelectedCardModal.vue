@@ -31,16 +31,6 @@ const bonus = computed(() =>
 )
 
 const cardTransform = computed(() => {
-  // const XRotation = (
-  //   ROTATION_SENSIBILITY / 2 - 
-  //   (elementY.value / elementHeight.value) * ROTATION_SENSIBILITY
-  // ).toFixed(2)
-
-  // const YRotation = (
-  //   (elementX.value / elementWidth.value) * ROTATION_SENSIBILITY - 
-  //   ROTATION_SENSIBILITY / 2
-  // ).toFixed(2)
-
   const XRotation = (
     (elementY.value / elementHeight.value) * ROTATION_SENSIBILITY - 
     ROTATION_SENSIBILITY / 2
@@ -70,7 +60,7 @@ const resetSelectedCard = () => {
         :card="selectedCard" 
         :style="{
           transform: cardTransform,
-          transition: isOutside ? 'transform 2s ease-out' : 'transform 250ms ease-out'
+          transition: isOutside ? 'transform 2s ease-out' : 'transform 150ms ease-out'
         }"
       /> 
       <div class="flex flex-col gap-4 text-white p-4 max-w-[50%]">
