@@ -78,7 +78,7 @@ onMounted(() => {
 
 <template>
   <div
-  ref="interactiveCard"
+    ref="interactiveCard"
     @mousemove="updatePointer"
     @mouseleave="resetPointer"
     class="relative overflow-hidden card"
@@ -107,9 +107,9 @@ onMounted(() => {
   >
     <CollectionListCardBackground :legion-name="legionName" />
 
-    <div 
+    <!-- <div 
       class="absolute inset-0 w-full h-full rounded-xl opacity-5 bg-[url('/_nuxt/assets/images/cards/elements/foreground/common.png')] bg-center bg-blend-multiply"
-    />
+    /> -->
 
     <CollectionListCardCharacterImage
       :legion-name="legionName"
@@ -132,8 +132,8 @@ onMounted(() => {
 
     
 
-    <div class="card__shine"></div>
-    <div class="card__glare"></div>
+    <!-- <div class="card__shine"></div> -->
+    <!-- <div class="card__glare"></div> -->
 
   </div>  
 </template>
