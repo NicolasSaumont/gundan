@@ -3,23 +3,20 @@ import type { BATTLE_MODE } from "~/utils/constants"
 
 const { setSelectedBattleMode } = useBattleModeStore()
 
-const handleSelection = (mode: BATTLE_MODE) => {
-  setSelectedBattleMode(mode)
-}
-
 onUnmounted(() => {
   setSelectedBattleMode(null)
 })
 </script>
 
 <template>
-  <div class="text-white">
-    <div 
-      v-for="mode in Object.values(BATTLE_MODE)" 
-      :key="mode"
-      @click="handleSelection(mode)"
-    >
-      {{ mode }}
+  <div class="flex justify-center items-center h-full">
+    <div class="flex flex-wrap gap-4 justify-between max-w-[450px]">
+      <template
+        v-for="mode in Object.values(BATTLE_MODE)"
+        :key="mode"
+      >
+        <BattleModeSelector :mode/>
+      </template>
     </div>
   </div>
 </template>
