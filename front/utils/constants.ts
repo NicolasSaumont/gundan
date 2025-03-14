@@ -151,8 +151,8 @@ export const ROTATION_SENSIBILITY = 20
 export enum BATTLE_MODE {
   TUTO = "Tuto",
   TRAINING = "Entrainement",
-  SOLO = "Solo rapide",
-  CAREER = "Carrière",
   CLASSICAL_PVP = "PvP Classique",
-  QUICK_PVP = "PvP Rapide"
+  QUICK_PVP = "PvP Rapide",
+  // CAREER = "Carrière",
+  SOLO = "Solo rapide",
 }

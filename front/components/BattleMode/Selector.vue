@@ -5,6 +5,8 @@ defineProps<{
   mode: BATTLE_MODE
 }>()
 
+const { t } = useI18n()
+
 const { setSelectedBattleMode } = useBattleModeStore()
 
 const handleSelection = (mode: BATTLE_MODE) => {
@@ -17,6 +19,6 @@ const handleSelection = (mode: BATTLE_MODE) => {
     class="text-center text-lg w-48 bg-white shadow-inner-medium p-4 rounded-lg cursor-pointer hover:text-primary hover:bg-red-200 hover:tracking-wider transition-all duration-300 ease-in-out"
     @click="handleSelection(mode)"
   >
-    {{ mode }}
+    {{ t(mode) }}
   </div>
 </template>
