@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
 
 <template>
   <div class="loader-container">
@@ -26,7 +28,7 @@
       class="vegeta-energy shaking-animation animation-delay-80"
       src="/_nuxt/assets/images/kamehameha-loader/vegeta-energy.png"
     >
-    <p>Chargement...</p>
+    <p>{{ t('Chargement...') }}</p>
   </div>
 </template>
 

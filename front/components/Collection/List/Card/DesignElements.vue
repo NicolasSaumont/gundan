@@ -2,9 +2,11 @@
 defineProps<{
   legionName?: string
   card: ICard
+  cardWidth: number
 }>()
 
 const { t } = useI18n()
+const { selectedCard } = storeToRefs(useCardStore())
 
 const getRarityImage = (rarity: CardRarity) => {
   return rarityImages[rarity]
@@ -35,8 +37,8 @@ const getRarityImage = (rarity: CardRarity) => {
   >
   <div 
     class="flex items-center justify-center w-[80%] h-[7%] font-bloom-monday text-white tracking-widest drop-shadow-[2px_2px_0_rgb(0,0,0)] absolute top-[5%] right-0"
-    :style="{ fontSize: `${CARD_WIDTH * CARD_WIDTH_NAME_RATIO}px` }"
-  >
+    :style="{ fontSize: `${cardWidth * CARD_WIDTH_NAME_RATIO}px` }"
+    >
     {{ card.name }}
   </div>
 </template>

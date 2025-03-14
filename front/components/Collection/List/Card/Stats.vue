@@ -1,10 +1,11 @@
 <script setup lang='ts'>
 const props = defineProps<{
   cardStats: IStats
+  cardWidth: number
 }>()
 
 const statClasses = computed(() => 'flex items-center justify-center w-[7%] h-[7%] absolute font-bloom-monday text-white')
-const statsFontSize = computed(() => `${CARD_WIDTH * CARD_WIDTH_STATS_RATIO}px`);
+const statsFontSize = computed(() => `${props.cardWidth * CARD_WIDTH_STATS_RATIO}px`);
 
 const stats = computed(() => [
   { key: "power", value: props.cardStats.power, position: "top-[33.5%] left-[4.6%]" },

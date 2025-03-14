@@ -2,6 +2,7 @@
 defineProps<{
   count: number
   imageSrc: string
+  cardWidth: number
 }>()
 
 const { t } = useI18n()
@@ -13,6 +14,6 @@ const { t } = useI18n()
     :key="index"
     :src="imageSrc"
     :alt="t('Étoile de niveau')"
-    :style="{ width: `${CARD_WIDTH * CARD_WIDTH_STARS_EXPERIENCE_RATIO}px` }"
+    :style="{ width: `${cardWidth * CARD_WIDTH_STARS_EXPERIENCE_RATIO}px` }"
   >
 </template>

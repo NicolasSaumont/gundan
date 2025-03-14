@@ -1,13 +1,14 @@
 <script setup lang='ts'>
 const props = defineProps<{
   cardSkills: ISkills
+  cardWidth: number
 }>()
 
 const { gameMode } = storeToRefs(useCollectionStore())
 
 const isQuickMode = computed(() => gameMode.value === "quick");
 
-const skillFontSize = computed(() => `${CARD_WIDTH * CARD_WIDTH_SKILL_RATIO}px`);
+const skillFontSize = computed(() => `${props.cardWidth * CARD_WIDTH_SKILL_RATIO}px`);
 
 const capacity = computed(() => 
   isQuickMode.value ? props.cardSkills.capacity.quickMode : props.cardSkills.capacity.classicalMode

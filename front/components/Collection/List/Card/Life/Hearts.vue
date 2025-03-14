@@ -2,6 +2,7 @@
 defineProps<{
   hearts: number
   reverse?: boolean
+  cardWidth: number
 }>()
 
 const { t } = useI18n()
@@ -14,7 +15,7 @@ const { t } = useI18n()
       :key="index"
       src="@/assets/images/cards/elements/heart.png"
       :alt="t('Coeur de vie')"
-      :style="{ width: `${CARD_WIDTH * CARD_WIDTH_HEARTS_RATIO}px` }"
+      :style="{ width: `${cardWidth * CARD_WIDTH_HEARTS_RATIO}px` }"
     >
   </div>
 </template>

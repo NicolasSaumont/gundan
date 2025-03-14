@@ -12,7 +12,7 @@ const { t } = useI18n()
   <img
     :src="`_nuxt/assets/images/cards/legions/${legionName}/characters/${characterImage}.png`"
     :alt="t('Personnage de la carte')"
-    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] transition-opacity duration-500 ease-in-out"
-    :class="{'opacity-0': isHovered}"
+    class="aboslute inset-0 transform transition-all duration-500 ease-in-out"
+    :class="{ 'opacity-100 -translate-y-[110%]': isHovered, 'opacity-0 -translate-y-[80%]': !isHovered }"
   >
 </template>
