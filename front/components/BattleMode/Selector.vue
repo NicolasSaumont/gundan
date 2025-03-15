@@ -8,6 +8,8 @@ defineProps<{
 const { t } = useI18n()
 
 const { setSelectedBattleMode } = useBattleModeStore()
+const isHovered = ref(false)
+
 
 const handleSelection = (mode: BATTLE_MODE) => {
   setSelectedBattleMode(mode)
@@ -16,9 +18,20 @@ const handleSelection = (mode: BATTLE_MODE) => {
 
 <template>
   <div 
-    class="text-white text-center text-lg w-full bg-primary border-2 border-white p-4 rounded-lg cursor-pointer hover:text-xl hover:text-secondary hover:bg-transparent hover:border-secondary hover:tracking-wider transition-all duration-300 ease-in-out"
+    class="relative text-white text-center text-lg w-full p-4 cursor-pointer overflow-hidden group"
     @click="handleSelection(mode)"
+    @mouseenter="isHovered = true"
+    @mouseleave="isHovered = false"
   >
-    {{ t(mode) }}
+    <!-- Fond animé -->
+    <div class="absolute inset-0 bg-primary origin-right scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
+
+    <!-- Texte au-dessus -->
+    <div 
+      class="relative z-10 transition-all duration-300 ease-in-out"
+      :class="{ 'tracking-widest': isHovered, 'tracking-normal': !isHovered }"
+    >
+      {{ t(mode) }}
+    </div>
   </div>
 </template>
