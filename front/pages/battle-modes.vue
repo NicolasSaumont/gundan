@@ -9,7 +9,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="flex justify-center items-center h-full">
+  <div class="main-container flex justify-center items-center h-full">
     <div class="flex flex-wrap gap-10 justify-center max-w-[450px]">
       <template
         v-for="mode in Object.values(BATTLE_MODE)"

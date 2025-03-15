@@ -16,7 +16,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex gap-6 flex-wrap">
+  <div class="flex gap-6 flex-wrap justify-center">
+    <CollectionListCard v-for="card in cards" :key="card.id" :card="card" @click="handleSelectCardClick(card.id)"/>
     <CollectionListCard v-for="card in cards" :key="card.id" :card="card" @click="handleSelectCardClick(card.id)"/>
   </div>
   <FullLoader v-if="loaderIsActive"/>

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col gap-4">
+  <div class="main-container flex flex-col gap-4">
     <CollectionFilters />
     <CollectionList />
   </div>
