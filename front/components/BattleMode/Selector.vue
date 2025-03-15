@@ -24,7 +24,7 @@ const handleSelection = (mode: BATTLE_MODE) => {
     @mouseleave="isHovered = false"
   >
     <!-- Fond animé -->
-    <div class="absolute inset-0 bg-primary origin-right scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
+    <div class="absolute inset-0 bg-primary border-2 border-r-0 border-white origin-right scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
 
     <!-- Texte au-dessus -->
     <div 
