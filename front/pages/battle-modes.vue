@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { BATTLE_MODE } from "~/utils/constants"
-
 const { t } = useI18n()
 
 const { setSelectedBattleMode } = useBattleModeStore()

@@ -1,4 +1,7 @@
 <script setup lang='ts'>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faScroll } from '@fortawesome/free-solid-svg-icons/faScroll';
+
 const { t } = useI18n()
 
 const isHovered = ref(false)
@@ -10,7 +13,7 @@ const handleRulesClick = () => {
 
 <template>
   <div 
-    class="relative text-center text-lg w-full p-4 cursor-pointer overflow-hidden bg-secondary border-2 border-r-0 border-white group"
+    class="relative text-end text-lg w-[50%] p-4 cursor-pointer overflow-hidden bg-secondary border-2 border-r-0 border-white group self-end"
     @click="handleRulesClick"
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
@@ -20,10 +23,13 @@ const handleRulesClick = () => {
 
     <!-- Texte au-dessus -->
     <div 
-      class="relative z-10 transition-all duration-300 ease-in-out"
+      class="flex gap-4 items-center relative z-10 transition-all duration-300 ease-in-out"
       :class="{ 'tracking-widest text-white': isHovered, 'tracking-normal text-black': !isHovered }"
     >
-      {{ t('Règles') }}
+      <font-awesome-icon
+        :icon="faScroll"
+      />
+      <span>{{ t('Règles') }}</span>
     </div>
   </div>
 </template>
