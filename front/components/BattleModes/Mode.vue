@@ -1,6 +1,5 @@
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faChalkboardTeacher } from "@fortawesome/free-solid-svg-icons/faChalkboardTeacher";
 import type { BATTLE_MODE } from "~/utils/constants"
 
 defineProps<{

@@ -1,7 +1,3 @@
-<script setup lang='ts'>
-import type { BATTLE_MODE } from "~/utils/constants"
-</script>
-
 <template>
   <div class="flex flex-col grow justify-center gap-20">
     <div>
