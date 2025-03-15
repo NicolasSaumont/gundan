@@ -10,7 +10,6 @@ const { t } = useI18n()
 const { setSelectedBattleMode } = useBattleModeStore()
 const isHovered = ref(false)
 
-
 const handleSelection = (mode: BATTLE_MODE) => {
   setSelectedBattleMode(mode)
 }
