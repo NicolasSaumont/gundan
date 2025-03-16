@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div>
-        <p>Règles du jeu</p>
-    </div>
+  <div class="text-white">
+    <p>Règles du jeu</p>
+  </div>
 </template>

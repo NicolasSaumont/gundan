@@ -126,14 +126,16 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 - [ ] Connexion au compte utilisateur
 - [ ] Afficher la page de profil d'un utilisateur
 - [ ] Déconnexion du compte utilisateur
+- [ ] Afficher les règles du jeu
 - [ ] Acquérir de nouvelles cartes
-- [ ] Voir la liste des cartes possédées
-- [ ] Voir le détail d'une carte possédée
+- [x] Voir la liste des cartes possédées
+- [x] Voir le détail d'une carte possédée
 - [ ] CRUD deck (pas de modification dans la V1)
   - [ ] Création
   - [ ] Affichage
   - [ ] Suppression
 - [ ] Afficher la liste des missions (avec leurs progressions respectives)
+- [x] Afficher la liste des arènes disponibles
 - [ ] Système de combat
   - [ ] Affichage de l'arène
     - [ ] Tutoriel
