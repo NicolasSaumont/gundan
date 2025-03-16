@@ -173,3 +173,12 @@ export const modeIcons: Record<BATTLE_MODE, IconDefinition> = {
   [BATTLE_MODE.CAREER]: faMedal,
   [BATTLE_MODE.SOLO]: faRobot
 }
+
+//* RULES //
+
+export enum RULES_SECTIONS {
+  INTRO = "Introduction",
+  CARDS = "Cartes",
+  PLAY = "Comment jouer ?",
+  BATTLES_MODES = "Modes de jeu",
+}
