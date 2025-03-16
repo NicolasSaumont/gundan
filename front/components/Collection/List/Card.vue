@@ -6,7 +6,7 @@ const props = defineProps<{
 const { formatLegionName } = useCard()
 
 const legionName = ref<string>()
-  const isHovered = ref(false)
+const isHovered = ref(false)
 
 onMounted(() => {
   legionName.value = formatLegionName(props.card.legion.name!) // Je sais que le nom de la légion est toujours défini

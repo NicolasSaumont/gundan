@@ -1,4 +1,4 @@
-// PUBLIC HOME PAGE
+//* PUBLIC HOME PAGE //
 
 // GENERAL
 export const GAP_BETWEEN_SECTIONS = 96
@@ -39,7 +39,7 @@ export const TITAN_ANIMATION_DURATION = 8000
 export const LOGO_FILE = '/_nuxt/assets/images/public-home-page/legions-section'
 export const FLIP_ANIMATION_DURATION = 600
 
-// HOME PAGE
+//* HOME PAGE //
 
 // GENERAL
 export const SHOW_DURATION = 50
@@ -68,7 +68,7 @@ export const NAVIGATION_LINKS = [
   }
 ]
 
-// COLLECTION
+//* COLLECTION //
 
 // FILTERS
 export const DEFAULT_GAME_MODE = 'quick'
@@ -128,7 +128,7 @@ const CARD_MODEL_WIDTH = 350
 const CARD_MODEL_HEIGHT = 463
 const CARD_MODEL_RATIO = CARD_MODEL_HEIGHT / CARD_MODEL_WIDTH
 
-export const COLLECTION_CARD_WIDTH = 200
+export const COLLECTION_CARD_WIDTH = 225
 export const SELECTED_CARD_WIDTH = 350
 export const COLLECTION_CARD_HEIGHT = COLLECTION_CARD_WIDTH * CARD_MODEL_RATIO
 export const SELECTED_CARD_HEIGHT = SELECTED_CARD_WIDTH * CARD_MODEL_RATIO
@@ -146,3 +146,13 @@ export const MIN_EXPERIENCE_VISIBLE = 4
 
 export const ROTATION_SENSIBILITY = 20
 
+//* BATTLE MODES //
+
+export enum BATTLE_MODE {
+  TUTO = "Tuto",
+  TRAINING = "Entrainement",
+  CLASSICAL_PVP = "PvP Classique",
+  QUICK_PVP = "PvP Rapide",
+  // CAREER = "Carrière",
+  SOLO = "Solo rapide",
+}
