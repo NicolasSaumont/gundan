@@ -1,3 +1,11 @@
+import { type IconDefinition } from "@fortawesome/free-solid-svg-icons";
+import { faChalkboardTeacher } from "@fortawesome/free-solid-svg-icons/faChalkboardTeacher";
+import { faDumbbell } from "@fortawesome/free-solid-svg-icons/faDumbbell";
+import { faUsers } from "@fortawesome/free-solid-svg-icons/faUsers";
+import { faBolt } from "@fortawesome/free-solid-svg-icons/faBolt";
+import { faMedal } from "@fortawesome/free-solid-svg-icons/faMedal";
+import { faRobot } from "@fortawesome/free-solid-svg-icons/faRobot";
+
 //* PUBLIC HOME PAGE //
 
 // GENERAL
@@ -153,6 +161,15 @@ export enum BATTLE_MODE {
   TRAINING = "Entrainement",
   CLASSICAL_PVP = "PvP Classique",
   QUICK_PVP = "PvP Rapide",
-  // CAREER = "Carrière",
+  CAREER = "Carrière",
   SOLO = "Solo rapide",
+}
+
+export const modeIcons: Record<BATTLE_MODE, IconDefinition> = {
+  [BATTLE_MODE.TUTO]: faChalkboardTeacher,
+  [BATTLE_MODE.TRAINING]: faDumbbell,
+  [BATTLE_MODE.CLASSICAL_PVP]: faUsers,
+  [BATTLE_MODE.QUICK_PVP]: faBolt,
+  [BATTLE_MODE.CAREER]: faMedal,
+  [BATTLE_MODE.SOLO]: faRobot
 }

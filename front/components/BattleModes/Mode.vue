@@ -1,4 +1,5 @@
 <script setup lang='ts'>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import type { BATTLE_MODE } from "~/utils/constants"
 
 defineProps<{
@@ -9,7 +10,6 @@ const { t } = useI18n()
 
 const { setSelectedBattleMode } = useBattleModeStore()
 const isHovered = ref(false)
-
 
 const handleSelection = (mode: BATTLE_MODE) => {
   setSelectedBattleMode(mode)
@@ -28,10 +28,13 @@ const handleSelection = (mode: BATTLE_MODE) => {
 
     <!-- Texte au-dessus -->
     <div 
-      class="relative z-10 transition-all duration-300 ease-in-out"
+      class="flex gap-4 items-center relative z-10 transition-all duration-300 ease-in-out"
       :class="{ 'tracking-widest': isHovered, 'tracking-normal': !isHovered }"
     >
-      {{ t(mode) }}
+      <font-awesome-icon
+        :icon="modeIcons[mode]"
+      />
+      <span>{{ t(mode) }}</span>
     </div>
   </div>
 </template>

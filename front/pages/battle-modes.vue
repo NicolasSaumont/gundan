@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type { BATTLE_MODE } from "~/utils/constants"
-
 const { t } = useI18n()
 
 const { setSelectedBattleMode } = useBattleModeStore()
@@ -12,14 +10,7 @@ onUnmounted(() => {
 
 <template>
   <div class="flex mx-auto justify-between h-full w-[500px]">
-    <div class="flex flex-col grow justify-center">
-      <template
-        v-for="mode in Object.values(BATTLE_MODE)"
-        :key="mode"
-      >
-        <BattleModeSelector :mode/>
-      </template>
-    </div>
+    <BattleModesList />
     <img
       :src="`_nuxt/assets/images/battle-modes/goku-frieza-kamehameha.jpg`"
       :alt="t('Goku fights Frieza')"
