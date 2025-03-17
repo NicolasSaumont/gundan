@@ -9,6 +9,7 @@ defineProps<{
 const { t } = useI18n()
 
 const { setSelectedRulesSection } = useRulesStore()
+const { selectedRulesSection } = storeToRefs(useRulesStore())
 const isHovered = ref(false)
 
 const handleSelection = (section: RULES_SECTIONS) => {
@@ -24,12 +25,18 @@ const handleSelection = (section: RULES_SECTIONS) => {
     @mouseleave="isHovered = false"
   >
     <!-- Fond animé -->
-    <div class="absolute inset-0 bg-primary border-2 border-x-0 border-white origin-right scale-x-0 transition-transform duration-300 ease-in-out group-hover:scale-x-100" />
+    <div 
+      class="absolute inset-0 bg-primary border-2 border-x-0 border-white origin-right scale-x-0 transition-transform duration-300 ease-in-out " 
+      :class="{ 
+        'border-t-0': section === RULES_SECTIONS.INTRO,
+        'scale-x-100': isHovered || selectedRulesSection === section
+      }"
+    />
 
     <!-- Texte au-dessus -->
     <div 
       class="flex gap-4 items-center relative z-10 transition-all duration-300 ease-in-out"
-      :class="{ 'tracking-widest': isHovered, 'tracking-normal': !isHovered }"
+      :class="{ 'tracking-widest': isHovered || selectedRulesSection === section, 'tracking-normal': !isHovered }"
     >
       <span>{{ t(section) }}</span>
     </div>
