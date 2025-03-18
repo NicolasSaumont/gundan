@@ -8,6 +8,7 @@ const { selectedRulesSection } = storeToRefs(useRulesStore())
     <RulesContentIntroduction v-if="selectedRulesSection === RULES_SECTIONS.INTRO"/>
     <RulesContentCards v-if="selectedRulesSection === RULES_SECTIONS.CARDS"/>
     <RulesContentPlay v-if="selectedRulesSection === RULES_SECTIONS.PLAY"/>
+    <RulesContentSenzu v-if="selectedRulesSection === RULES_SECTIONS.SENZU"/>
     <RulesContentBattleModes v-if="selectedRulesSection === RULES_SECTIONS.BATTLES_MODES"/>
   </div>
 </template>

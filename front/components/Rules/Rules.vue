@@ -2,35 +2,6 @@
 
 <template>
   <div>
-      GUNDAN (Légions)
-
-      But du jeu : Réduire les points de vie (PV) du joueur adverse à 0
-
-      Structure des cartes
-
-      Carte Personnage
-
-      Nom : Nom du personnage.
-      Légion : Ex. One Piece, Naruto, Dragon Ball, etc.
-      Niveau : Détermine la puissance de base du personnage.
-      Puissance : Attaque.
-      Défense : Défense.
-      Dégâts : Points de dégâts.
-      Points de Vie (PV) : Le personnage est défaussé si les PV arriventà 0.
-      Capacité : Activée sous certaines conditions.
-      Bonus de légion : Activé sous certaines conditions.
-      Type : Attaquant / Défenseur / Support / Stratège.
-
-      Carte Objet
-
-      Nom : Armes, artefacts, objets emblématiques des mangas.
-      Effet : Bonus temporaire ou permanent (ex : +2 Attaque, +3 Défense).
-
-      Carte Événement
-
-      Nom : Un événement majeur d’un manga.
-      Effet : Modifie le déroulement de la partie (ex : bouleversement de règles, changement de conditions de victoire).
-
       Déroulement d’une partie
 
       Mise en place

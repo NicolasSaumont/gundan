@@ -180,5 +180,6 @@ export enum RULES_SECTIONS {
   INTRO = "Introduction",
   CARDS = "Cartes",
   PLAY = "Comment jouer ?",
+  SENZU = "Senzu",
   BATTLES_MODES = "Modes de jeu",
 }
