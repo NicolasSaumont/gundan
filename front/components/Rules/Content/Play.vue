@@ -25,5 +25,44 @@ const { t } = useI18n()
       <span class="text-primary underline cursor-pointer" @click="setSelectedRulesSection(RULES_SECTIONS.SENZU)">{{ t('Senzu') }}</span>
       <span>{{ t(' pour augmenter temporairement l’efficacité de son attaque ou de sa défense.') }}</span>
     </div>
+
+    <h3>{{ t('Détail de la phase de combat') }}</h3>
+    <div class="flex flex-col">
+      <span>{{ t('Le joueur attaquant choisit un personnage pour attaquer.') }}</span>
+      <span>{{ t('Le joueur peut alors investir entre 1 et le nombre de Senzu disponibles pour booster l’attaque :') }}</span>
+    </div>
+    <span class="text-secondary italic text-center">{{ t('Points d\'attaque = Puissance x ( Nombre de Senzu dépensés + 1 )') }}</span>
+    <div class="flex flex-col">
+      <span>{{ t('Le joueur défenseur choisit un personnage pour se défendre.') }}</span>
+      <span>{{ t('Le joueur peut aussi investir entre 1 et le nombre de Senzu disponibles pour booster la défense :') }}</span>
+    </div>
+    <span class="text-secondary italic text-center">{{ t('Points de défense = Défense x ( Nombre de Senzu dépensés + 1 )') }}</span>
+    <span>{{ t('Déclaration du vainqueur :') }}</span>
+    <span class="text-secondary italic text-center">{{ t('Issue du combat = Points d\'attaque - Points de défense') }}</span>
+    <span>{{ t('Si l\'issue du combat est positive, c\'est le joueur attaquant qui remporte le round.') }}</span>
+    <div class="flex flex-col">
+      <span>{{ t('Le personnage défenseur subit alors des dégâts égaux aux points de dégâts du personnage attaquant. Les dégâts ainsi calculés viennent se soustraire aux PV du personnage.') }}</span>
+      <span>{{ t('Si ces PV deviennent inférieurs ou égaux à 0, le personnage défenseur est éliminé.') }}</span>
+      <span>{{ t('La différence restante est infligée au joueur défenseur sous forme de dégâts directs à ses PV.') }}</span>
+    </div>
+    <span>{{ t('Si l\'issue du combat est négative, c\'est le joueur défenseur qui remporte le round.') }}</span>
+    <div class="flex flex-col">
+      <span>{{ t('Le personnage attaquant subit alors des dégâts égaux aux points de dégâts du personnage défenseur. Les dégâts ainsi calculés viennent se soustraire aux PV du personnage.') }}</span>
+      <span>{{ t('Si ces PV deviennent inférieurs ou égaux à 0, le personnage attaquant est éliminé.') }}</span>
+      <span>{{ t('La différence restante est infligée au joueur attaquant sous forme de dégâts directs à ses PV.') }}</span>
+    </div>
+
+    <h3>{{ t('Exemple') }}</h3>
+    <ol>
+      <li>{{ t('Puissance du personnage attaquant : 5 ATQ') }}</li>
+      <li>{{ t('Dégâts du personnage attaquant : 3 DEG') }}</li>
+      <li>{{ t('Défense du personnage défenseur : 4 DEF') }}</li>
+      <li>{{ t('PV restant du personnage défenseur : 2 PV') }}</li>
+      <li>{{ t('L\'attaquant utilise 3 Senzu (5 × ( 3 + 1 ) = 5 × 4 = 20 ATQ).') }}</li>
+      <li>{{ t('Le défenseur utilise 0 Senzu (4 × 1 = 4 DEF)') }}</li>
+      <li>{{ t('Issue du combat : 20 - 4 = 16') }}</li>
+      <li>{{ t('Le défenseur subit 3 dégâts, qui viennent se soustraire aux 2 PV qu\'il lui reste : 2 - 3 = -1') }}</li>
+      <li>{{ t('Le défenseur est éliminé, et le joueur adverse subit 1 point de dégâts.') }}</li>
+    </ol>
   </div>
 </template>

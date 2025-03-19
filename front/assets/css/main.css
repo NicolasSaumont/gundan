@@ -34,3 +34,26 @@ h3 {
   */
   height: calc(100vh - 100px - 24px - 40px - 20px)
 }
+
+
+/* Largeur de la barre */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Couleur du rail */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+/* Couleur et apparence du curseur */
+::-webkit-scrollbar-thumb {
+  background: #686868;
+  border-radius: 4px;
+}
+
+/* Effet au survol */
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
