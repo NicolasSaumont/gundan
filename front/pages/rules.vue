@@ -1,9 +1,23 @@
 <script setup lang="ts">
+const { t } = useI18n()
 
+const { setSelectedRulesSection } = useRulesStore()
+
+onMounted(() => {
+  setSelectedRulesSection(RULES_SECTIONS.INTRO)
+})
+
+onUnmounted(() => {
+  setSelectedRulesSection(null)
+})
 </script>
 
 <template>
-    <div>
-        <p>Règles du jeu</p>
+  <div class="flex flex-col items-center justify-center text-white main-container h-full gap-10">
+    <h2 class="font-bungee text-lg">{{ t('Règles du jeu') }}</h2>
+    <div class="flex border-2 border-white h-[80%] w-full">
+      <RulesSectionsList />
+      <RulesContent />
     </div>
+  </div>
 </template>

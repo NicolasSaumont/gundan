@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import type { BATTLE_MODE } from "~/utils/constants"
+import type { BATTLE_MODE } from '~/utils/constants'
 
 defineProps<{
   mode: BATTLE_MODE
