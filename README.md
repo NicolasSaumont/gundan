@@ -126,7 +126,7 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 - [ ] Connexion au compte utilisateur
 - [ ] Afficher la page de profil d'un utilisateur
 - [ ] Déconnexion du compte utilisateur
-- [ ] Afficher les règles du jeu
+- [x] Afficher les règles du jeu
 - [ ] Acquérir de nouvelles cartes
 - [x] Voir la liste des cartes possédées
 - [x] Voir le détail d'une carte possédée
