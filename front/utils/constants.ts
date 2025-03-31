@@ -193,3 +193,11 @@ export const DEFAULT_PACK = {
   cardsCount: 1,
   image: '',
 }
+
+export enum PACK_NAME {
+  STARTER = 'Starter',
+  GENIN = 'Genin',
+  RONIN = 'Ronin',
+  SENSEI = 'Sensei',
+  SHOGUN = 'Shogun'
+}

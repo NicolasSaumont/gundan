@@ -5,6 +5,8 @@ const { packs } = storeToRefs(useShopStore())
 
 const selectedPackDetailsModalIsVisible = ref(false)
 
+const filteredPacks = computed(() => packs.value.filter(pack => pack.name !== PACK_NAME.STARTER))
+
 const handleSelectPackClick = (packId: number) => {
   setSelectedPack(packId)
   selectedPackDetailsModalIsVisible.value = true
@@ -16,8 +18,8 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="flex border-2 border-white w-full">
-    <ShopPacksListPack v-for="pack in packs" :key="pack.id" :pack="pack" @click="handleSelectPackClick(pack.id)"/>
+  <div class="flex flex-wrap gap-10 justify-center">
+    <ShopPacksListPack v-for="pack in filteredPacks" :key="pack.id" :pack="pack" @click="handleSelectPackClick(pack.id)"/>
   </div>
   <FullLoader v-if="loaderIsActive"/>
 </template>

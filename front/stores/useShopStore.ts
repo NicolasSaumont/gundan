@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 const packs = ref<IPacks>([
   {
     id: 1,
-    name: 'Starte',
+    name: 'Starter',
     description: '8 cartes, parmi 2 légions au choix',
     price: 0,
     cardsCount: 8,
