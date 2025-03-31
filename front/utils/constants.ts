@@ -183,3 +183,13 @@ export enum RULES_SECTIONS {
   SENZU = "Senzu",
   BATTLES_MODES = "Modes de jeu",
 }
+
+//* SHOP //
+export const DEFAULT_PACK = {
+  id: 0,
+  name: '',
+  description: '',
+  price: 0,
+  cardsCount: 1,
+  image: '',
+}
