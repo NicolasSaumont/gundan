@@ -22,4 +22,5 @@ onMounted(async () => {
     <ShopPacksListPack v-for="pack in filteredPacks" :key="pack.id" :pack="pack" @click="handleSelectPackClick(pack.id)"/>
   </div>
   <FullLoader v-if="loaderIsActive"/>
+  <ShopPacksListSelectedPackModal v-model:is-visible="selectedPackDetailsModalIsVisible" />
 </template>
