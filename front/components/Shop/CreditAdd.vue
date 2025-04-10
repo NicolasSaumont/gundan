@@ -1,6 +1,6 @@
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins';
+import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
 
 const { t } = useI18n()
 
@@ -20,6 +20,7 @@ const isHovered = ref(false)
         <div>{{ t('Tu trouves que collecter les crédits grâce aux récompenses de combat prend trop de temps ?') }}</div>
         <div>{{ t('Tu en as assez de passer à côté des crédits bonus ?') }}</div>
       </div>
+      <!-- TODO: create button component -->
       <button
         class="flex items-center gap-3 bg-primary text-lg text-white border-2 rounded-full px-3 py-2 shadow-xl hover:cursor-pointer hover:bg-black hover:text-secondary hover:border-secondary transition-all duration-300 ease-in-out"
         :class="{ 'tracking-wider': isHovered, 'tracking-normal': !isHovered }"
