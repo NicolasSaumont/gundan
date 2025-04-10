@@ -10,8 +10,11 @@ const resetSelectedPack = () => {
 
 <template>
   <Modal v-model:is-visible="isVisible" class="flex gap-4" @click="resetSelectedPack">
-  <div>
-    Hello World!
-  </div>
+    <div class="flex flex-col">
+     <span>{{ 'Nom : ' + selectedPack.name }}</span>
+     <span>{{ 'Description : ' + selectedPack.description }}</span>
+     <span>{{ 'Prix : ' + selectedPack.price }}</span>
+     <span>{{ 'Nombre de cartes obtenues : ' + selectedPack.cardsCount }}</span>
+    </div>
   </Modal>
 </template>
