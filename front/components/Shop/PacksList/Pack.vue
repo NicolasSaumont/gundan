@@ -1,4 +1,7 @@
 <script setup lang='ts'>
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+import { faGem } from '@fortawesome/free-solid-svg-icons/faGem'
+
 defineProps<{
   pack: IPack
 }>()
@@ -14,7 +17,10 @@ const isHovered = ref(false)
     @mouseenter="isHovered = true"
     @mouseleave="isHovered = false"
   >
-    <div>{{ pack.price > 1 ? t(pack.price + ' crédits') : t(pack.price + ' crédit') }}</div>
+    <div class="flex items-center gap-2">
+      <div>{{ pack.price }}</div>
+      <font-awesome-icon :icon="faGem" size="lg" />
+    </div>
     <div>{{ pack.name }}</div>
     <div>{{ pack.cardsCount > 1 ? t(pack.cardsCount + ' cartes') : t(pack.cardsCount + ' carte') }}</div>
   </div>
