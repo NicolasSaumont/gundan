@@ -1,5 +1,4 @@
 <script setup lang='ts'>
-import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import { faCoins } from '@fortawesome/free-solid-svg-icons/faCoins'
 
 const isVisible = defineModel<boolean>('isVisible', { required: true })

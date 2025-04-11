@@ -182,6 +182,7 @@ export enum RULES_SECTIONS {
   PLAY = "Comment jouer ?",
   SENZU = "Senzu",
   BATTLES_MODES = "Modes de jeu",
+  BACK = "Retour",
 }
 
 //* SHOP //
