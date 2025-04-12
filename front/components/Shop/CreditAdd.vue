@@ -4,6 +4,11 @@ import { faGem } from '@fortawesome/free-solid-svg-icons/faGem'
 const { t } = useI18n()
 
 const GET_MORE_CREDITS_TEXT = t('Obtiens un max de gemmes')
+
+const handleGetMoreGemsClick = () => {
+  // TODO: manage get more gems
+  alert(t('Je veux acheter des gemmes - Fonctionnalité non disponible pour le moment'))
+}
 </script>
 
 <template>
@@ -20,7 +25,7 @@ const GET_MORE_CREDITS_TEXT = t('Obtiens un max de gemmes')
         <div>{{ t('Tu en as assez de passer à côté des gemmes bonus ?') }}</div>
       </div>
 
-      <Button :text="GET_MORE_CREDITS_TEXT" :icon="faGem" />
+      <Button :text="GET_MORE_CREDITS_TEXT" :icon="faGem" @click="handleGetMoreGemsClick" />
     </div>
   </div>
 </template>

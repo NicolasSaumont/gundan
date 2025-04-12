@@ -12,6 +12,7 @@ const isHovered = ref(false)
 </script>
 
 <template>
+  <!-- TODO: make it prettier -->
   <div 
     class="hover-reflection relative overflow-hidden flex flex-col items-center justify-between border-2 border-white bg-green-500/20 p-4 h-52 w-44 cursor-pointer"
     @mouseenter="isHovered = true"

@@ -31,6 +31,11 @@ const handleCancelClick = () => {
   resetSelectedPack()
   isVisible.value = false
 }
+
+const handleValidateClick = () => {
+  // TODO: manage buy pack
+  alert(t('Je veux acheter ce pack - Fonctionnalité non disponible pour le moment'))
+}
 </script>
 
 <template>
@@ -50,7 +55,7 @@ const handleCancelClick = () => {
      </div>
      <div class="flex gap-4">
       <Button :text="t('Annuler')" flat class="!tracking-normal" @click="handleCancelClick" />
-      <Button :text="t('Acheter')" :icon="faCoins" class="!tracking-normal" />
+      <Button :text="t('Acheter')" :icon="faCoins" class="!tracking-normal" @click="handleValidateClick"/>
      </div>
     </div>
   </Modal>
