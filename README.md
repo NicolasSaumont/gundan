@@ -128,6 +128,9 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 - [ ] Déconnexion du compte utilisateur
 - [x] Afficher les règles du jeu
 - [ ] Acquérir de nouvelles cartes
+  - [x] Mise en place de la boutique
+  - [ ] Gain de gemmes (combats + missions)
+  - [ ] Achat de packs
 - [x] Voir la liste des cartes possédées
 - [x] Voir le détail d'une carte possédée
 - [ ] CRUD deck (pas de modification dans la V1)
@@ -150,7 +153,7 @@ Le projet n'est pas en ligne pour le moment. Si vous voulez accéder au projet e
 - [ ] Système de chat
 - [ ] Système d'échanges de cartes
 - [ ] Mode carrière
-- [ ] Système de paiement pour ouvrir des decks plus souvent
+- [ ] Système de paiement pour ouvrir des packs plus souvent
 
 
 Voir les [problèmes non résolus](https://github.com/NicolasSaumont/gundan/issues) pour accéder à la liste complète des fonctionnalités proposées (et les bugs connus).
