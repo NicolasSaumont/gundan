@@ -202,3 +202,5 @@ export enum PACK_NAME {
   SENSEI = 'Sensei',
   SHOGUN = 'Shogun'
 }
+
+export const MIN_PACK_COUNT = 1

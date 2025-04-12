@@ -10,7 +10,7 @@ const isVisible = defineModel<boolean>('isVisible', { required: true })
 const { t } = useI18n()
 const { selectedPack } = storeToRefs(useShopStore())
 
-const packCount = ref(1)
+const packCount = ref(MIN_PACK_COUNT)
 const totalPrice = computed(() => selectedPack.value.price * packCount.value )
 
 const incrementPackCount = () => {
@@ -18,12 +18,12 @@ const incrementPackCount = () => {
 }
 
 const decrementPackCount = () => {
-  if (packCount.value === 1) return
+  if (packCount.value === MIN_PACK_COUNT) return
   packCount.value --
 }
 
 const resetSelectedPack = () => {
-  packCount.value = 1
+  packCount.value = MIN_PACK_COUNT
   selectedPack.value = DEFAULT_PACK as IPack
 }
 
@@ -35,13 +35,13 @@ const handleCancelClick = () => {
 
 <template>
   <Modal v-model:is-visible="isVisible" class="flex gap-4" @click="resetSelectedPack">
-    <div class="flex flex-col justify-between items-center gap-10 bg-black border-2 border-white rounded-lg p-6" @click.stop>
+    <div class="flex flex-col justify-between items-center gap-10 bg-black border-2 border-white rounded-lg p-6 w-[30%]" @click.stop>
      <div class="text-center font-bungee">{{ selectedPack.name }}</div>
      <div>{{ selectedPack.description }}</div>
      <div class="flex gap-2 items-center border-2 border-secondary rounded-xl">
-      <font-awesome-icon :icon="faMinus" class="border-r-2 border-secondary p-2 cursor-pointer text-secondary" @click="decrementPackCount" />
+      <font-awesome-icon :icon="faMinus" class="border-r-2 border-secondary p-2 cursor-pointer text-secondary hover:text-white transition-all ease-in-out" @click="decrementPackCount" />
       <div class="px-4">{{ packCount }}</div>
-      <font-awesome-icon :icon="faPlus" class="border-l-2 border-secondary p-2 cursor-pointer text-secondary" @click="incrementPackCount" />
+      <font-awesome-icon :icon="faPlus" class="border-l-2 border-secondary p-2 cursor-pointer text-secondary hover:text-white transition-all ease-in-out" @click="incrementPackCount" />
      </div>
      <div class="flex items-center gap-2">
        <div>{{ t('Coût total :') }}</div>
