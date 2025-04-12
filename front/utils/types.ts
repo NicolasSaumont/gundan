@@ -1,4 +1,4 @@
-// PUBLIC HOME PAGE
+//* PUBLIC HOME PAGE //
 export interface IGameSectionCardDetails {
   id: number
   sourceImage: string
@@ -21,7 +21,7 @@ export interface ILegion {
 
 export type ILegions = ILegion[]
 
-// COLLECTION
+//* COLLECTION //
 export type GameModeType = "quick" | "classical"
 
 export type CardType = "Attaquant" | "Défenseur" | "Soutien" | "Stratège"
@@ -80,3 +80,16 @@ export interface ICard {
 }
 
 export type ICards = ICard[]
+
+//* SHOP //
+
+export interface IPack {
+  id: number
+  name: string
+  description: string
+  price: number
+  cardsCount: number
+  image: string
+}
+
+export type IPacks = IPack[]

@@ -182,4 +182,25 @@ export enum RULES_SECTIONS {
   PLAY = "Comment jouer ?",
   SENZU = "Senzu",
   BATTLES_MODES = "Modes de jeu",
+  BACK = "Retour",
 }
+
+//* SHOP //
+export const DEFAULT_PACK = {
+  id: 0,
+  name: '',
+  description: '',
+  price: 0,
+  cardsCount: 1,
+  image: '',
+}
+
+export enum PACK_NAME {
+  STARTER = 'Starter',
+  GENIN = 'Genin',
+  RONIN = 'Ronin',
+  SENSEI = 'Sensei',
+  SHOGUN = 'Shogun'
+}
+
+export const MIN_PACK_COUNT = 1

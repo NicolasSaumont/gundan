@@ -1,6 +1,7 @@
 <script setup lang='ts'>
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
-import type { RULES_SECTIONS } from '~/utils/constants'
+import { faArrowLeft } from '@fortawesome/free-solid-svg-icons/faArrowLeft'
+import { RULES_SECTIONS } from '~/utils/constants'
 
 defineProps<{
   section: RULES_SECTIONS
@@ -13,7 +14,11 @@ const { selectedRulesSection } = storeToRefs(useRulesStore())
 const isHovered = ref(false)
 
 const handleSelection = (section: RULES_SECTIONS) => {
-  setSelectedRulesSection(section)
+  if (section === RULES_SECTIONS.BACK) {
+    navigateTo('/battle-modes')
+  } else {
+    setSelectedRulesSection(section)
+  }
 }
 </script>
 
@@ -36,8 +41,13 @@ const handleSelection = (section: RULES_SECTIONS) => {
     <!-- Texte au-dessus -->
     <div 
       class="flex gap-4 items-center relative z-10 transition-all duration-300 ease-in-out"
-      :class="{ 'tracking-widest': isHovered || selectedRulesSection === section, 'tracking-normal': !isHovered }"
+      :class="{ 
+        'tracking-widest': isHovered || selectedRulesSection === section, 
+        'tracking-normal': !isHovered,
+        'justify-center': section === RULES_SECTIONS.BACK 
+      }"
     >
+      <font-awesome-icon v-if="section === RULES_SECTIONS.BACK" :icon="faArrowLeft" size="lg" />
       <span>{{ t(section) }}</span>
     </div>
   </div>
