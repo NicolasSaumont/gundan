@@ -17,7 +17,7 @@ const {
   >
     <div 
       class="flex items-center -translate-y-[5%] transition-all duration-500 ease-in-out"
-      :class="loginForm ? 'translate-x-[15%]' : '-translate-x-[350%]'"
+      :class="loginForm ? '-translate-x-[350%]' : 'translate-x-[15%]'"
     >
       <img
         class="w-[70%]"
