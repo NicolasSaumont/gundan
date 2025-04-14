@@ -3,13 +3,17 @@ definePageMeta({
   layout: 'public',
 })
 
+const route = useRoute()
+const router = useRouter()
 const { doScroll } = useMenu()
 
 onMounted(() => {
-  const route = useRoute()
   const scrollToId = route.query.scrollTo as string
   if (scrollToId) {
-    setTimeout(() => doScroll(scrollToId), 100)
+    setTimeout(() => {
+      doScroll(scrollToId)
+      router.replace({ query: {} }) // nettoie l’URL
+    }, 100)
   }
 })
 </script>
