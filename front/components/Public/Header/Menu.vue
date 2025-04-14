@@ -29,6 +29,13 @@ const publicHomePageLinks = [
       <span class="link" @click="scrollTo(link.path)">
         {{ t(link.label) }}
       </span>
+      <!-- <NuxtLink
+        class="link"
+        :to="`/public#${link.path}`"
+        replace
+      >
+        {{ t(link.label) }}
+      </NuxtLink> -->
     </template>
     <button
       class="flex gap-2 bg-white text-secondary border-2 rounded-lg px-3 py-2 shadow-xl hover:cursor-pointer hover:bg-primary hover:text-xl hover:text-white transition-all duration-300 ease-in-out"

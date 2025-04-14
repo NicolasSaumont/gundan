@@ -16,13 +16,9 @@ definePageMeta({
 
         <!-- Contenu au-dessus de l'image -->
         <div class="flex h-full w-full z-10">
-
           <Login />
-
           <LoginSeparator />
-
           <LoginSignup />
-          
         </div>
       </div>
     </div>
