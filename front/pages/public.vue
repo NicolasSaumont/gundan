@@ -2,6 +2,16 @@
 definePageMeta({
   layout: 'public',
 })
+
+const { doScroll } = useMenu()
+
+onMounted(() => {
+  const route = useRoute()
+  const scrollToId = route.query.scrollTo as string
+  if (scrollToId) {
+    setTimeout(() => doScroll(scrollToId), 100)
+  }
+})
 </script>
 
 <template>
