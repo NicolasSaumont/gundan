@@ -44,7 +44,7 @@ const handleSelection = (section: RULES_SECTIONS) => {
       :class="{ 
         'tracking-widest': isHovered || selectedRulesSection === section, 
         'tracking-normal': !isHovered,
-        'justify-center': section === RULES_SECTIONS.BACK 
+        'justify-end': section === RULES_SECTIONS.BACK 
       }"
     >
       <font-awesome-icon v-if="section === RULES_SECTIONS.BACK" :icon="faArrowLeft" size="lg" />
