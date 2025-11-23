@@ -9,6 +9,10 @@ const {
 const {
   loginForm
 } = storeToRefs(useLoginStore())
+
+onMounted(() => {
+  loginForm.value = true
+})
 </script>
 
 <template>

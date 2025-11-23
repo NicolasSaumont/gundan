@@ -3,13 +3,15 @@ export const useMenu = () => {
     () => document.body.querySelector('header')?.offsetHeight || 0
   )
 
-  const scrollTo = (id: string) => {
+  const router = useRouter()
+  const route = useRoute()
+
+  const doScroll = (id: string) => {
     const element = document.getElementById(id)
     if (!element) return
 
     // Ajustement de la position vers laquelle scroller pour prendre en compte le sticky header
     const targetPosition = element.offsetTop
-
     const adjustedPosition =
       targetPosition - headerHeight.value - GAP_BETWEEN_SECTIONS
 
@@ -19,5 +21,18 @@ export const useMenu = () => {
       behavior: 'smooth',
     })
   }
-  return { scrollTo, headerHeight }
+
+  const scrollTo = async (id: string) => {
+    if (route.path === '/public') {
+      doScroll(id)
+    } else {
+      await router.push({ path: '/public', query: { scrollTo: id } })
+    }
+  }
+
+  return {
+    doScroll,
+    headerHeight,
+    scrollTo,
+  }
 }

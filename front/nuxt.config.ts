@@ -8,6 +8,13 @@ export default defineNuxtConfig({
     },
   },
 
+  router: {
+    scrollBehavior() {
+      // on gère nous-même le scroll, donc on empêche tout comportement auto
+      return false
+    }
+  },
+
   devtools: { enabled: true },
   ssr: false,
 
