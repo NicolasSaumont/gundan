@@ -5,8 +5,13 @@ export const useLoginStore = defineStore('login', () => {
     loginForm.value = !loginForm.value
   }
 
+  const handleLoginClick = () => {
+    console.log('Je veux me connecter')
+  }
+
   return { 
+    handleLoginClick,
     loginForm,
-    toggleForm
+    toggleForm,
    }
 })
